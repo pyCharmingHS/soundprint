@@ -1,12 +1,15 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import PageTransition from '../components/PageTransition'
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  isActive ? 'font-semibold' : 'text-neutral-500 hover:text-neutral-900'
+  `text-sm tracking-wide transition-colors ${
+    isActive ? 'text-gold' : 'text-muted hover:text-foreground'
+  }`
 
 function RootLayout() {
   return (
     <div className="flex min-h-svh flex-col">
-      <nav className="flex gap-4 p-4">
+      <nav className="flex items-center gap-6 border-b border-border px-6 py-4">
         <NavLink to="/" end className={navLinkClass}>
           Home
         </NavLink>
@@ -18,7 +21,7 @@ function RootLayout() {
         </NavLink>
       </nav>
       <main className="flex flex-1 flex-col">
-        <Outlet />
+        <PageTransition />
       </main>
     </div>
   )
