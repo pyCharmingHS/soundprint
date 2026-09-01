@@ -1,0 +1,290 @@
+[
+  {
+    "id": "song-medianoche",
+    "title": "Medianoche",
+    "artist": "Los Astros Nocturnos",
+    "album": "Costa Eléctrica",
+    "duration": 201,
+    "releaseDate": "2023-06-02",
+    "genres": ["bachata"],
+    "listening": {
+      "plays": 312,
+      "minutes": 1045.2,
+      "firstListened": "2023-06-10T21:14:00",
+      "lastListened": "2026-08-20T22:40:00",
+      "playsByDay": { "Friday": 60, "Saturday": 88, "Sunday": 40 }
+    },
+    "personal": {
+      "isPantheon": false,
+      "categories": [],
+      "tags": ["energetic", "dance"]
+    }
+  },
+  {
+    "id": "song-vidrio-y-sal",
+    "title": "Vidrio y Sal",
+    "artist": "Renata Cruz",
+    "album": "Cuartos Vacíos",
+    "duration": 234,
+    "releaseDate": "2021-11-14",
+    "genres": ["bachata", "ballad"],
+    "listening": {
+      "plays": 17,
+      "minutes": 66.3,
+      "firstListened": "2022-01-05T23:50:00",
+      "lastListened": "2026-07-02T00:20:00",
+      "playsByHour": { "23": 6, "0": 5 },
+      "playsByDay": { "Friday": 9, "Saturday": 4 }
+    },
+    "personal": {
+      "isPantheon": true,
+      "pantheonRank": 1,
+      "categories": ["personal", "hurts"],
+      "tags": ["melancholic", "heartbreak", "beautiful"],
+      "rating": 10,
+      "emotionalIntensity": 9,
+      "nostalgia": 6,
+      "meaning": 10,
+      "why": "Barely 17 plays, but every single one of them wrecked me a little. Some songs you don't replay because they cost too much to feel.",
+      "addedToPantheon": "2022-01-06"
+    }
+  },
+  {
+    "id": "song-fuego-bajo-el-asfalto",
+    "title": "Fuego Bajo el Asfalto",
+    "artist": "Kilo & Reyna",
+    "album": "Bajo Presión",
+    "duration": 178,
+    "releaseDate": "2024-03-22",
+    "genres": ["trap", "reggaeton"],
+    "listening": {
+      "plays": 245,
+      "minutes": 727.4,
+      "firstListened": "2024-03-25T20:00:00",
+      "lastListened": "2026-08-29T23:10:00",
+      "playsByDay": { "Friday": 70, "Saturday": 95 }
+    },
+    "personal": {
+      "isPantheon": true,
+      "pantheonRank": 3,
+      "categories": ["bangers"],
+      "tags": ["energetic", "dance", "chaotic", "badass"],
+      "rating": 9,
+      "emotionalIntensity": 7,
+      "why": "This is the song that makes me feel unstoppable. No further explanation needed.",
+      "addedToPantheon": "2024-04-01"
+    }
+  },
+  {
+    "id": "song-perreo-eterno",
+    "title": "Perreo Eterno",
+    "artist": "DJ Combate",
+    "album": "Sesión Caliente Vol. 2",
+    "duration": 195,
+    "releaseDate": "2020-09-10",
+    "genres": ["dembow"],
+    "listening": {
+      "plays": 189,
+      "minutes": 614.3,
+      "firstListened": "2020-09-15T22:30:00",
+      "lastListened": "2026-06-18T23:55:00"
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["guilty-pleasures"],
+      "tags": ["dance", "chaotic"],
+      "rating": 8,
+      "why": "This does not fit the version of my musical taste I like to present to people. I don't care. It goes unreasonably hard.",
+      "addedToPantheon": "2021-02-14"
+    }
+  },
+  {
+    "id": "song-vuelve-a-mi",
+    "title": "Vuelve a Mí",
+    "artist": "Hermanos Ferreira",
+    "album": "Herencia",
+    "duration": 212,
+    "releaseDate": "2015-12-01",
+    "genres": ["merengue"],
+    "listening": {
+      "plays": 58,
+      "minutes": 205.1,
+      "firstListened": "2016-01-01T15:00:00",
+      "lastListened": "2026-01-01T16:30:00",
+      "playsByMonth": { "12": 22, "1": 18 }
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["time-machines"],
+      "tags": ["nostalgic", "summer"],
+      "nostalgia": 10,
+      "meaning": 7,
+      "why": "Every New Year's Eve at my grandmother's house, without exception.",
+      "memories": "The whole family dancing badly in a kitchen too small for all of us.",
+      "addedToPantheon": "2018-01-02"
+    }
+  },
+  {
+    "id": "song-bajo-la-luna-de-diciembre",
+    "title": "Bajo la Luna de Diciembre",
+    "artist": "Orquesta Salinas",
+    "album": "Salinas En Vivo",
+    "duration": 267,
+    "releaseDate": "2019-12-05",
+    "genres": ["salsa"],
+    "listening": {
+      "plays": 134,
+      "minutes": 596.4,
+      "firstListened": "2019-12-08T21:00:00",
+      "lastListened": "2026-05-11T20:45:00"
+    },
+    "personal": {
+      "isPantheon": false,
+      "categories": [],
+      "tags": ["dance", "energetic"]
+    }
+  },
+  {
+    "id": "song-cartas-que-nunca-envie",
+    "title": "Cartas que Nunca Envié",
+    "artist": "Marisol Duarte",
+    "album": "Correspondencia",
+    "duration": 251,
+    "releaseDate": "2022-02-14",
+    "genres": ["ballad"],
+    "listening": {
+      "plays": 41,
+      "minutes": 171.7,
+      "firstListened": "2022-02-20T01:10:00",
+      "lastListened": "2026-04-03T00:55:00",
+      "playsByHour": { "0": 14, "1": 9 }
+    },
+    "personal": {
+      "isPantheon": true,
+      "pantheonRank": 2,
+      "categories": ["hurts", "personal"],
+      "tags": ["melancholic", "lyrics", "late-night"],
+      "rating": 10,
+      "emotionalIntensity": 10,
+      "meaning": 9,
+      "why": "Structured like an actual letter someone never sent. I felt caught the first time I heard it.",
+      "addedToPantheon": "2022-02-21"
+    }
+  },
+  {
+    "id": "song-el-camino-de-los-abuelos",
+    "title": "El Camino de los Abuelos",
+    "artist": "Tierra Adentro",
+    "album": "Raíces",
+    "duration": 289,
+    "releaseDate": "2018-05-30",
+    "genres": ["folk"],
+    "listening": {
+      "plays": 22,
+      "minutes": 105.9,
+      "firstListened": "2019-03-14T19:20:00",
+      "lastListened": "2026-03-01T18:00:00"
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["time-machines", "thinkers"],
+      "tags": ["nostalgic", "philosophical", "guitar"],
+      "nostalgia": 8,
+      "meaning": 8,
+      "why": "About lineage, memory, and what gets carried forward without being asked. Makes me think about my own family differently.",
+      "addedToPantheon": "2019-03-20"
+    }
+  },
+  {
+    "id": "song-estatica",
+    "title": "Estática",
+    "artist": "Cables Sueltos",
+    "album": "Voltaje",
+    "duration": 223,
+    "releaseDate": "2023-10-13",
+    "genres": ["rock"],
+    "listening": {
+      "plays": 97,
+      "minutes": 360.4,
+      "firstListened": "2023-10-15T22:00:00",
+      "lastListened": "2026-07-19T21:30:00"
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["masterpieces"],
+      "tags": ["production", "guitar", "beautiful"],
+      "rating": 10,
+      "meaning": 6,
+      "why": "The production on this track is absurd. Every listen I catch something new happening in the mix.",
+      "addedToPantheon": "2023-11-01"
+    }
+  },
+  {
+    "id": "song-ceniza-y-trueno",
+    "title": "Ceniza y Trueno",
+    "artist": "Voraz",
+    "album": "Diluvio",
+    "duration": 246,
+    "releaseDate": "2017-08-08",
+    "genres": ["metal"],
+    "listening": {
+      "plays": 76,
+      "minutes": 311.6,
+      "firstListened": "2017-08-10T23:40:00",
+      "lastListened": "2026-02-27T22:15:00"
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["bangers", "masterpieces"],
+      "tags": ["energetic", "badass", "guitar"],
+      "rating": 9,
+      "emotionalIntensity": 8,
+      "why": "That riff still gives me chills, seven years later. That's the whole review.",
+      "addedToPantheon": "2017-09-01"
+    }
+  },
+  {
+    "id": "song-bajo-cero",
+    "title": "Bajo Cero",
+    "artist": "Nico Deluxe",
+    "album": "Frío",
+    "duration": 164,
+    "releaseDate": "2026-08-15",
+    "genres": ["reggaeton", "trap"],
+    "listening": {
+      "plays": 63,
+      "minutes": 172.2,
+      "firstListened": "2026-08-24T20:00:00",
+      "lastListened": "2026-08-31T23:59:00"
+    },
+    "personal": {
+      "isPantheon": false,
+      "categories": [],
+      "tags": ["energetic", "dance"]
+    }
+  },
+  {
+    "id": "song-preguntas-sin-fondo",
+    "title": "Preguntas sin Fondo",
+    "artist": "Elías Voz",
+    "album": "Insomnio",
+    "duration": 278,
+    "releaseDate": "2020-01-17",
+    "genres": ["folk", "ballad"],
+    "listening": {
+      "plays": 29,
+      "minutes": 134.4,
+      "firstListened": "2020-02-01T00:30:00",
+      "lastListened": "2026-01-15T00:10:00",
+      "playsByHour": { "0": 12, "23": 8 }
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["thinkers"],
+      "tags": ["philosophical", "existential", "late-night"],
+      "meaning": 9,
+      "why": "Asks questions it never answers, on purpose. I think about this song more than songs I've played ten times as often.",
+      "addedToPantheon": "2020-02-03"
+    }
+  }
+]

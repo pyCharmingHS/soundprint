@@ -1,0 +1,44 @@
+[
+  {
+    "id": "bangers",
+    "name": "The Bangers",
+    "emoji": "🔥",
+    "description": "Songs that are ridiculously fun. Rhythm, swagger, hooks, energy."
+  },
+  {
+    "id": "hurts",
+    "name": "The Ones That Hurt",
+    "emoji": "🖤",
+    "description": "Sad, emotional, vulnerable, cathartic songs."
+  },
+  {
+    "id": "thinkers",
+    "name": "The Thinkers",
+    "emoji": "🧠",
+    "description": "Songs connected to ideas, philosophy, existentialism, meaning, worldview."
+  },
+  {
+    "id": "time-machines",
+    "name": "The Time Machines",
+    "emoji": "🕰️",
+    "description": "Songs associated with people, places, periods of life, memories, specific experiences."
+  },
+  {
+    "id": "masterpieces",
+    "name": "The Masterpieces",
+    "emoji": "🏛️",
+    "description": "Songs where the primary reaction is: this is fucking incredible."
+  },
+  {
+    "id": "guilty-pleasures",
+    "name": "The Guilty Pleasures",
+    "emoji": "😂",
+    "description": "Songs that may not fit my perceived musical identity but are genuinely enjoyed."
+  },
+  {
+    "id": "personal",
+    "name": "The Personal Ones",
+    "emoji": "❤️",
+    "description": "Songs whose importance is deeply personal and difficult to explain objectively."
+  }
+]
