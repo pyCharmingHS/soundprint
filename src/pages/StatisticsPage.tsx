@@ -9,6 +9,7 @@ import {
   computeTotals,
   discoveryTimeline,
   findCurrentObsession,
+  genresByYear,
   pantheonCandidates,
   topArtists,
   topByReplayIntensity,
@@ -19,6 +20,11 @@ import {
 import { formatHourLabel, formatHours } from '../lib/format'
 import { loadSongs } from '../lib/data'
 import type { Song } from '../types'
+import GenreCloud from '../visualizations/GenreCloud'
+import ListeningClock from '../visualizations/ListeningClock'
+import MusicalEvolution from '../visualizations/MusicalEvolution'
+import PantheonVsReality from '../visualizations/PantheonVsReality'
+import TimelineChart from '../visualizations/TimelineChart'
 
 function SectionHeading({ children }: { children: string }) {
   return (
@@ -41,6 +47,7 @@ function StatisticsPage() {
   const maxHourPlays = Math.max(...Object.values(byHour))
   const maxDayPlays = Math.max(...Object.values(byDay))
   const timeline = discoveryTimeline(songs)
+  const evolution = genresByYear(songs)
   const obsession = findCurrentObsession(songs)
   const candidates = pantheonCandidates(songs)
 
@@ -88,6 +95,14 @@ function StatisticsPage() {
         </motion.div>
       )}
 
+      <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+        <SectionHeading>Pantheon vs. Reality</SectionHeading>
+        <p className="text-sm text-muted">
+          Sorted by plays. Color shows what actually made the Pantheon.
+        </p>
+        <PantheonVsReality songs={songs} />
+      </motion.div>
+
       <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-8">
         <SectionHeading>Most Played</SectionHeading>
         {topSongsByPlays(songs).map((song, i) => (
@@ -126,6 +141,7 @@ function StatisticsPage() {
             value={`${genre.plays} plays`}
           />
         ))}
+        <GenreCloud genres={topGenres(songs, 10)} />
       </motion.div>
 
       <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-8">
@@ -147,19 +163,19 @@ function StatisticsPage() {
               <StatBar key={hour} label={formatHourLabel(hour)} value={plays} max={maxHourPlays} />
             ))}
         </div>
+        <ListeningClock hours={byHour} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-8">
         <SectionHeading>Discovery Timeline</SectionHeading>
-        {timeline.map((entry, i) => (
-          <RankRow
-            key={entry.year}
-            rank={i + 1}
-            primary={String(entry.year)}
-            secondary={`${entry.songCount} song${entry.songCount === 1 ? '' : 's'} discovered`}
-            value={`${entry.plays} plays since`}
-          />
-        ))}
+        <p className="text-sm text-muted">Songs discovered and plays accumulated, by year.</p>
+        <TimelineChart entries={timeline} />
+      </motion.div>
+
+      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-8">
+        <SectionHeading>Musical Evolution</SectionHeading>
+        <p className="text-sm text-muted">Genres entering the collection, year by year.</p>
+        <MusicalEvolution entries={evolution} />
       </motion.div>
 
       <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-8">
