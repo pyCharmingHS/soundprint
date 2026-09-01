@@ -21,8 +21,8 @@ function AlbumArt({ src, title, artist, className = '' }: AlbumArtProps) {
       ) : (
         <svg viewBox="0 0 100 100" role="img" aria-label={alt} className="h-full w-full">
           <text
-            x="22"
-            y="44"
+            x="38"
+            y="42"
             textAnchor="middle"
             dominantBaseline="middle"
             fontSize="38"
@@ -33,8 +33,8 @@ function AlbumArt({ src, title, artist, className = '' }: AlbumArtProps) {
             {initial(title)}
           </text>
           <text
-            x="62"
-            y="72"
+            x="58"
+            y="60"
             textAnchor="middle"
             dominantBaseline="middle"
             fontSize="38"
