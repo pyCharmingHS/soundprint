@@ -125,6 +125,26 @@ export function discoveryTimeline(songs: Song[]): TimelineEntry[] {
   return [...byYear.values()].sort((a, b) => a.year - b.year)
 }
 
+export interface GenreYearEntry {
+  year: number
+  genres: string[]
+}
+
+/** Which genres entered the collection each year, based on first-listened year. */
+export function genresByYear(songs: Song[]): GenreYearEntry[] {
+  const byYear = new Map<number, Set<string>>()
+  for (const song of songs) {
+    if (!song.listening.firstListened) continue
+    const year = new Date(song.listening.firstListened).getFullYear()
+    const set = byYear.get(year) ?? new Set<string>()
+    for (const genre of song.genres) set.add(genre)
+    byYear.set(year, set)
+  }
+  return [...byYear.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([year, genres]) => ({ year, genres: [...genres] }))
+}
+
 export function longevityDays(song: Song): number | undefined {
   const { firstListened, lastListened } = song.listening
   if (!firstListened || !lastListened) return undefined
