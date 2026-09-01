@@ -1,0 +1,26 @@
+[
+  {
+    "trackName": "Vidrio y Sal",
+    "artistName": "Renata Cruz",
+    "albumName": "Cuartos Vacíos",
+    "playDate": "2026-08-01T23:10:00",
+    "playDurationMs": 234000,
+    "trackId": "apple-vidrio-y-sal"
+  },
+  {
+    "trackName": "Vidrio y Sal",
+    "artistName": "Renata Cruz",
+    "albumName": "Cuartos Vacíos",
+    "playDate": "2026-08-08T23:40:00",
+    "playDurationMs": 234000,
+    "trackId": "apple-vidrio-y-sal"
+  },
+  {
+    "trackName": "Horizonte Roto",
+    "artistName": "Nueva Banda de Prueba",
+    "albumName": "Pruebas",
+    "playDate": "2026-08-10T19:00:00",
+    "playDurationMs": 180000,
+    "trackId": "apple-horizonte-roto"
+  }
+]
