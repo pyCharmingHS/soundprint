@@ -14,7 +14,8 @@ function SongCard({ song }: SongCardProps) {
     >
       <AlbumArt
         src={song.artwork}
-        alt={`${song.title} by ${song.artist}`}
+        title={song.title}
+        artist={song.artist}
         className="transition-transform group-hover:scale-[1.02]"
       />
       <div className="flex flex-col">

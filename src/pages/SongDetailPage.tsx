@@ -42,7 +42,8 @@ function SongDetailPage() {
       <motion.div variants={fadeUp} className="flex flex-col items-center gap-4 text-center">
         <AlbumArt
           src={song.artwork}
-          alt={`${song.title} by ${song.artist}`}
+          title={song.title}
+          artist={song.artist}
           className="w-48"
         />
         <div>
