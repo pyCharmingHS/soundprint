@@ -1,1 +1,28 @@
 @import 'tailwindcss';
+
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-ink: #0b0a08;
+  --color-surface: #14120f;
+  --color-border: #2a2620;
+  --color-foreground: #ece7dc;
+  --color-muted: #9a9284;
+  --color-gold: #c9a24b;
+  --color-gold-strong: #e3c374;
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
