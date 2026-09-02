@@ -40,16 +40,21 @@ function PantheonPage() {
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
-      className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-10 px-6 py-16"
+      className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-6 py-8 sm:gap-10 sm:py-16"
     >
       <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center">
-        <h1 className="text-4xl">The Pantheon</h1>
+        <h1 className="text-3xl sm:text-4xl">The Pantheon</h1>
         <p className="text-muted">
           Not ranked by plays. Ranked by what stays.
         </p>
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
+      {/* Sticky so switching categories never requires scrolling back up
+          past the song grid. */}
+      <motion.div
+        variants={fadeUp}
+        className="sticky top-0 z-10 -mx-6 flex flex-wrap justify-center gap-3 bg-ink/95 px-6 py-3 backdrop-blur"
+      >
         {categories.map((category) => (
           <CategoryCard
             key={category.id}
@@ -81,7 +86,7 @@ function PantheonPage() {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              className="mx-auto max-w-md text-center leading-6 text-muted"
+              className="mx-auto line-clamp-3 max-w-md text-center leading-6 text-muted"
             >
               {activeCategoryData.description}
             </motion.p>
