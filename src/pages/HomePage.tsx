@@ -81,7 +81,7 @@ function HomePage() {
         </motion.p>
         <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
-            <Link key={category.id} to="/pantheon">
+            <Link key={category.id} to={`/pantheon?category=${category.id}`}>
               <CategoryCard category={category} />
             </Link>
           ))}

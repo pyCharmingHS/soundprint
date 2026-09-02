@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
 import SongCard from '../components/SongCard'
@@ -20,7 +21,8 @@ function sortPantheon(songs: Song[]): Song[] {
 function PantheonPage() {
   const [categories, setCategories] = useState<Category[]>([])
   const [songs, setSongs] = useState<Song[]>([])
-  const [activeCategory, setActiveCategory] = useState<string | null>(null)
+  const [searchParams, setSearchParams] = useSearchParams()
+  const activeCategory = searchParams.get('category')
 
   useEffect(() => {
     loadCategories().then(setCategories)
@@ -54,9 +56,15 @@ function PantheonPage() {
             category={category}
             active={activeCategory === category.id}
             onClick={() =>
-              setActiveCategory((current) =>
-                current === category.id ? null : category.id,
-              )
+              setSearchParams((prev) => {
+                const next = new URLSearchParams(prev)
+                if (activeCategory === category.id) {
+                  next.delete('category')
+                } else {
+                  next.set('category', category.id)
+                }
+                return next
+              })
             }
           />
         ))}
