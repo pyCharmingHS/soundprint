@@ -79,7 +79,7 @@ function HomePage() {
         <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
           Explore the Pantheon
         </motion.p>
-        <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <Link key={category.id} to="/pantheon">
               <CategoryCard category={category} />

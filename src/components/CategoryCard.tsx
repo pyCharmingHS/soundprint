@@ -11,16 +11,16 @@ function CategoryCard({ category, active, onClick }: CategoryCardProps) {
     <button
       type="button"
       onClick={onClick}
-      className={`flex flex-col items-start gap-1 rounded-sm border px-4 py-3 text-left transition-colors ${
+      className={`flex h-40 w-40 shrink-0 flex-col items-center justify-center gap-2 rounded-md border p-4 text-center transition-colors sm:h-48 sm:w-48 ${
         active
           ? 'border-gold bg-gold/10'
           : 'border-border bg-surface hover:border-gold/50'
       }`}
     >
-      <span className="text-2xl">{category.emoji}</span>
-      <span className="font-display text-lg">{category.name}</span>
+      <span className="text-4xl">{category.emoji}</span>
+      <span className="font-display text-xl">{category.name}</span>
       {category.description && (
-        <span className="text-sm text-muted">{category.description}</span>
+        <span className="line-clamp-2 text-xs text-muted">{category.description}</span>
       )}
     </button>
   )

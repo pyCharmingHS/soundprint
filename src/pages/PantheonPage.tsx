@@ -45,10 +45,7 @@ function PantheonPage() {
         </p>
       </motion.div>
 
-      <motion.div
-        variants={fadeUp}
-        className="grid grid-cols-2 gap-3 sm:grid-cols-4"
-      >
+      <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
         {categories.map((category) => (
           <CategoryCard
             key={category.id}
