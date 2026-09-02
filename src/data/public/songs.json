@@ -286,5 +286,39 @@
       "why": "Asks questions it never answers, on purpose. I think about this song more than songs I've played ten times as often.",
       "addedToPantheon": "2020-02-03"
     }
+  },
+  {
+    "id": "song-el-aguante",
+    "title": "El Aguante",
+    "artist": "Calle 13",
+    "genres": ["fusion"],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["catalogues"],
+      "tags": [],
+      "why": "I love songs that enumerate things, and this is my favorite one! From things that don't kill you, to dictators and evil companies, to philosophy and mindset. A tribute to resilience.",
+      "addedToPantheon": "2026-09-02"
+    }
+  },
+  {
+    "id": "song-cuando-se-acaba-el-amor",
+    "title": "Cuando Se Acaba el Amor",
+    "artist": "Guillermo Dávila",
+    "genres": ["ballad"],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["hurts"],
+      "tags": ["romantic"],
+      "why": "You can really feel love has ended for this man — he takes you right along with him.",
+      "addedToPantheon": "2026-09-02"
+    }
   }
 ]
