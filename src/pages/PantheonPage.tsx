@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { fadeUp, staggerContainer } from '../animations/variants'
+import { fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
 import SongCard from '../components/SongCard'
 import { loadCategories, loadSongs } from '../lib/data'
@@ -31,6 +31,8 @@ function PantheonPage() {
     ? songs.filter((song) => song.personal.categories.includes(activeCategory))
     : songs
 
+  const activeCategoryData = categories.find((c) => c.id === activeCategory)
+
   return (
     <motion.div
       variants={staggerContainer}
@@ -59,6 +61,21 @@ function PantheonPage() {
           />
         ))}
       </motion.div>
+
+      <AnimatePresence mode="wait">
+        {activeCategoryData?.description && (
+          <motion.p
+            key={activeCategoryData.id}
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="mx-auto max-w-md text-center text-muted"
+          >
+            {activeCategoryData.description}
+          </motion.p>
+        )}
+      </AnimatePresence>
 
       <motion.div
         variants={fadeUp}

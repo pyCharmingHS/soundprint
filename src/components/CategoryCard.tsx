@@ -11,6 +11,7 @@ function CategoryCard({ category, active, onClick }: CategoryCardProps) {
     <button
       type="button"
       onClick={onClick}
+      title={category.description}
       className={`flex h-40 w-40 shrink-0 flex-col items-center justify-center gap-2 rounded-md border p-4 text-center transition-colors sm:h-48 sm:w-48 ${
         active
           ? 'border-gold bg-gold/10'
