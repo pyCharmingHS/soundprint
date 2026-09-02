@@ -11,7 +11,9 @@ const CLOCK_LABELS: Array<[number, string]> = [
   [18, '6 PM'],
 ]
 
-const CENTER = 100
+// Center is inset from the 240x240 viewBox edges so the cardinal labels
+// (offset R_OUTER + 14 past the circle) have room to render without clipping.
+const CENTER = 120
 const R_INNER = 36
 const R_OUTER = 88
 
@@ -27,7 +29,7 @@ function ListeningClock({ hours }: ListeningClockProps) {
   const max = Math.max(1, ...Object.values(hours))
 
   return (
-    <svg viewBox="0 0 200 200" className="mx-auto w-56 sm:w-64">
+    <svg viewBox="0 0 240 240" className="mx-auto w-56 sm:w-64">
       <circle
         cx={CENTER}
         cy={CENTER}
