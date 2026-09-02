@@ -26,3 +26,29 @@ h2,
 h3 {
   font-family: var(--font-display);
 }
+
+/* Themed scrollbars — the OS default (light, with arrow buttons on
+   Windows) clashes hard with the dark palette, on both the page scrollbar
+   and horizontally-scrolling strips like Musical Evolution. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-gold);
+}
