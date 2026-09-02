@@ -70,20 +70,24 @@ function PantheonPage() {
         ))}
       </motion.div>
 
-      <AnimatePresence mode="wait">
-        {activeCategoryData?.description && (
-          <motion.p
-            key={activeCategoryData.id}
-            variants={fadeIn}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            className="mx-auto max-w-md text-center text-muted"
-          >
-            {activeCategoryData.description}
-          </motion.p>
-        )}
-      </AnimatePresence>
+      {/* Fixed height regardless of description length or whether a category
+          is selected, so the song grid below never shifts. */}
+      <div className="flex h-[4.5rem] items-start justify-center">
+        <AnimatePresence mode="wait">
+          {activeCategoryData?.description && (
+            <motion.p
+              key={activeCategoryData.id}
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="mx-auto max-w-md text-center leading-6 text-muted"
+            >
+              {activeCategoryData.description}
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
 
       <motion.div
         variants={fadeUp}
