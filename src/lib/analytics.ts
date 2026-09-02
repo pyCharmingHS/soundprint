@@ -201,6 +201,13 @@ function minMax(values: number[]): [number, number] {
   return [Math.min(...values), Math.max(...values)]
 }
 
+// A song with plays but no listening dates (e.g. a brand-new stub from
+// generate_public_data.py) is "as unrecent as possible" for ranking
+// purposes. Using -Infinity here breaks normalize() with NaN whenever it's
+// also the min of the batch — (-Infinity - -Infinity) is NaN — so a large
+// finite sentinel is used instead.
+const UNKNOWN_RECENCY_DAYS = -1_000_000
+
 export interface PantheonCandidate {
   song: Song
   score: number
@@ -225,7 +232,7 @@ export function pantheonCandidates(
       replay: replayIntensity(song) ?? 0,
       recency: song.listening.lastListened
         ? -(recencyDays(song, now) ?? 0)
-        : Number.NEGATIVE_INFINITY,
+        : UNKNOWN_RECENCY_DAYS,
     }))
 
   if (candidates.length === 0) return []
