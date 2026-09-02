@@ -12,13 +12,13 @@ function CategoryCard({ category, active, onClick }: CategoryCardProps) {
       type="button"
       onClick={onClick}
       title={category.description}
-      className={`flex items-center gap-2 rounded-full border px-4 py-2 transition-colors ${
+      className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:gap-2 sm:px-4 sm:py-2 sm:text-base ${
         active
           ? 'border-gold bg-gold/10 text-gold'
           : 'border-border bg-surface hover:border-gold/50'
       }`}
     >
-      <span className="text-lg">{category.emoji}</span>
+      <span className="text-base sm:text-lg">{category.emoji}</span>
       <span className="font-display">{category.name}</span>
     </button>
   )

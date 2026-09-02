@@ -53,7 +53,7 @@ function PantheonPage() {
           past the song grid. */}
       <motion.div
         variants={fadeUp}
-        className="sticky top-0 z-10 -mx-6 flex flex-wrap justify-center gap-3 bg-ink/95 px-6 py-3 backdrop-blur"
+        className="sticky top-0 z-10 -mx-6 flex flex-nowrap items-center gap-2 overflow-x-auto bg-ink/95 px-6 py-2 backdrop-blur sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible sm:py-3"
       >
         {categories.map((category) => (
           <CategoryCard
