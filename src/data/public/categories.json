@@ -40,5 +40,11 @@
     "name": "The Personal Ones",
     "emoji": "❤️",
     "description": "Songs whose importance is deeply personal and difficult to explain objectively."
+  },
+  {
+    "id": "catalogues",
+    "name": "The Catalogues",
+    "emoji": "📜",
+    "description": "Songs that work by naming things — philosophies, structures, everything that hasn't killed you yet. The list is the argument."
   }
 ]
