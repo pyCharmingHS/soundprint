@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../animations/variants'
 import AlbumArt from '../components/AlbumArt'
 import { formatDate, formatHourLabel, formatHours, mostCommonKey } from '../lib/format'
@@ -10,6 +10,7 @@ import type { Category, Song } from '../types'
 
 function SongDetailPage() {
   const { id } = useParams<{ id: string }>()
+  const navigate = useNavigate()
   const [song, setSong] = useState<Song | null | undefined>(undefined)
   const [categories, setCategories] = useState<Category[]>([])
 
@@ -40,6 +41,15 @@ function SongDetailPage() {
       animate="visible"
       className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-16"
     >
+      <motion.button
+        type="button"
+        variants={fadeUp}
+        onClick={() => navigate(-1)}
+        className="flex w-fit cursor-pointer items-center gap-1 text-sm text-muted transition-colors hover:text-gold"
+      >
+        ← Back
+      </motion.button>
+
       <motion.div variants={fadeUp} className="flex flex-col items-center gap-4 text-center">
         <AlbumArt
           src={song.artwork}
@@ -107,15 +117,16 @@ function SongDetailPage() {
         <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
           <h2 className="text-sm tracking-wide text-muted uppercase">Categories</h2>
           <div className="flex flex-wrap gap-2">
-            {personal.categories.map((id) => {
-              const category = categoryById.get(id)
+            {personal.categories.map((categoryId) => {
+              const category = categoryById.get(categoryId)
               return (
-                <span
-                  key={id}
-                  className="rounded-full border border-border bg-surface px-3 py-1 text-sm"
+                <Link
+                  key={categoryId}
+                  to={`/pantheon?category=${categoryId}`}
+                  className="rounded-full border border-border bg-surface px-3 py-1 text-sm transition-colors hover:border-gold hover:text-gold"
                 >
-                  {category ? `${category.emoji} ${category.name}` : id}
-                </span>
+                  {category ? `${category.emoji} ${category.name}` : categoryId}
+                </Link>
               )
             })}
           </div>
