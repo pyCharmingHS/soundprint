@@ -4,9 +4,10 @@ import AlbumArt from './AlbumArt'
 
 interface SongCardProps {
   song: Song
+  showWhy?: boolean
 }
 
-function SongCard({ song }: SongCardProps) {
+function SongCard({ song, showWhy }: SongCardProps) {
   return (
     <Link
       to={`/song/${song.id}`}
@@ -22,6 +23,9 @@ function SongCard({ song }: SongCardProps) {
         <span className="truncate font-medium">{song.title}</span>
         <span className="truncate text-sm text-muted">{song.artist}</span>
       </div>
+      {showWhy && song.personal.why && (
+        <p className="line-clamp-2 text-sm text-muted italic">"{song.personal.why}"</p>
+      )}
     </Link>
   )
 }
