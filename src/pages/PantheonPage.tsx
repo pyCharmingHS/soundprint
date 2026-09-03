@@ -6,6 +6,7 @@ import CategoryCard from '../components/CategoryCard'
 import SongCard from '../components/SongCard'
 import { loadCategories, loadSongs } from '../lib/data'
 import type { Category, Song } from '../types'
+import EmotionalLandscape from '../visualizations/EmotionalLandscape'
 
 type BrowseMode = 'category' | 'genre'
 
@@ -179,6 +180,20 @@ function PantheonPage() {
           <SongCard key={song.id} song={song} />
         ))}
       </motion.div>
+
+      {songs.some(
+        (s) => s.personal.meaning !== undefined && s.personal.emotionalIntensity !== undefined,
+      ) && (
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+          <h2 className="text-center text-sm tracking-wide text-muted uppercase">
+            Emotional Landscape
+          </h2>
+          <p className="text-center text-sm text-muted">
+            How the Pantheon feels, not just what's in it.
+          </p>
+          <EmotionalLandscape songs={songs} />
+        </motion.div>
+      )}
     </motion.div>
   )
 }
