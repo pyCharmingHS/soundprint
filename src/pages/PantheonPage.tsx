@@ -23,17 +23,28 @@ function PantheonPage() {
   const [songs, setSongs] = useState<Song[]>([])
   const [searchParams, setSearchParams] = useSearchParams()
   const activeCategory = searchParams.get('category')
+  const activeGenre = searchParams.get('genre')
 
   useEffect(() => {
     loadCategories().then(setCategories)
     loadSongs().then((all) => setSongs(sortPantheon(all.filter((s) => s.personal.isPantheon))))
   }, [])
 
-  const visibleSongs = activeCategory
-    ? songs.filter((song) => song.personal.categories.includes(activeCategory))
-    : songs
+  const visibleSongs = activeGenre
+    ? songs.filter((song) => song.genres.includes(activeGenre))
+    : activeCategory
+      ? songs.filter((song) => song.personal.categories.includes(activeCategory))
+      : songs
 
   const activeCategoryData = categories.find((c) => c.id === activeCategory)
+
+  function clearGenre() {
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev)
+      next.delete('genre')
+      return next
+    })
+  }
 
   return (
     <motion.div
@@ -63,6 +74,7 @@ function PantheonPage() {
             onClick={() =>
               setSearchParams((prev) => {
                 const next = new URLSearchParams(prev)
+                next.delete('genre')
                 if (activeCategory === category.id) {
                   next.delete('category')
                 } else {
@@ -79,17 +91,39 @@ function PantheonPage() {
           is selected, so the song grid below never shifts. */}
       <div className="flex h-[4.5rem] items-start justify-center">
         <AnimatePresence mode="wait">
-          {activeCategoryData?.description && (
-            <motion.p
-              key={activeCategoryData.id}
+          {activeGenre ? (
+            <motion.div
+              key={`genre-${activeGenre}`}
               variants={fadeIn}
               initial="hidden"
               animate="visible"
               exit="hidden"
-              className="mx-auto line-clamp-3 max-w-md text-center leading-6 text-muted"
+              className="flex flex-col items-center gap-1"
             >
-              {activeCategoryData.description}
-            </motion.p>
+              <p className="text-muted">
+                Genre: <span className="text-gold">{activeGenre}</span>
+              </p>
+              <button
+                type="button"
+                onClick={clearGenre}
+                className="cursor-pointer text-sm text-muted underline hover:text-gold"
+              >
+                Clear
+              </button>
+            </motion.div>
+          ) : (
+            activeCategoryData?.description && (
+              <motion.p
+                key={activeCategoryData.id}
+                variants={fadeIn}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                className="mx-auto line-clamp-3 max-w-md text-center leading-6 text-muted"
+              >
+                {activeCategoryData.description}
+              </motion.p>
+            )
           )}
         </AnimatePresence>
       </div>

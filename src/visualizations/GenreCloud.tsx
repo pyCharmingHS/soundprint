@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { GenreStat } from '../lib/analytics'
 
 interface GenreCloudProps {
@@ -13,13 +14,14 @@ function GenreCloud({ genres }: GenreCloudProps) {
       {genres.map((genre) => {
         const scale = 0.85 + (genre.plays / max) * 0.85
         return (
-          <span
+          <Link
             key={genre.genre}
+            to={`/pantheon?genre=${encodeURIComponent(genre.genre)}`}
             style={{ fontSize: `${scale}rem` }}
-            className="text-gold/80"
+            className="cursor-pointer text-gold/80 transition-colors hover:text-gold"
           >
             {genre.genre}
-          </span>
+          </Link>
         )
       })}
     </div>
