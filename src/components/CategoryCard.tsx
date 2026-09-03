@@ -12,7 +12,7 @@ function CategoryCard({ category, active, onClick }: CategoryCardProps) {
       type="button"
       onClick={onClick}
       title={category.description}
-      className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:gap-2 sm:px-4 sm:py-2 sm:text-base ${
+      className={`flex shrink-0 cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:gap-2 sm:px-4 sm:py-2 sm:text-base ${
         active
           ? 'border-gold bg-gold/10 text-gold'
           : 'border-border bg-surface hover:border-gold/50'
