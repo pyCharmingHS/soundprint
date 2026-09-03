@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../animations/variants'
 import AlbumArt from '../components/AlbumArt'
+import StatBar from '../components/StatBar'
 import { formatDate, formatHourLabel, formatHours, mostCommonKey } from '../lib/format'
 import { loadCategories, loadSongs } from '../lib/data'
 import { streamingLinks } from '../lib/streaming'
@@ -85,6 +86,32 @@ function SongDetailPage() {
         <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
           <h2 className="text-sm tracking-wide text-muted uppercase">Why it's here</h2>
           <p className="text-lg italic">"{personal.why}"</p>
+          {personal.memories && (
+            <p className="text-sm text-muted">{personal.memories}</p>
+          )}
+        </motion.div>
+      )}
+
+      {(personal.rating !== undefined ||
+        personal.emotionalIntensity !== undefined ||
+        personal.nostalgia !== undefined ||
+        personal.meaning !== undefined) && (
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+          <h2 className="text-sm tracking-wide text-muted uppercase">Emotional Profile</h2>
+          <div className="flex flex-col gap-1.5">
+            {personal.rating !== undefined && (
+              <StatBar label="Rating" value={personal.rating} max={10} />
+            )}
+            {personal.emotionalIntensity !== undefined && (
+              <StatBar label="Intensity" value={personal.emotionalIntensity} max={10} />
+            )}
+            {personal.nostalgia !== undefined && (
+              <StatBar label="Nostalgia" value={personal.nostalgia} max={10} />
+            )}
+            {personal.meaning !== undefined && (
+              <StatBar label="Meaning" value={personal.meaning} max={10} />
+            )}
+          </div>
         </motion.div>
       )}
 
