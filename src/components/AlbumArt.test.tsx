@@ -13,6 +13,7 @@ describe('AlbumArt', () => {
   it('falls back to a generative pattern when there is no src', () => {
     const { container } = render(<AlbumArt title="Vidrio y Sal" artist="Renata Cruz" />)
     expect(screen.getByRole('img', { name: 'Vidrio y Sal by Renata Cruz' })).toBeInTheDocument()
-    expect(container.querySelectorAll('circle').length).toBeGreaterThan(0)
+    // 1 background rect + 4 shapes (circle/triangle/rectangle mix)
+    expect(container.querySelectorAll('circle, polygon, rect').length).toBe(5)
   })
 })
