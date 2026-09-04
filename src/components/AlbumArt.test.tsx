@@ -10,10 +10,9 @@ describe('AlbumArt', () => {
     expect(img).toHaveAttribute('src', 'https://example.com/art.jpg')
   })
 
-  it('falls back to a title/artist initials monogram when there is no src', () => {
-    render(<AlbumArt title="Vidrio y Sal" artist="Renata Cruz" />)
-    expect(screen.getByText('V')).toBeInTheDocument()
-    expect(screen.getByText('R')).toBeInTheDocument()
+  it('falls back to a generative pattern when there is no src', () => {
+    const { container } = render(<AlbumArt title="Vidrio y Sal" artist="Renata Cruz" />)
     expect(screen.getByRole('img', { name: 'Vidrio y Sal by Renata Cruz' })).toBeInTheDocument()
+    expect(container.querySelectorAll('circle').length).toBeGreaterThan(0)
   })
 })
