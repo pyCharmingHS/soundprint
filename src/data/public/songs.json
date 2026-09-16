@@ -10,10 +10,13 @@
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["catalogues"],
+      "categories": ["catalogues", "thinkers"],
       "tags": [],
       "why": {
-        "en": "I love songs that enumerate things, and this is my favorite one! From things that don't kill you, to dictators and evil companies, to philosophy and mindset. A tribute to resilience."
+        "en": "I love songs that enumerate things, and this is my favorite one! From things that don't kill you, to dictators and evil companies, to philosophy and mindset. A tribute to resilience.",
+        "es": "Me encantan las canciones que enumeran cosas, ¡y esta es mi favorita! Desde cosas que no te matan, hasta dictadores y empresas malvadas, pasando por filosofía y mentalidad. Un tributo a la resiliencia.",
+        "it": "Adoro le canzoni che elencano le cose, e questa è la mia preferita! Da tutto ciò che non ti uccide, a dittatori e aziende malvagie, fino a filosofia e mentalità. Un tributo alla resilienza.",
+        "pt": "Eu amo músicas que enumeram coisas, e essa é a minha favorita! De coisas que não te matam, a ditadores e empresas malvadas, passando por filosofia e mentalidade. Uma homenagem à resiliência."
       },
       "addedToPantheon": "2026-09-02"
     }
@@ -32,7 +35,10 @@
       "categories": ["hurts"],
       "tags": ["romantic"],
       "why": {
-        "en": "You can really feel love has ended for this man — he takes you right along with him."
+        "en": "You can really feel love has ended for this man — he takes you right along with him.",
+        "es": "Realmente se siente que el amor se acabó para este hombre — te arrastra con él.",
+        "it": "Si sente davvero che l'amore è finito per quest'uomo: ti trascina con sé.",
+        "pt": "Dá pra sentir de verdade que o amor acabou pra esse homem — ele te leva junto com ele."
       },
       "addedToPantheon": "2026-09-02"
     }
@@ -51,7 +57,10 @@
       "categories": ["personal", "thinkers"],
       "tags": ["romantic", "growth"],
       "why": {
-        "en": "It's not my favorite because I don't have one, but it pops into my head whenever I'm asked the question. It's incredibly romantic — my favorite part is \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" It encapsulates the beauty of always growing but retaining your essence, and I think that's beautiful."
+        "en": "It's not my favorite because I don't have one, but it pops into my head whenever I'm asked the question. It's incredibly romantic — my favorite part is \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" It encapsulates the beauty of always growing but retaining your essence, and I think that's beautiful.",
+        "es": "No es mi favorita porque no tengo una, pero se me viene a la mente cada vez que me hacen esa pregunta. Es increíblemente romántica — mi parte favorita es \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" Encierra la belleza de crecer constantemente sin perder tu esencia, y creo que eso es hermoso.",
+        "it": "Non è la mia preferita perché non ne ho una, ma mi viene in mente ogni volta che mi fanno questa domanda. È incredibilmente romantica — la mia parte preferita è \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" Racchiude la bellezza di crescere sempre pur mantenendo la propria essenza, e penso che sia bellissimo.",
+        "pt": "Não é a minha favorita porque eu não tenho uma, mas ela vem à minha cabeça toda vez que me fazem essa pergunta. É incrivelmente romântica — minha parte favorita é \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" Ela resume a beleza de sempre crescer mas manter sua essência, e eu acho isso lindo."
       },
       "addedToPantheon": "2026-09-16"
     }

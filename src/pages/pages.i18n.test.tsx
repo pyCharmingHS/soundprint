@@ -44,6 +44,16 @@ const STATISTICS_TITLES: Record<Locale, string> = {
   pt: 'Estatísticas',
 }
 
+// El Aguante's "why" note is curated in all four locales — a distinguishing
+// opening phrase per language, so this test proves the real translation
+// renders, not just an English fallback.
+const EL_AGUANTE_WHY_SNIPPETS: Record<Locale, RegExp> = {
+  en: /I love songs that enumerate things/,
+  es: /Me encantan las canciones que enumeran cosas/,
+  it: /Adoro le canzoni che elencano le cose/,
+  pt: /Eu amo músicas que enumeram coisas/,
+}
+
 describe.each(LOCALES)('pages render correctly in %s', (locale) => {
   beforeEach(() => {
     window.localStorage.clear()
@@ -95,10 +105,6 @@ describe.each(LOCALES)('pages render correctly in %s', (locale) => {
       </LocaleProvider>,
     )
     expect(await screen.findByText('El Aguante')).toBeInTheDocument()
-    // Only an English `why` exists on this song — every locale should fall
-    // back to it rather than showing nothing or a raw object.
-    expect(
-      screen.getByText(/I love songs that enumerate things/),
-    ).toBeInTheDocument()
+    expect(screen.getByText(EL_AGUANTE_WHY_SNIPPETS[locale])).toBeInTheDocument()
   })
 })
