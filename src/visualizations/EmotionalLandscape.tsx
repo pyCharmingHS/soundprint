@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useLocale } from '../i18n/LocaleContext'
 import type { Song } from '../types'
 
 interface EmotionalLandscapeProps {
@@ -14,6 +15,7 @@ const PLOT = SIZE - PADDING - 10
 // just render as a mid-range dot rather than being excluded.
 function EmotionalLandscape({ songs }: EmotionalLandscapeProps) {
   const navigate = useNavigate()
+  const { t } = useLocale()
 
   const points = songs
     .filter(
@@ -55,7 +57,7 @@ function EmotionalLandscape({ songs }: EmotionalLandscapeProps) {
           strokeWidth={1}
         />
         <text x={SIZE / 2} y={SIZE - 12} fill="var(--color-muted)" fontSize={10} textAnchor="middle">
-          Meaning →
+          {t('viz.meaningAxis')}
         </text>
         <text
           x={14}
@@ -65,7 +67,7 @@ function EmotionalLandscape({ songs }: EmotionalLandscapeProps) {
           textAnchor="middle"
           transform={`rotate(-90 14 ${SIZE / 2})`}
         >
-          Intensity →
+          {t('viz.intensityAxis')}
         </text>
         {points.map(({ song, x, y, radius, opacity }) => (
           <circle
@@ -82,7 +84,7 @@ function EmotionalLandscape({ songs }: EmotionalLandscapeProps) {
           </circle>
         ))}
       </svg>
-      <p className="text-xs text-muted">Size = nostalgia · Brightness = rating</p>
+      <p className="text-xs text-muted">{t('viz.emotionalLandscapeLegend')}</p>
     </div>
   )
 }

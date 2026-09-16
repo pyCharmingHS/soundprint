@@ -12,7 +12,9 @@
       "isPantheon": true,
       "categories": ["catalogues"],
       "tags": [],
-      "why": "I love songs that enumerate things, and this is my favorite one! From things that don't kill you, to dictators and evil companies, to philosophy and mindset. A tribute to resilience.",
+      "why": {
+        "en": "I love songs that enumerate things, and this is my favorite one! From things that don't kill you, to dictators and evil companies, to philosophy and mindset. A tribute to resilience."
+      },
       "addedToPantheon": "2026-09-02"
     }
   },
@@ -29,8 +31,29 @@
       "isPantheon": true,
       "categories": ["hurts"],
       "tags": ["romantic"],
-      "why": "You can really feel love has ended for this man — he takes you right along with him.",
+      "why": {
+        "en": "You can really feel love has ended for this man — he takes you right along with him."
+      },
       "addedToPantheon": "2026-09-02"
+    }
+  },
+  {
+    "id": "song-a-te",
+    "title": "A te",
+    "artist": "Jovanotti",
+    "genres": ["pop"],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["personal", "thinkers"],
+      "tags": ["romantic", "growth"],
+      "why": {
+        "en": "It's not my favorite because I don't have one, but it pops into my head whenever I'm asked the question. It's incredibly romantic — my favorite part is \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" It encapsulates the beauty of always growing but retaining your essence, and I think that's beautiful."
+      },
+      "addedToPantheon": "2026-09-16"
     }
   }
 ]

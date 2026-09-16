@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion'
+import { useLocale } from '../i18n/LocaleContext'
+import { formatHourLabel } from '../lib/format'
 
 interface ListeningClockProps {
   hours: Record<string, number>
 }
 
-const CLOCK_LABELS: Array<[number, string]> = [
-  [0, '12 AM'],
-  [6, '6 AM'],
-  [12, '12 PM'],
-  [18, '6 PM'],
-]
+const CARDINAL_HOURS = [0, 6, 12, 18]
 
 // Center is inset from the 240x240 viewBox edges so the cardinal labels
 // (offset R_OUTER + 14 past the circle) have room to render without clipping.
@@ -26,6 +23,7 @@ function pointOnCircle(hour: number, radius: number) {
 }
 
 function ListeningClock({ hours }: ListeningClockProps) {
+  const { locale } = useLocale()
   const max = Math.max(1, ...Object.values(hours))
 
   return (
@@ -59,7 +57,8 @@ function ListeningClock({ hours }: ListeningClockProps) {
           />
         )
       })}
-      {CLOCK_LABELS.map(([hour, label]) => {
+      {CARDINAL_HOURS.map((hour) => {
+        const label = formatHourLabel(String(hour), locale)
         const { x, y } = pointOnCircle(hour, R_OUTER + 14)
         return (
           <text

@@ -5,9 +5,9 @@ import CategoryCard from './CategoryCard'
 
 const category: Category = {
   id: 'thinkers',
-  name: 'The Thinkers',
+  name: { en: 'The Thinkers' },
   emoji: '🧠',
-  description: 'Songs connected to ideas, philosophy, existentialism, meaning, worldview.',
+  description: { en: 'Songs connected to ideas, philosophy, existentialism, meaning, worldview.' },
 }
 
 describe('CategoryCard', () => {
@@ -15,7 +15,7 @@ describe('CategoryCard', () => {
     render(<CategoryCard category={category} />)
     expect(screen.getByText('🧠')).toBeInTheDocument()
     expect(screen.getByText('The Thinkers')).toBeInTheDocument()
-    expect(screen.getByRole('button')).toHaveAttribute('title', category.description)
+    expect(screen.getByRole('button')).toHaveAttribute('title', category.description!.en!)
   })
 
   it('calls onClick when clicked', () => {

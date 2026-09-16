@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
 import SongCard from '../components/SongCard'
+import { useLocale } from '../i18n/LocaleContext'
 import { curatedHighlights } from '../lib/highlights'
 import { loadCategories, loadSongs } from '../lib/data'
 import { topGenres } from '../lib/analytics'
@@ -11,6 +12,7 @@ import type { Category, Song } from '../types'
 import GenreCloud from '../visualizations/GenreCloud'
 
 function HomePage() {
+  const { t } = useLocale()
   const [songs, setSongs] = useState<Song[]>([])
   const [mostPlayed, setMostPlayed] = useState<Song | null>(null)
   const [topPantheon, setTopPantheon] = useState<Song | null>(null)
@@ -48,15 +50,15 @@ function HomePage() {
           variants={fadeUp}
           className="text-5xl tracking-tight sm:text-7xl"
         >
-          THE PANTHEON
+          {t('home.wordmark')}
         </motion.h1>
         <motion.p variants={fadeUp} className="max-w-md text-lg text-muted italic">
-          I don't have a favorite song.
+          {t('home.tagline1')}
           <br />
-          <span className="text-foreground not-italic">I have several.</span>
+          <span className="text-foreground not-italic">{t('home.tagline2')}</span>
         </motion.p>
         <motion.p variants={fadeUp} className="max-w-md text-sm text-muted">
-          Organized by why each one matters to me — not genre, not rank.
+          {t('home.subtitle')}
         </motion.p>
       </motion.div>
 
@@ -68,7 +70,7 @@ function HomePage() {
           className="mx-auto flex w-full max-w-4xl flex-col gap-6 border-t border-border px-6 py-16"
         >
           <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
-            A few, to start
+            {t('home.highlightsHeading')}
           </motion.p>
           <motion.div variants={fadeUp} className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {highlights.map((song) => (
@@ -86,7 +88,7 @@ function HomePage() {
           className="mx-auto flex w-full max-w-3xl flex-col gap-2 border-t border-border px-6 py-16"
         >
           <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
-            Across genres
+            {t('home.acrossGenresHeading')}
           </motion.p>
           <motion.div variants={fadeUp}>
             <GenreCloud genres={pantheonGenres} />
@@ -102,18 +104,22 @@ function HomePage() {
           className="mx-auto flex w-full max-w-3xl flex-col gap-6 border-t border-border px-6 py-16"
         >
           <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
-            Most played ≠ favorite
+            {t('home.mostPlayedVsFavoriteHeading')}
           </motion.p>
           <motion.div variants={fadeUp} className="grid grid-cols-2 gap-6">
             <div className="flex flex-col items-center gap-2 text-center">
-              <span className="text-xs tracking-wide text-muted uppercase">Most Played</span>
+              <span className="text-xs tracking-wide text-muted uppercase">{t('home.mostPlayedLabel')}</span>
               <SongCard song={mostPlayed} />
-              <span className="text-sm text-muted">{mostPlayed.listening.plays} plays</span>
+              <span className="text-sm text-muted">
+                {t('common.plays', { count: mostPlayed.listening.plays })}
+              </span>
             </div>
             <div className="flex flex-col items-center gap-2 text-center">
-              <span className="text-xs tracking-wide text-gold uppercase">Pantheon</span>
+              <span className="text-xs tracking-wide text-gold uppercase">{t('home.pantheonLabel')}</span>
               <SongCard song={topPantheon} />
-              <span className="text-sm text-muted">{topPantheon.listening.plays} plays</span>
+              <span className="text-sm text-muted">
+                {t('common.plays', { count: topPantheon.listening.plays })}
+              </span>
             </div>
           </motion.div>
         </motion.section>
@@ -126,7 +132,7 @@ function HomePage() {
         className="mx-auto flex w-full max-w-3xl flex-col gap-6 border-t border-border px-6 py-16"
       >
         <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
-          Explore the Pantheon
+          {t('home.exploreHeading')}
         </motion.p>
         <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
           {categories.map((category) => (

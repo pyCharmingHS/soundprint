@@ -1,3 +1,4 @@
+import { useLocale } from '../i18n/LocaleContext'
 import AlbumArtPattern from './AlbumArtPattern'
 
 interface AlbumArtProps {
@@ -8,7 +9,8 @@ interface AlbumArtProps {
 }
 
 function AlbumArt({ src, title, artist, className = '' }: AlbumArtProps) {
-  const alt = `${title} by ${artist}`
+  const { t } = useLocale()
+  const alt = t('common.by', { title, artist })
 
   return (
     <div

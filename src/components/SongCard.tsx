@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useLocale } from '../i18n/LocaleContext'
 import type { Song } from '../types'
 import AlbumArt from './AlbumArt'
 
@@ -8,6 +9,9 @@ interface SongCardProps {
 }
 
 function SongCard({ song, showWhy }: SongCardProps) {
+  const { localize } = useLocale()
+  const why = showWhy ? localize(song.personal.why) : undefined
+
   return (
     <Link
       to={`/song/${song.id}`}
@@ -23,9 +27,7 @@ function SongCard({ song, showWhy }: SongCardProps) {
         <span className="truncate font-medium">{song.title}</span>
         <span className="truncate text-sm text-muted">{song.artist}</span>
       </div>
-      {showWhy && song.personal.why && (
-        <p className="line-clamp-2 text-sm text-muted italic">"{song.personal.why}"</p>
-      )}
+      {why && <p className="line-clamp-2 text-sm text-muted italic">"{why}"</p>}
     </Link>
   )
 }

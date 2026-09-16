@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 import { fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
 import SongCard from '../components/SongCard'
+import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
 import type { Category, Song } from '../types'
 import EmotionalLandscape from '../visualizations/EmotionalLandscape'
@@ -22,6 +23,7 @@ function sortPantheon(songs: Song[]): Song[] {
 }
 
 function PantheonPage() {
+  const { t, localize } = useLocale()
   const [categories, setCategories] = useState<Category[]>([])
   const [songs, setSongs] = useState<Song[]>([])
   const [searchParams, setSearchParams] = useSearchParams()
@@ -87,10 +89,8 @@ function PantheonPage() {
       className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-6 py-8 sm:gap-10 sm:py-16"
     >
       <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center">
-        <h1 className="text-3xl sm:text-4xl">The Pantheon</h1>
-        <p className="text-muted">
-          Not ranked by plays. Ranked by what stays.
-        </p>
+        <h1 className="text-3xl sm:text-4xl">{t('pantheon.title')}</h1>
+        <p className="text-muted">{t('pantheon.subtitle')}</p>
       </motion.div>
 
       {/* Sticky so switching categories/genres never requires scrolling
@@ -101,7 +101,7 @@ function PantheonPage() {
         className="sticky top-0 z-10 -mx-6 flex flex-col gap-2 bg-ink/95 px-6 py-2 backdrop-blur sm:py-3"
       >
         <div className="flex items-center justify-center gap-2 text-xs tracking-wide uppercase">
-          <span className="text-muted">Browse by</span>
+          <span className="text-muted">{t('pantheon.browseBy')}</span>
           <button
             type="button"
             onClick={() => switchMode('category')}
@@ -109,7 +109,7 @@ function PantheonPage() {
               browseMode === 'category' ? 'text-gold' : 'text-muted hover:text-foreground'
             }`}
           >
-            Category
+            {t('pantheon.category')}
           </button>
           <span className="text-border">/</span>
           <button
@@ -119,7 +119,7 @@ function PantheonPage() {
               browseMode === 'genre' ? 'text-gold' : 'text-muted hover:text-foreground'
             }`}
           >
-            Genre
+            {t('pantheon.genre')}
           </button>
         </div>
 
@@ -165,7 +165,7 @@ function PantheonPage() {
                 exit="hidden"
                 className="mx-auto line-clamp-3 max-w-md text-center leading-6 text-muted"
               >
-                {activeCategoryData.description}
+                {localize(activeCategoryData.description)}
               </motion.p>
             )}
           </AnimatePresence>
@@ -186,10 +186,10 @@ function PantheonPage() {
       ) && (
         <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
           <h2 className="text-center text-sm tracking-wide text-muted uppercase">
-            Emotional Landscape
+            {t('pantheon.emotionalLandscapeHeading')}
           </h2>
           <p className="text-center text-sm text-muted">
-            How the Pantheon feels, not just what's in it.
+            {t('pantheon.emotionalLandscapeCaption')}
           </p>
           <EmotionalLandscape songs={songs} />
         </motion.div>

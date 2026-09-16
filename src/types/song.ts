@@ -1,3 +1,5 @@
+import type { LocalizedString } from '../i18n/locale'
+
 export interface SongListening {
   plays: number
   minutes: number
@@ -18,8 +20,8 @@ export interface SongPersonal {
   emotionalIntensity?: number
   nostalgia?: number
   meaning?: number
-  why?: string
-  memories?: string
+  why?: LocalizedString
+  memories?: LocalizedString
   addedToPantheon?: string
 }
 

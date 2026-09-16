@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useLocale } from '../i18n/LocaleContext'
 import type { Song } from '../types'
 
 interface PantheonVsRealityProps {
@@ -9,6 +10,7 @@ interface PantheonVsRealityProps {
 // tracks Pantheon membership — so the eye immediately sees that the two
 // don't line up.
 function PantheonVsReality({ songs }: PantheonVsRealityProps) {
+  const { t } = useLocale()
   const sorted = [...songs].sort((a, b) => b.listening.plays - a.listening.plays)
   const max = Math.max(1, ...sorted.map((s) => s.listening.plays))
 
@@ -39,10 +41,10 @@ function PantheonVsReality({ songs }: PantheonVsRealityProps) {
       ))}
       <div className="mt-2 flex items-center justify-center gap-4 text-xs text-muted">
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-gold" /> Pantheon
+          <span className="h-2 w-2 rounded-full bg-gold" /> {t('viz.pantheonLegend')}
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-muted/50" /> Not (yet)
+          <span className="h-2 w-2 rounded-full bg-muted/50" /> {t('viz.notYetLegend')}
         </span>
       </div>
     </div>

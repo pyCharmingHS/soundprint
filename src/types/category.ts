@@ -1,6 +1,8 @@
+import type { LocalizedString } from '../i18n/locale'
+
 export interface Category {
   id: string
-  name: string
+  name: LocalizedString
   emoji?: string
-  description?: string
+  description?: LocalizedString
 }

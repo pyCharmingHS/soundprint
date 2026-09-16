@@ -1,50 +1,90 @@
 [
   {
     "id": "bangers",
-    "name": "The Bangers",
+    "name": { "en": "The Bangers", "es": "Los Temazos", "it": "I Tormentoni", "pt": "As Bombas" },
     "emoji": "🔥",
-    "description": "Songs that are ridiculously fun. Rhythm, swagger, hooks, energy."
+    "description": {
+      "en": "Songs that are ridiculously fun. Rhythm, swagger, hooks, energy.",
+      "es": "Canciones absurdamente divertidas. Ritmo, actitud, ganchos, energía.",
+      "it": "Canzoni assurdamente divertenti. Ritmo, sfrontatezza, hook, energia.",
+      "pt": "Músicas absurdamente divertidas. Ritmo, atitude, refrões marcantes, energia."
+    }
   },
   {
     "id": "hurts",
-    "name": "The Ones That Hurt",
+    "name": { "en": "The Ones That Hurt", "es": "Las Que Duelen", "it": "Quelle Che Fanno Male", "pt": "As Que Doem" },
     "emoji": "🖤",
-    "description": "Sad, emotional, vulnerable, cathartic songs."
+    "description": {
+      "en": "Sad, emotional, vulnerable, cathartic songs.",
+      "es": "Canciones tristes, emotivas, vulnerables, catárticas.",
+      "it": "Canzoni tristi, emotive, vulnerabili, catartiche.",
+      "pt": "Músicas tristes, emocionantes, vulneráveis, catárticas."
+    }
   },
   {
     "id": "thinkers",
-    "name": "The Thinkers",
+    "name": { "en": "The Thinkers", "es": "Los Pensadores", "it": "I Pensatori", "pt": "Os Pensadores" },
     "emoji": "🧠",
-    "description": "Songs connected to ideas, philosophy, existentialism, meaning, worldview."
+    "description": {
+      "en": "Songs connected to ideas, philosophy, existentialism, meaning, worldview.",
+      "es": "Canciones conectadas a ideas, filosofía, existencialismo, sentido, cosmovisión.",
+      "it": "Canzoni legate a idee, filosofia, esistenzialismo, significato, visione del mondo.",
+      "pt": "Músicas ligadas a ideias, filosofia, existencialismo, sentido, visão de mundo."
+    }
   },
   {
     "id": "time-machines",
-    "name": "The Time Machines",
+    "name": { "en": "The Time Machines", "es": "Las Máquinas del Tiempo", "it": "Le Macchine del Tempo", "pt": "As Máquinas do Tempo" },
     "emoji": "🕰️",
-    "description": "Songs associated with people, places, periods of life, memories, specific experiences."
+    "description": {
+      "en": "Songs associated with people, places, periods of life, memories, specific experiences.",
+      "es": "Canciones asociadas a personas, lugares, etapas de la vida, recuerdos, experiencias específicas.",
+      "it": "Canzoni legate a persone, luoghi, periodi della vita, ricordi, esperienze specifiche.",
+      "pt": "Músicas associadas a pessoas, lugares, fases da vida, memórias, experiências específicas."
+    }
   },
   {
     "id": "masterpieces",
-    "name": "The Masterpieces",
+    "name": { "en": "The Masterpieces", "es": "Las Obras Maestras", "it": "I Capolavori", "pt": "As Obras-Primas" },
     "emoji": "🏛️",
-    "description": "Songs where the primary reaction is: this is fucking incredible."
+    "description": {
+      "en": "Songs where the primary reaction is: this is fucking incredible.",
+      "es": "Canciones cuya reacción principal es: esto es jodidamente increíble.",
+      "it": "Canzoni la cui reazione principale è: cazzo, che capolavoro.",
+      "pt": "Músicas cuja reação principal é: isso é foda demais."
+    }
   },
   {
     "id": "guilty-pleasures",
-    "name": "The Guilty Pleasures",
+    "name": { "en": "The Guilty Pleasures", "es": "Los Placeres Culposos", "it": "I Piaceri Colpevoli", "pt": "Os Prazeres Culposos" },
     "emoji": "😂",
-    "description": "Songs that may not fit my perceived musical identity but are genuinely enjoyed."
+    "description": {
+      "en": "Songs that may not fit my perceived musical identity but are genuinely enjoyed.",
+      "es": "Canciones que tal vez no encajan con mi identidad musical percibida, pero que disfruto genuinamente.",
+      "it": "Canzoni che forse non si addicono alla mia identità musicale percepita, ma che mi piacciono davvero.",
+      "pt": "Músicas que talvez não combinem com a minha identidade musical percebida, mas que eu realmente curto."
+    }
   },
   {
     "id": "personal",
-    "name": "The Personal Ones",
+    "name": { "en": "The Personal Ones", "es": "Las Personales", "it": "Quelle Personali", "pt": "As Pessoais" },
     "emoji": "❤️",
-    "description": "Songs whose importance is deeply personal and difficult to explain objectively."
+    "description": {
+      "en": "Songs whose importance is deeply personal and difficult to explain objectively.",
+      "es": "Canciones cuya importancia es profundamente personal y difícil de explicar objetivamente.",
+      "it": "Canzoni la cui importanza è profondamente personale e difficile da spiegare oggettivamente.",
+      "pt": "Músicas cuja importância é profundamente pessoal e difícil de explicar objetivamente."
+    }
   },
   {
     "id": "catalogues",
-    "name": "The Catalogues",
+    "name": { "en": "The Catalogues", "es": "Los Catálogos", "it": "I Cataloghi", "pt": "Os Catálogos" },
     "emoji": "📜",
-    "description": "Songs that work by naming things — philosophies, structures, everything that hasn't killed you yet. The list is the argument."
+    "description": {
+      "en": "Songs that work by naming things — philosophies, structures, everything that hasn't killed you yet. The list is the argument.",
+      "es": "Canciones que funcionan nombrando cosas: filosofías, estructuras, todo lo que aún no te ha matado. La lista es el argumento.",
+      "it": "Canzoni che funzionano elencando le cose: filosofie, strutture, tutto ciò che non ti ha ancora ucciso. La lista è l'argomentazione.",
+      "pt": "Músicas que funcionam nomeando coisas: filosofias, estruturas, tudo o que ainda não te matou. A lista é o argumento."
+    }
   }
 ]

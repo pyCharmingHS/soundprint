@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../animations/variants'
 import AlbumArt from '../components/AlbumArt'
 import StatBar from '../components/StatBar'
+import { useLocale } from '../i18n/LocaleContext'
 import { formatDate, formatHourLabel, formatHours, mostCommonKey } from '../lib/format'
 import { loadCategories, loadSongs } from '../lib/data'
 import { streamingLinks } from '../lib/streaming'
@@ -12,6 +13,7 @@ import type { Category, Song } from '../types'
 function SongDetailPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
+  const { t, locale, localize } = useLocale()
   const [song, setSong] = useState<Song | null | undefined>(undefined)
   const [categories, setCategories] = useState<Category[]>([])
 
@@ -25,7 +27,7 @@ function SongDetailPage() {
   if (song === null) {
     return (
       <div className="flex flex-1 items-center justify-center">
-        <p className="text-muted">Song not found.</p>
+        <p className="text-muted">{t('song.notFound')}</p>
       </div>
     )
   }
@@ -34,6 +36,8 @@ function SongDetailPage() {
   const mostActiveDay = mostCommonKey(listening.playsByDay)
   const mostActiveHour = mostCommonKey(listening.playsByHour)
   const categoryById = new Map(categories.map((c) => [c.id, c]))
+  const why = localize(personal.why)
+  const memories = localize(personal.memories)
 
   return (
     <motion.div
@@ -48,7 +52,7 @@ function SongDetailPage() {
         onClick={() => navigate(-1)}
         className="flex w-fit cursor-pointer items-center gap-1 text-sm text-muted transition-colors hover:text-gold"
       >
-        ← Back
+        ← {t('song.back')}
       </motion.button>
 
       <motion.div variants={fadeUp} className="flex flex-col items-center gap-4 text-center">
@@ -64,7 +68,7 @@ function SongDetailPage() {
         </div>
         {personal.isPantheon && (
           <span className="text-sm tracking-wide text-gold">
-            🏛️ PANTHEON{personal.pantheonRank ? ` — #${personal.pantheonRank}` : ''}
+            🏛️ {t('song.pantheonBadge')}{personal.pantheonRank ? ` — #${personal.pantheonRank}` : ''}
           </span>
         )}
         <div className="flex flex-wrap justify-center gap-2">
@@ -82,13 +86,11 @@ function SongDetailPage() {
         </div>
       </motion.div>
 
-      {personal.why && (
+      {why && (
         <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
-          <h2 className="text-sm tracking-wide text-muted uppercase">Why it's here</h2>
-          <p className="text-lg italic">"{personal.why}"</p>
-          {personal.memories && (
-            <p className="text-sm text-muted">{personal.memories}</p>
-          )}
+          <h2 className="text-sm tracking-wide text-muted uppercase">{t('song.whyHeading')}</h2>
+          <p className="text-lg italic">"{why}"</p>
+          {memories && <p className="text-sm text-muted">{memories}</p>}
         </motion.div>
       )}
 
@@ -97,43 +99,49 @@ function SongDetailPage() {
         personal.nostalgia !== undefined ||
         personal.meaning !== undefined) && (
         <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
-          <h2 className="text-sm tracking-wide text-muted uppercase">Emotional Profile</h2>
+          <h2 className="text-sm tracking-wide text-muted uppercase">
+            {t('song.emotionalProfileHeading')}
+          </h2>
           <div className="flex flex-col gap-1.5">
             {personal.rating !== undefined && (
-              <StatBar label="Rating" value={personal.rating} max={10} />
+              <StatBar label={t('song.rating')} value={personal.rating} max={10} />
             )}
             {personal.emotionalIntensity !== undefined && (
-              <StatBar label="Intensity" value={personal.emotionalIntensity} max={10} />
+              <StatBar label={t('song.intensity')} value={personal.emotionalIntensity} max={10} />
             )}
             {personal.nostalgia !== undefined && (
-              <StatBar label="Nostalgia" value={personal.nostalgia} max={10} />
+              <StatBar label={t('song.nostalgia')} value={personal.nostalgia} max={10} />
             )}
             {personal.meaning !== undefined && (
-              <StatBar label="Meaning" value={personal.meaning} max={10} />
+              <StatBar label={t('song.meaning')} value={personal.meaning} max={10} />
             )}
           </div>
         </motion.div>
       )}
 
       <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
-        <h2 className="text-sm tracking-wide text-muted uppercase">My Listening</h2>
+        <h2 className="text-sm tracking-wide text-muted uppercase">{t('song.myListeningHeading')}</h2>
         <p>
-          {listening.plays} plays · {formatHours(listening.minutes)}
+          {t('common.plays', { count: listening.plays })} · {formatHours(listening.minutes)}{' '}
+          {t('common.hoursUnit')}
         </p>
         {listening.firstListened && (
           <p className="text-sm text-muted">
-            First heard: {formatDate(listening.firstListened)}
+            {t('song.firstHeard')} {formatDate(listening.firstListened, locale)}
           </p>
         )}
         {listening.lastListened && (
           <p className="text-sm text-muted">
-            Last heard: {formatDate(listening.lastListened)}
+            {t('song.lastHeard')} {formatDate(listening.lastListened, locale)}
           </p>
         )}
         {(mostActiveDay || mostActiveHour) && (
           <p className="text-sm text-muted">
-            Most commonly played:{' '}
-            {[mostActiveDay, mostActiveHour && formatHourLabel(mostActiveHour)]
+            {t('song.mostCommonlyPlayed')}{' '}
+            {[
+              mostActiveDay && t(`weekday.${mostActiveDay}`),
+              mostActiveHour && formatHourLabel(mostActiveHour, locale),
+            ]
               .filter(Boolean)
               .join(', ')}
           </p>
@@ -142,17 +150,20 @@ function SongDetailPage() {
 
       {personal.categories.length > 0 && (
         <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
-          <h2 className="text-sm tracking-wide text-muted uppercase">Categories</h2>
+          <h2 className="text-sm tracking-wide text-muted uppercase">
+            {t('song.categoriesHeading')}
+          </h2>
           <div className="flex flex-wrap gap-2">
             {personal.categories.map((categoryId) => {
               const category = categoryById.get(categoryId)
+              const categoryName = category ? localize(category.name) : undefined
               return (
                 <Link
                   key={categoryId}
                   to={`/pantheon?category=${categoryId}`}
                   className="rounded-full border border-border bg-surface px-3 py-1 text-sm transition-colors hover:border-gold hover:text-gold"
                 >
-                  {category ? `${category.emoji} ${category.name}` : categoryId}
+                  {category ? `${category.emoji ?? ''} ${categoryName}`.trim() : categoryId}
                 </Link>
               )
             })}
@@ -162,7 +173,7 @@ function SongDetailPage() {
 
       {personal.tags.length > 0 && (
         <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
-          <h2 className="text-sm tracking-wide text-muted uppercase">Tags</h2>
+          <h2 className="text-sm tracking-wide text-muted uppercase">{t('song.tagsHeading')}</h2>
           <div className="flex flex-wrap gap-2">
             {personal.tags.map((tag) => (
               <span

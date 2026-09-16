@@ -14,9 +14,9 @@ function makeSong(overrides: Partial<Song> & Pick<Song, 'id'>): Song {
 }
 
 const categories: Category[] = [
-  { id: 'bangers', name: 'The Bangers' },
-  { id: 'hurts', name: 'The Ones That Hurt' },
-  { id: 'thinkers', name: 'The Thinkers' },
+  { id: 'bangers', name: { en: 'The Bangers' } },
+  { id: 'hurts', name: { en: 'The Ones That Hurt' } },
+  { id: 'thinkers', name: { en: 'The Thinkers' } },
 ]
 
 describe('curatedHighlights', () => {
