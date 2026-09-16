@@ -1,0 +1,92 @@
+import type { TranslationKey } from './en'
+import type { TranslationValue } from './types'
+
+const it: Record<TranslationKey, TranslationValue> = {
+  'nav.home': 'Home',
+  'nav.pantheon': 'Pantheon',
+  'nav.statistics': 'Statistiche',
+
+  'home.wordmark': 'IL PANTHEON',
+  'home.tagline1': 'Non ho una canzone preferita.',
+  'home.tagline2': 'Ne ho diverse.',
+  'home.subtitle': 'Organizzato in base al perché ognuna conta per me, non per genere o classifica.',
+  'home.highlightsHeading': 'Alcune, per iniziare',
+  'home.acrossGenresHeading': 'Attraverso i generi',
+  'home.mostPlayedVsFavoriteHeading': 'Più ascoltata ≠ preferita',
+  'home.mostPlayedLabel': 'Più Ascoltata',
+  'home.pantheonLabel': 'Pantheon',
+  'home.exploreHeading': 'Esplora il Pantheon',
+
+  'pantheon.title': 'Il Pantheon',
+  'pantheon.subtitle': 'Non classificate per riproduzioni. Classificate per ciò che resta.',
+  'pantheon.browseBy': 'Esplora per',
+  'pantheon.category': 'Categoria',
+  'pantheon.genre': 'Genere',
+  'pantheon.emotionalLandscapeHeading': 'Paesaggio Emotivo',
+  'pantheon.emotionalLandscapeCaption': 'Come si sente il Pantheon, non solo cosa contiene.',
+
+  'statistics.title': 'Statistiche',
+  'statistics.subtitle': 'Quello che faccio davvero, non quello che apprezzo.',
+  'statistics.plays': 'Riproduzioni',
+  'statistics.listened': 'Ascoltato',
+  'statistics.artists': 'Artisti',
+  'statistics.albums': 'Album',
+  'statistics.currentObsession': 'Ossessione Attuale',
+  'statistics.pantheonVsReality': 'Pantheon vs. Realtà',
+  'statistics.pantheonVsRealityCaption':
+    'Ordinato per riproduzioni. Il colore mostra cosa è davvero entrato nel Pantheon.',
+  'statistics.mostPlayed': 'Più Ascoltate',
+  'statistics.topArtists': 'Artisti Principali',
+  'statistics.topGenres': 'Generi Principali',
+  'statistics.dayOfWeek': 'Giorno della Settimana',
+  'statistics.timeOfDay': 'Ora del Giorno',
+  'statistics.discoveryTimeline': 'Cronologia delle Scoperte',
+  'statistics.discoveryTimelineCaption': 'Canzoni scoperte e riproduzioni accumulate, per anno.',
+  'statistics.musicalEvolution': 'Evoluzione Musicale',
+  'statistics.musicalEvolutionCaption': 'Generi che entrano nella collezione, anno dopo anno.',
+  'statistics.replayIntensity': 'Intensità di Riascolto',
+  'statistics.replayIntensityCaption':
+    'Riproduzioni al giorno da quando è stata ascoltata per la prima volta.',
+  'statistics.pantheonCandidates': 'Candidate al Pantheon',
+  'statistics.pantheonCandidatesCaption':
+    'Un segnale di scoperta, non una decisione: queste canzoni si comportano come canzoni del Pantheon, ma non sono ancora state aggiunte.',
+
+  'song.back': 'Indietro',
+  'song.pantheonBadge': 'PANTHEON',
+  'song.whyHeading': 'Perché è qui',
+  'song.emotionalProfileHeading': 'Profilo Emotivo',
+  'song.rating': 'Valutazione',
+  'song.intensity': 'Intensità',
+  'song.nostalgia': 'Nostalgia',
+  'song.meaning': 'Significato',
+  'song.myListeningHeading': 'I Miei Ascolti',
+  'song.firstHeard': 'Primo ascolto:',
+  'song.lastHeard': 'Ultimo ascolto:',
+  'song.mostCommonlyPlayed': 'Momento più frequente:',
+  'song.categoriesHeading': 'Categorie',
+  'song.tagsHeading': 'Etichette',
+  'song.notFound': 'Canzone non trovata.',
+
+  'common.plays': { one: '{{count}} riproduzione', other: '{{count}} riproduzioni' },
+  'common.songs': { one: '{{count}} canzone', other: '{{count}} canzoni' },
+  'common.hoursUnit': 'ore',
+  'common.by': '{{title}} di {{artist}}',
+
+  'viz.pantheonLegend': 'Pantheon',
+  'viz.notYetLegend': 'Non ancora',
+  'viz.meaningAxis': 'Significato →',
+  'viz.intensityAxis': 'Intensità →',
+  'viz.emotionalLandscapeLegend': 'Dimensione = nostalgia · Luminosità = valutazione',
+
+  'weekday.Monday': 'Lunedì',
+  'weekday.Tuesday': 'Martedì',
+  'weekday.Wednesday': 'Mercoledì',
+  'weekday.Thursday': 'Giovedì',
+  'weekday.Friday': 'Venerdì',
+  'weekday.Saturday': 'Sabato',
+  'weekday.Sunday': 'Domenica',
+
+  'languagePicker.ariaLabel': 'Cambia lingua',
+}
+
+export default it

@@ -1,0 +1,91 @@
+import type { TranslationKey } from './en'
+import type { TranslationValue } from './types'
+
+const pt: Record<TranslationKey, TranslationValue> = {
+  'nav.home': 'Início',
+  'nav.pantheon': 'Panteão',
+  'nav.statistics': 'Estatísticas',
+
+  'home.wordmark': 'O PANTEÃO',
+  'home.tagline1': 'Eu não tenho uma música favorita.',
+  'home.tagline2': 'Eu tenho várias.',
+  'home.subtitle': 'Organizado pelo motivo de cada uma importar para mim, não por gênero ou posição.',
+  'home.highlightsHeading': 'Algumas, para começar',
+  'home.acrossGenresHeading': 'Através dos gêneros',
+  'home.mostPlayedVsFavoriteHeading': 'Mais tocada ≠ favorita',
+  'home.mostPlayedLabel': 'Mais Tocada',
+  'home.pantheonLabel': 'Panteão',
+  'home.exploreHeading': 'Explorar o Panteão',
+
+  'pantheon.title': 'O Panteão',
+  'pantheon.subtitle': 'Não classificadas por reproduções. Classificadas pelo que permanece.',
+  'pantheon.browseBy': 'Explorar por',
+  'pantheon.category': 'Categoria',
+  'pantheon.genre': 'Gênero',
+  'pantheon.emotionalLandscapeHeading': 'Paisagem Emocional',
+  'pantheon.emotionalLandscapeCaption': 'Como o Panteão se sente, não apenas o que ele contém.',
+
+  'statistics.title': 'Estatísticas',
+  'statistics.subtitle': 'O que eu realmente faço, não o que eu valorizo.',
+  'statistics.plays': 'Reproduções',
+  'statistics.listened': 'Ouvido',
+  'statistics.artists': 'Artistas',
+  'statistics.albums': 'Álbuns',
+  'statistics.currentObsession': 'Obsessão Atual',
+  'statistics.pantheonVsReality': 'Panteão vs. Realidade',
+  'statistics.pantheonVsRealityCaption':
+    'Ordenado por reproduções. A cor mostra o que realmente entrou no Panteão.',
+  'statistics.mostPlayed': 'Mais Tocadas',
+  'statistics.topArtists': 'Principais Artistas',
+  'statistics.topGenres': 'Principais Gêneros',
+  'statistics.dayOfWeek': 'Dia da Semana',
+  'statistics.timeOfDay': 'Hora do Dia',
+  'statistics.discoveryTimeline': 'Linha do Tempo de Descobertas',
+  'statistics.discoveryTimelineCaption': 'Músicas descobertas e reproduções acumuladas, por ano.',
+  'statistics.musicalEvolution': 'Evolução Musical',
+  'statistics.musicalEvolutionCaption': 'Gêneros que entram na coleção, ano após ano.',
+  'statistics.replayIntensity': 'Intensidade de Repetição',
+  'statistics.replayIntensityCaption': 'Reproduções por dia desde a primeira escuta.',
+  'statistics.pantheonCandidates': 'Candidatas ao Panteão',
+  'statistics.pantheonCandidatesCaption':
+    'Um sinal de descoberta, não uma decisão: essas músicas se comportam como músicas do Panteão, mas ainda não foram adicionadas.',
+
+  'song.back': 'Voltar',
+  'song.pantheonBadge': 'PANTEÃO',
+  'song.whyHeading': 'Por que está aqui',
+  'song.emotionalProfileHeading': 'Perfil Emocional',
+  'song.rating': 'Avaliação',
+  'song.intensity': 'Intensidade',
+  'song.nostalgia': 'Nostalgia',
+  'song.meaning': 'Significado',
+  'song.myListeningHeading': 'Minha Escuta',
+  'song.firstHeard': 'Primeira escuta:',
+  'song.lastHeard': 'Última escuta:',
+  'song.mostCommonlyPlayed': 'Momento mais frequente:',
+  'song.categoriesHeading': 'Categorias',
+  'song.tagsHeading': 'Etiquetas',
+  'song.notFound': 'Música não encontrada.',
+
+  'common.plays': { one: '{{count}} reprodução', other: '{{count}} reproduções' },
+  'common.songs': { one: '{{count}} música', other: '{{count}} músicas' },
+  'common.hoursUnit': 'horas',
+  'common.by': '{{title}} de {{artist}}',
+
+  'viz.pantheonLegend': 'Panteão',
+  'viz.notYetLegend': 'Ainda não',
+  'viz.meaningAxis': 'Significado →',
+  'viz.intensityAxis': 'Intensidade →',
+  'viz.emotionalLandscapeLegend': 'Tamanho = nostalgia · Brilho = avaliação',
+
+  'weekday.Monday': 'Segunda-feira',
+  'weekday.Tuesday': 'Terça-feira',
+  'weekday.Wednesday': 'Quarta-feira',
+  'weekday.Thursday': 'Quinta-feira',
+  'weekday.Friday': 'Sexta-feira',
+  'weekday.Saturday': 'Sábado',
+  'weekday.Sunday': 'Domingo',
+
+  'languagePicker.ariaLabel': 'Mudar idioma',
+}
+
+export default pt
