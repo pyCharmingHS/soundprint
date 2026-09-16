@@ -2,15 +2,18 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { fadeIn } from '../animations/variants'
 import { useLocale } from '../i18n/LocaleContext'
-import { LOCALES } from '../i18n/locale'
+import { LOCALES, type FlagCode } from '../i18n/locale'
+import FlagIcon from './FlagIcon'
 
-function FlagCluster({ flags, className = '' }: { flags: string[]; className?: string }) {
+function FlagCluster({ flags, className = '' }: { flags: FlagCode[]; className?: string }) {
   return (
-    <span className={`inline-flex ${className}`}>
+    <span className={`inline-flex items-center ${className}`}>
       {flags.map((flag, i) => (
-        <span key={flag} style={i === 0 ? undefined : { marginLeft: '-0.35em' }}>
-          {flag}
-        </span>
+        <FlagIcon
+          key={flag}
+          code={flag}
+          className={`rounded-[1px] ring-1 ring-ink ${i === 0 ? '' : '-ml-1'}`}
+        />
       ))}
     </span>
   )

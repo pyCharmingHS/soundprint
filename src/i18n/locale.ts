@@ -8,20 +8,26 @@ export type Locale = 'en' | 'es' | 'it' | 'pt'
  */
 export type LocalizedString = Partial<Record<Locale, string>>
 
+/** Hand-drawn SVG flags (see src/components/FlagIcon.tsx) — not Unicode
+ * flag emoji, whose regional-indicator glyph pairs render unreliably
+ * across OSes (Windows in particular often shows literal letter pairs
+ * instead of a combined flag). */
+export type FlagCode = 'us' | 'gb' | 'au' | 'do' | 'mx' | 'es' | 'it' | 'br' | 'pt'
+
 export interface LocaleMeta {
   code: Locale
   nativeName: string
   /** One or more small flags representing the language — deliberately not
    * a single "correct" flag, since most of these languages are spoken
    * across many countries. */
-  flags: string[]
+  flags: FlagCode[]
 }
 
 export const LOCALES: LocaleMeta[] = [
-  { code: 'en', nativeName: 'English', flags: ['🇺🇸', '🇬🇧', '🇦🇺'] },
-  { code: 'es', nativeName: 'Español', flags: ['🇩🇴', '🇲🇽', '🇪🇸'] },
-  { code: 'it', nativeName: 'Italiano', flags: ['🇮🇹'] },
-  { code: 'pt', nativeName: 'Português', flags: ['🇧🇷', '🇵🇹'] },
+  { code: 'en', nativeName: 'English', flags: ['us', 'gb', 'au'] },
+  { code: 'es', nativeName: 'Español', flags: ['do', 'mx', 'es'] },
+  { code: 'it', nativeName: 'Italiano', flags: ['it'] },
+  { code: 'pt', nativeName: 'Português', flags: ['br', 'pt'] },
 ]
 
 export function isLocale(value: string): value is Locale {
