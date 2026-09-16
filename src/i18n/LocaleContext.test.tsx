@@ -11,6 +11,7 @@ function Probe() {
       <span data-testid="plural-one">{t('common.plays', { count: 1 })}</span>
       <span data-testid="plural-other">{t('common.plays', { count: 5 })}</span>
       <span data-testid="localized">{localize({ en: 'Hello', es: 'Hola' }) ?? ''}</span>
+      <span data-testid="localized-empty-slot">{localize({ en: 'Hello', es: '' }) ?? ''}</span>
       <button onClick={() => setLocale('es')}>Switch to Spanish</button>
     </div>
   )
@@ -90,5 +91,17 @@ describe('LocaleProvider', () => {
     )
     // The probe's localized value only has en/es, no pt — falls back to en.
     expect(screen.getByTestId('localized')).toHaveTextContent('Hello')
+  })
+
+  it('treats an empty-string curation placeholder as absent, not a real value', () => {
+    window.localStorage.setItem('soundprint-locale', 'es')
+    render(
+      <LocaleProvider>
+        <Probe />
+      </LocaleProvider>,
+    )
+    // es is '' (an unfilled placeholder slot) — must fall back to en rather
+    // than rendering blank.
+    expect(screen.getByTestId('localized-empty-slot')).toHaveTextContent('Hello')
   })
 })

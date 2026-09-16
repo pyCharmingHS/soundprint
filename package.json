@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "update-data": "python -m scripts.update_data"
+    "update-data": "python -m scripts.update_data",
+    "check-translations": "node tools/check-translations.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

@@ -18,9 +18,19 @@ function translate(locale: Locale, key: string, vars?: TranslationVars): string 
   return interpolate(raw, vars)
 }
 
+function hasContent(text: string | undefined): text is string {
+  return text !== undefined && text.trim() !== ''
+}
+
+// Empty strings (`""`) are treated the same as a missing key — songs.json
+// pre-seeds an empty slot per locale as a curation placeholder (see
+// tools/check-translations.mjs), and those must fall back to English
+// exactly like an absent key would, not render as blank.
 function localizeValue(locale: Locale, value: LocalizedString | undefined): string | undefined {
   if (!value) return undefined
-  return value[locale] ?? value.en ?? Object.values(value).find(Boolean)
+  if (hasContent(value[locale])) return value[locale]
+  if (hasContent(value.en)) return value.en
+  return Object.values(value).find(hasContent)
 }
 
 interface LocaleContextValue {
