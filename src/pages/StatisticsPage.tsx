@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { fadeUp, staggerContainer } from '../animations/variants'
+import ParallaxLayer from '../components/ParallaxLayer'
 import RankRow from '../components/RankRow'
 import StatBar from '../components/StatBar'
 import { useLocale } from '../i18n/LocaleContext'
@@ -60,10 +61,12 @@ function StatisticsPage() {
       animate="visible"
       className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-12 px-6 py-16"
     >
-      <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center">
-        <h1 className="text-4xl">{t('statistics.title')}</h1>
-        <p className="text-muted">{t('statistics.subtitle')}</p>
-      </motion.div>
+      <ParallaxLayer offset={20}>
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center">
+          <h1 className="text-4xl">{t('statistics.title')}</h1>
+          <p className="text-muted">{t('statistics.subtitle')}</p>
+        </motion.div>
+      </ParallaxLayer>
 
       <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         <div className="flex flex-col items-center gap-1 rounded-sm border border-border bg-surface py-4">

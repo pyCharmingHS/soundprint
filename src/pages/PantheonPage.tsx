@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
+import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
 import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
@@ -88,10 +89,12 @@ function PantheonPage() {
       animate="visible"
       className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-6 py-8 sm:gap-10 sm:py-16"
     >
-      <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center">
-        <h1 className="text-3xl sm:text-4xl">{t('pantheon.title')}</h1>
-        <p className="text-muted">{t('pantheon.subtitle')}</p>
-      </motion.div>
+      <ParallaxLayer offset={20}>
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center">
+          <h1 className="text-3xl sm:text-4xl">{t('pantheon.title')}</h1>
+          <p className="text-muted">{t('pantheon.subtitle')}</p>
+        </motion.div>
+      </ParallaxLayer>
 
       {/* Sticky so switching categories/genres never requires scrolling
           back up past the song grid. Only one pill row shows at a time
