@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { EASE_CINEMATIC } from '../animations/variants'
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { useLocale } from '../i18n/LocaleContext'
 import AlbumArtPattern from './AlbumArtPattern'
 
@@ -14,14 +15,6 @@ const PHASE_DELAYS_MS: Record<Exclude<Phase, 'done'>, number> = {
   word2: 1300,
   tagline1: 2600,
   tagline2: 3500,
-}
-
-function prefersReducedMotion(): boolean {
-  try {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  } catch {
-    return false
-  }
 }
 
 function hasSeenIntro(): boolean {
@@ -48,9 +41,10 @@ function markIntroSeen() {
  */
 function OpeningAnimation() {
   const { t } = useLocale()
+  const reducedMotion = usePrefersReducedMotion()
   const skippedRef = useRef(false)
   const [phase, setPhase] = useState<Phase>(() =>
-    hasSeenIntro() || prefersReducedMotion() ? 'done' : 'texture',
+    hasSeenIntro() || reducedMotion ? 'done' : 'texture',
   )
 
   useEffect(() => {
