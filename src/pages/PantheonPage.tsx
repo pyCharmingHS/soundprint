@@ -3,8 +3,11 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
+import OrbitalPantheon from '../components/OrbitalPantheon'
 import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
 import type { Category, Song } from '../types'
@@ -31,6 +34,9 @@ function PantheonPage() {
   const activeCategory = searchParams.get('category')
   const activeGenre = searchParams.get('genre')
   const [browseMode, setBrowseMode] = useState<BrowseMode>(activeGenre ? 'genre' : 'category')
+  const reducedMotion = usePrefersReducedMotion()
+  const isDesktop = useMediaQuery('(min-width: 1024px)')
+  const showOrbital = browseMode === 'category' && isDesktop && !reducedMotion
 
   useEffect(() => {
     loadCategories().then(setCategories)
@@ -95,6 +101,20 @@ function PantheonPage() {
           <p className="text-muted">{t('pantheon.subtitle')}</p>
         </motion.div>
       </ParallaxLayer>
+
+      {/* Desktop-only, motion-on spatial view of the categories (vision doc
+          section 14) — a decorative navigator layered above the pill row,
+          which stays as the actual browsing control for everyone. */}
+      {showOrbital && (
+        <motion.div variants={fadeUp}>
+          <OrbitalPantheon
+            categories={categories}
+            songs={songs}
+            activeCategory={activeCategory}
+            onSelectCategory={toggleCategory}
+          />
+        </motion.div>
+      )}
 
       {/* Sticky so switching categories/genres never requires scrolling
           back up past the song grid. Only one pill row shows at a time
