@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { fadeIn, fadeUp, staggerContainer } from '../animations/variants'
+import { EASE_CINEMATIC, fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
 import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
@@ -98,8 +98,12 @@ function PantheonPage() {
 
       {/* Sticky so switching categories/genres never requires scrolling
           back up past the song grid. Only one pill row shows at a time
-          (toggled below) to keep this compact on small screens. */}
+          (toggled below) to keep this compact on small screens. `layout`
+          on both this container and the row below lets the height change
+          (category vs. genre pills wrap differently) settle smoothly
+          instead of popping. */}
       <motion.div
+        layout
         variants={fadeUp}
         className="sticky top-0 z-10 -mx-6 flex flex-col gap-2 bg-ink/95 px-6 py-2 backdrop-blur sm:py-3"
       >
@@ -126,31 +130,40 @@ function PantheonPage() {
           </button>
         </div>
 
-        <div className="flex flex-nowrap items-center gap-2 overflow-x-auto sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible">
-          {browseMode === 'category'
-            ? categories.map((category) => (
-                <CategoryCard
-                  key={category.id}
-                  category={category}
-                  active={activeCategory === category.id}
-                  onClick={() => toggleCategory(category.id)}
-                />
-              ))
-            : genres.map((genre) => (
-                <button
-                  key={genre}
-                  type="button"
-                  onClick={() => toggleGenre(genre)}
-                  className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
-                    activeGenre === genre
-                      ? 'border-gold bg-gold/10 text-gold'
-                      : 'border-border bg-surface hover:border-gold/50'
-                  }`}
-                >
-                  {genre}
-                </button>
-              ))}
-        </div>
+        <motion.div
+          layout
+          className="flex flex-nowrap items-center gap-2 overflow-x-auto sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible"
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+            {browseMode === 'category'
+              ? categories.map((category) => (
+                  <CategoryCard
+                    key={category.id}
+                    category={category}
+                    active={activeCategory === category.id}
+                    onClick={() => toggleCategory(category.id)}
+                  />
+                ))
+              : genres.map((genre) => (
+                  <motion.button
+                    key={genre}
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    type="button"
+                    onClick={() => toggleGenre(genre)}
+                    className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
+                      activeGenre === genre
+                        ? 'border-gold bg-gold/10 text-gold'
+                        : 'border-border bg-surface hover:border-gold/50'
+                    }`}
+                  >
+                    {genre}
+                  </motion.button>
+                ))}
+          </AnimatePresence>
+        </motion.div>
       </motion.div>
 
       {/* Fixed height regardless of description length or whether a category
@@ -176,12 +189,24 @@ function PantheonPage() {
       )}
 
       <motion.div
+        layout
         variants={fadeUp}
         className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4"
       >
-        {visibleSongs.map((song) => (
-          <SongCard key={song.id} song={song} />
-        ))}
+        <AnimatePresence mode="popLayout" initial={false}>
+          {visibleSongs.map((song) => (
+            <motion.div
+              key={song.id}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.35, ease: EASE_CINEMATIC }}
+            >
+              <SongCard song={song} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </motion.div>
 
       {songs.some(
