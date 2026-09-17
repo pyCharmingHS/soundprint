@@ -16,6 +16,7 @@ const pt: Record<TranslationKey, TranslationValue> = {
   'home.mostPlayedLabel': 'Mais Tocada',
   'home.pantheonLabel': 'Panteão',
   'home.exploreHeading': 'Explorar o Panteão',
+  'home.introSkip': 'Pular',
 
   'pantheon.title': 'O Panteão',
   'pantheon.subtitle': 'Não classificadas por reproduções. Classificadas pelo que permanece.',

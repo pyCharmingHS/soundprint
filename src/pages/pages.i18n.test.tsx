@@ -58,6 +58,10 @@ describe.each(LOCALES)('pages render correctly in %s', (locale) => {
   beforeEach(() => {
     window.localStorage.clear()
     setStoredLocale(locale)
+    // HomePage's OpeningAnimation runs on real timers; this suite is about
+    // translated content, not intro-sequence timing (that's covered by
+    // OpeningAnimation.test.tsx), so mark it already-seen to skip it.
+    window.sessionStorage.setItem('soundprint-intro-seen', '1')
   })
 
   it('renders HomePage with the translated wordmark', async () => {

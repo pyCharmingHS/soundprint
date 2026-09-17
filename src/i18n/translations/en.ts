@@ -18,6 +18,7 @@ const en = {
   'home.mostPlayedLabel': 'Most Played',
   'home.pantheonLabel': 'Pantheon',
   'home.exploreHeading': 'Explore the Pantheon',
+  'home.introSkip': 'Skip',
 
   'pantheon.title': 'The Pantheon',
   'pantheon.subtitle': 'Not ranked by plays. Ranked by what stays.',

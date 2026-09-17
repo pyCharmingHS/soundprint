@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
+import OpeningAnimation from '../components/OpeningAnimation'
 import SongCard from '../components/SongCard'
 import { useLocale } from '../i18n/LocaleContext'
 import { curatedHighlights } from '../lib/highlights'
@@ -40,6 +41,7 @@ function HomePage() {
 
   return (
     <div className="flex flex-1 flex-col">
+      <OpeningAnimation />
       <motion.div
         variants={staggerContainer}
         initial="hidden"
