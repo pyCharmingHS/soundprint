@@ -202,6 +202,8 @@ function PantheonPage() {
                     type="button"
                     onClick={() => toggleSimpleValue(browseMode, value)}
                     className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
+                      browseMode === 'language' ? 'uppercase' : ''
+                    } ${
                       activeValues[browseMode] === value
                         ? 'border-gold bg-gold/10 text-gold'
                         : 'border-border bg-surface hover:border-gold/50'
