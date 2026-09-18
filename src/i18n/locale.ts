@@ -26,8 +26,8 @@ export interface LocaleMeta {
 export const LOCALES: LocaleMeta[] = [
   { code: 'en', nativeName: 'English', flags: ['us', 'gb', 'au'] },
   { code: 'es', nativeName: 'Español', flags: ['do', 'mx', 'es'] },
-  { code: 'it', nativeName: 'Italiano', flags: ['it'] },
   { code: 'pt', nativeName: 'Português', flags: ['br', 'pt'] },
+  { code: 'it', nativeName: 'Italiano', flags: ['it'] },
 ]
 
 export function isLocale(value: string): value is Locale {

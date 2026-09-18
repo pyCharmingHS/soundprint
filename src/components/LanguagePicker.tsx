@@ -64,7 +64,7 @@ function LanguagePicker() {
                   l.code === locale ? 'text-gold' : 'text-foreground hover:text-gold'
                 }`}
               >
-                <FlagCluster flags={l.flags} className="text-base" />
+                <FlagCluster flags={l.flags} className="w-[4.5rem] shrink-0 justify-end text-base" />
                 <span>{l.nativeName}</span>
               </button>
             ))}
