@@ -36,7 +36,7 @@
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["hurts"],
+      "categories": ["hurts", "time-machines"],
       "tags": ["romantic"],
       "why": {
         "en": "You can really feel love has ended for this man — he takes you right along with him.",
@@ -135,7 +135,7 @@
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["hurts"],
+      "categories": ["hurts", "time-machines"],
       "tags": [],
       "why": {
         "en": "Another one where you can tell the songwriter has been through real heartbreak — it shows in the way they put into words what it feels like for the world to end. Very relatable.",
@@ -185,7 +185,7 @@
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["catalogues", "thinkers"],
+      "categories": ["catalogues", "thinkers", "time-machines"],
       "tags": [],
       "why": {
         "en": "It's about that very common feeling of belonging to a place of origin, and how it shows up as nostalgia and as overvaluing the things you share that origin with. What's interesting is that not everything the song mentions is framed as necessarily good — just as the attributes that are supposed to define the place: \"The gates are the rustiest,\" \"The roads are the dustiest,\" and \"The dogs are the yappiest\" are a few examples. It also enumerates things, and I love that.",
@@ -210,7 +210,7 @@
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["thinkers"],
+      "categories": ["thinkers", "time-machines"],
       "tags": [],
       "why": {
         "en": "It's a semi-satirical, stereotype-heavy description of the qualities associated with masculinity at the time, with the added edge that women are led to believe love is \"their thing,\" and that getting married is one of the most important goals of their life, if not the most important. The ending is... particularly interesting.",
@@ -235,7 +235,7 @@
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["thinkers"],
+      "categories": ["thinkers", "time-machines"],
       "tags": ["romantic"],
       "why": {
         "en": "Love this song. There's a stark contrast between the guy spitting romantic lines in the most classic French romantic accent, and the woman seeing right through it. It's kind of funny.",
@@ -360,7 +360,7 @@
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["thinkers"],
+      "categories": ["thinkers", "time-machines"],
       "tags": [],
       "why": {
         "en": "A very mature, very real take on forgiveness and owning your mistakes.",
