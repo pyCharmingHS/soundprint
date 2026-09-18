@@ -55,6 +55,7 @@ const en = {
     "A discovery signal, not a decision — these songs behave like Pantheon songs but haven't been added.",
 
   'song.back': 'Back',
+  'song.watchOnYouTube': 'Watch on YouTube',
   'song.pantheonBadge': 'PANTHEON',
   'song.whyHeading': "Why it's here",
   'song.emotionalProfileHeading': 'Emotional Profile',

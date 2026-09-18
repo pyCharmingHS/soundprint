@@ -40,6 +40,9 @@ export interface Song {
   // External identifiers
   appleMusicId?: string
   youtubeMusicId?: string
+  /** Direct link to the song on YouTube — a manual stopgap until the real
+   * streaming-platform integration (Phase 7) can resolve this itself. */
+  youtubeUrl?: string
 
   // Listening analytics
   listening: SongListening

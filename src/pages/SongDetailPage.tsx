@@ -4,10 +4,10 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../animations/variants'
 import AlbumArt from '../components/AlbumArt'
 import StatBar from '../components/StatBar'
+import YouTubeIcon from '../components/YouTubeIcon'
 import { useLocale } from '../i18n/LocaleContext'
 import { formatDate, formatHourLabel, formatHours, mostCommonKey } from '../lib/format'
 import { loadCategories, loadSongs } from '../lib/data'
-import { streamingLinks } from '../lib/streaming'
 import type { Category, Song } from '../types'
 
 function SongDetailPage() {
@@ -74,19 +74,18 @@ function SongDetailPage() {
             🏛️ {t('song.pantheonBadge')}{personal.pantheonRank ? ` — #${personal.pantheonRank}` : ''}
           </span>
         )}
-        <div className="flex flex-wrap justify-center gap-2">
-          {streamingLinks(song).map((link) => (
-            <a
-              key={link.label}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-3 py-1 text-sm text-muted transition-colors hover:border-gold hover:text-gold"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
+        {song.youtubeUrl && (
+          <a
+            href={song.youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t('song.watchOnYouTube')}
+            title={t('song.watchOnYouTube')}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-gold hover:text-gold"
+          >
+            <YouTubeIcon className="h-4 w-4" />
+          </a>
+        )}
       </motion.div>
 
       {why && (

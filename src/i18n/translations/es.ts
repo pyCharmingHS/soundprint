@@ -53,6 +53,7 @@ const es: Record<TranslationKey, TranslationValue> = {
     'Una señal de descubrimiento, no una decisión: estas canciones se comportan como canciones del Panteón, pero aún no han sido añadidas.',
 
   'song.back': 'Volver',
+  'song.watchOnYouTube': 'Ver en YouTube',
   'song.pantheonBadge': 'PANTEÓN',
   'song.whyHeading': 'Por qué está aquí',
   'song.emotionalProfileHeading': 'Perfil Emocional',
