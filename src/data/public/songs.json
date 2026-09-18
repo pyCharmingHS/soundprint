@@ -70,5 +70,303 @@
       },
       "addedToPantheon": "2026-09-16"
     }
+  },
+  {
+    "id": "song-l-ecole",
+    "title": "L'école",
+    "artist": "Lo Straqen",
+    "releaseYear": 2020,
+    "language": "it",
+    "youtubeUrl": "https://www.youtube.com/watch?v=fVWLRf8IaNw",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["thinkers"],
+      "tags": [],
+      "why": {
+        "en": "Great song — there's a little monologue by a remarkably smart kid about what life actually is, compared to what school makes us do, from his point of view. The maturity of his stance is inspiring. And it's in Italian, to boot!",
+        "es": "Gran canción — tiene un pequeño monólogo de un niño increíblemente inteligente sobre lo que la vida realmente es, comparado con lo que la escuela nos obliga a hacer, desde su punto de vista. La madurez de su postura es inspiradora. ¡Y encima está en italiano!",
+        "it": "Gran bella canzone — c'è un piccolo monologo di un bambino incredibilmente intelligente su cosa sia davvero la vita, rispetto a quello che la scuola ci obbliga a fare, dal suo punto di vista. La maturità della sua visione è ispiratrice. E per di più è in italiano!",
+        "pt": "Ótima música — tem um pequeno monólogo de uma criança incrivelmente inteligente sobre o que a vida realmente é, comparado ao que a escola nos obriga a fazer, do ponto de vista dele. A maturidade da sua postura é inspiradora. E ainda por cima é em italiano!"
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-4-your-eyez-only",
+    "title": "4 Your Eyez Only",
+    "artist": "J. Cole",
+    "releaseYear": 2016,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=mgIk98foFOU",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["thinkers", "hurts"],
+      "tags": [],
+      "why": {
+        "en": "It redefines what a \"real man\" is, speaking out against an oppressive, discriminatory system. It's a beautiful song — reading through the lyrics closely has actually made my eyes water.",
+        "es": "Redefine lo que es un \"hombre de verdad\", alzando la voz contra un sistema opresivo y discriminatorio. Es una canción hermosa — leer la letra con atención de verdad me ha hecho llorar.",
+        "it": "Ridefinisce cosa significhi essere un \"uomo vero\", alzando la voce contro un sistema oppressivo e discriminatorio. È una canzone bellissima — leggerne il testo con attenzione mi ha davvero fatto venire le lacrime agli occhi.",
+        "pt": "Ela redefine o que é ser um \"homem de verdade\", levantando a voz contra um sistema opressor e discriminatório. É uma música linda — ler a letra com atenção realmente me fez os olhos marejarem."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-the-end-of-the-world",
+    "title": "The End of the World",
+    "artist": "Skeeter Davis",
+    "releaseYear": 1963,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=DsY_kocbWaM",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["hurts"],
+      "tags": [],
+      "why": {
+        "en": "Another one where you can tell the songwriter has been through real heartbreak — it shows in the way they put into words what it feels like for the world to end. Very relatable.",
+        "es": "Otra de esas donde se nota que quien la escribió pasó por un desamor de verdad — se nota en cómo logra poner en palabras la sensación de que el mundo se acaba. Muy identificable.",
+        "it": "Un'altra di quelle canzoni in cui si sente che chi l'ha scritta ha davvero vissuto un dolore d'amore vero — si nota nel modo in cui riesce a mettere in parole la sensazione che il mondo stia finendo. Molto in cui rispecchiarsi.",
+        "pt": "Mais uma daquelas em que dá pra perceber que quem escreveu passou por um sofrimento de amor de verdade — isso aparece no jeito como consegue colocar em palavras a sensação de que o mundo está acabando. Muito fácil de se identificar."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-personality",
+    "title": "Personality",
+    "artist": "Johnny Mercer & The Pied Pipers",
+    "releaseYear": 1945,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=gMTPsumjfTA",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["time-machines", "thinkers"],
+      "tags": [],
+      "why": {
+        "en": "A song about the \"personality\" women supposedly needed to get ahead (in a man's world) — a pretty transparent stand-in for physical attributes. A product of its time, and it always makes me think of my dear Denise Paiewonsky, my gender studies professor in college (Sex and Power).",
+        "es": "Una canción sobre la \"personalidad\" que las mujeres necesitaban para progresar (en un mundo de hombres) — una referencia bastante obvia a atributos físicos. Producto de su época, siempre me hace pensar en mi querida Denise Paiewonsky, mi profesora de estudios de género en la universidad (Sexo y Poder).",
+        "it": "Una canzone sulla \"personalità\" di cui le donne avevano bisogno per farsi strada (in un mondo di uomini) — un riferimento piuttosto trasparente ad attributi fisici. Un prodotto del suo tempo, e mi fa sempre pensare alla mia cara Denise Paiewonsky, la mia professoressa di studi di genere all'università (Sesso e Potere).",
+        "pt": "Uma música sobre a \"personalidade\" que as mulheres supostamente precisavam ter para progredir (num mundo de homens) — uma referência bem transparente a atributos físicos. Um produto da sua época, e sempre me faz lembrar da minha querida Denise Paiewonsky, minha professora de estudos de gênero na faculdade (Sexo e Poder)."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-way-back-home",
+    "title": "Way Back Home",
+    "artist": "Bob Crosby & The Bobcats",
+    "releaseYear": 1951,
+    "language": "en",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["catalogues", "thinkers"],
+      "tags": [],
+      "why": {
+        "en": "It's about that very common feeling of belonging to a place of origin, and how it shows up as nostalgia and as overvaluing the things you share that origin with. What's interesting is that not everything the song mentions is framed as necessarily good — just as the attributes that are supposed to define the place: \"The gates are the rustiest,\" \"The roads are the dustiest,\" and \"The dogs are the yappiest\" are a few examples. It also enumerates things, and I love that.",
+        "es": "Habla del sentimiento tan común de pertenecer a un lugar de origen, y de cómo eso se manifiesta en la melancolía y en sobrevalorar las cosas con las que compartimos esa procedencia. Es interesante que no todo lo que menciona la canción se presenta como necesariamente bueno, sino con los atributos que se supone que lo definen: \"The gates are the rustiest\", \"The roads are the dustiest\" y \"The dogs are the yappiest\" son algunos ejemplos. Además, enumera cosas, y eso me encanta.",
+        "it": "Parla di quel sentimento così comune di appartenenza al proprio luogo d'origine, e di come si manifesti nella nostalgia e nel sopravvalutare le cose che condividiamo con quell'origine. È interessante che non tutto ciò che la canzone menziona sia presentato come necessariamente positivo, ma solo come gli attributi che si suppone la definiscano: \"The gates are the rustiest\", \"The roads are the dustiest\" e \"The dogs are the yappiest\" sono alcuni esempi. Inoltre elenca le cose, e questo mi piace molto.",
+        "pt": "Fala sobre aquele sentimento tão comum de pertencer a um lugar de origem, e como isso se manifesta na melancolia e em supervalorizar as coisas com as quais compartilhamos essa origem. É interessante que nem tudo o que a música menciona é apresentado como necessariamente bom, mas sim como os atributos que supostamente a definem: \"The gates are the rustiest\", \"The roads are the dustiest\" e \"The dogs are the yappiest\" são alguns exemplos. Além disso, ela enumera coisas, e eu adoro isso."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-its-a-man",
+    "title": "It's a Man",
+    "artist": "Betty Hutton",
+    "releaseYear": 1951,
+    "language": "en",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["thinkers"],
+      "tags": [],
+      "why": {
+        "en": "It's a semi-satirical, stereotype-heavy description of the qualities associated with masculinity at the time, with the added edge that women are led to believe love is \"their thing,\" and that getting married is one of the most important goals of their life, if not the most important. The ending is... particularly interesting.",
+        "es": "Es una descripción semi-satírica (estereotípica) de las cualidades asociadas con la masculinidad de su época, con el matiz de que a las mujeres se les hace creer que el amor es \"lo suyo\", y que casarse es una de las metas más importantes de su vida, si no la más importante. El final es particularmente... interesante.",
+        "it": "È una descrizione semi-satirica, piena di stereotipi, delle qualità associate alla mascolinità dell'epoca, con la sfumatura che alle donne si fa credere che l'amore sia \"cosa loro\", e che sposarsi sia uno degli obiettivi più importanti della loro vita, se non il più importante. Il finale è... particolarmente interessante.",
+        "pt": "É uma descrição semi-satírica, cheia de estereótipos, das qualidades associadas à masculinidade da época, com o detalhe de que as mulheres são levadas a acreditar que o amor é \"a área delas\", e que se casar é uma das metas mais importantes da vida, senão a mais importante. O final é... particularmente interessante."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-paroles-paroles",
+    "title": "Paroles, Paroles",
+    "artist": "Dalida & Alain Delon",
+    "releaseYear": 1973,
+    "language": "fr",
+    "youtubeUrl": "https://www.youtube.com/watch?v=LYAvhujK4nA",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["thinkers"],
+      "tags": ["romantic"],
+      "why": {
+        "en": "Love this song. There's a stark contrast between the guy spitting romantic lines in the most classic French romantic accent, and the woman seeing right through it. It's kind of funny.",
+        "es": "Amo esta canción. Hay un contraste marcadísimo entre el tipo soltando frases románticas con el acento francés más romántico y clásico posible, y la mujer que ve todo eso venir de lejos. Es medio gracioso.",
+        "it": "Adoro questa canzone. C'è un contrasto nettissimo tra il tizio che sciorina frasi romantiche con il più classico accento romantico francese, e la donna che vede tutto arrivare da lontano. È abbastanza divertente.",
+        "pt": "Amo essa música. Existe um contraste bem marcante entre o cara soltando frases românticas com o sotaque francês mais romântico e clássico possível, e a mulher que enxerga tudo isso de longe. É meio engraçado."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-innerbloom",
+    "title": "Innerbloom",
+    "artist": "RÜFÜS DU SOL",
+    "releaseYear": 2016,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Tx9zMFodNtA",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["hurts"],
+      "tags": [],
+      "why": {
+        "en": "One of the most lopsided ratios I know of between lyrics and feeling. It barely says anything, and it'll wreck you anyway. Brace yourself.",
+        "es": "Una de las relaciones más desbalanceadas que conozco entre letra y sentimiento. Casi no dice nada, y aun así te va a destruir. Prepárate.",
+        "it": "Uno dei rapporti più sbilanciati che conosca tra testo e sentimento. Non dice quasi nulla, eppure ti distruggerà comunque. Preparati.",
+        "pt": "Uma das relações mais desequilibradas que conheço entre letra e sentimento. Quase não diz nada, e mesmo assim vai te destruir. Se prepare."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-wait",
+    "title": "Wait",
+    "artist": "M83",
+    "releaseYear": 2012,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=lAwYodrBr2Q",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["hurts"],
+      "tags": [],
+      "why": {
+        "en": "Say the least, feel the most — I don't think I know a bigger gap between how few words this song uses and how much it makes you feel.",
+        "es": "Decir lo mínimo, sentir lo máximo — no creo conocer una distancia más grande entre lo pocas que son las palabras de esta canción y todo lo que te hace sentir.",
+        "it": "Dire il minimo, sentire il massimo — non credo di conoscere un divario più grande tra quanto poche siano le parole di questa canzone e quanto ti faccia sentire.",
+        "pt": "Dizer o mínimo, sentir o máximo — acho que não conheço uma distância maior entre o quão poucas são as palavras dessa música e o quanto ela te faz sentir."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-look-at-me-now",
+    "title": "Look At Me Now",
+    "artist": "Chris Brown feat. Busta Rhymes & Lil Wayne",
+    "releaseYear": 2011,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=8gyLR4NfMiI",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["time-machines", "bangers"],
+      "tags": [],
+      "why": {
+        "en": "The first really fast rap verse I ever learned, way back when I was a teenager. A classic.",
+        "es": "El primer verso de rap realmente rápido que aprendí, allá cuando era adolescente. Un clásico.",
+        "it": "Il primo verso rap davvero veloce che ho imparato, tanto tempo fa quando ero adolescente. Un classico.",
+        "pt": "O primeiro verso de rap realmente rápido que aprendi, lá quando eu era adolescente. Um clássico."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-imaginacion",
+    "title": "Imaginación",
+    "artist": "Anthony Ríos",
+    "releaseYear": 1993,
+    "language": "es",
+    "youtubeUrl": "https://www.youtube.com/watch?v=tRszrYtlrlM",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["time-machines", "personal"],
+      "tags": [],
+      "why": {
+        "en": "My all-time go-to for karaoke. My mom asks for it every time we're at a karaoke night, or anything like it, when we're together.",
+        "es": "Mi comodín histórico para el karaoke. Mi mamá la pide cada vez que estamos en un karaoke, o algo parecido, cuando estamos juntos.",
+        "it": "Il mio jolly storico per il karaoke. Mia madre la chiede ogni volta che siamo a un karaoke, o qualcosa di simile, quando siamo insieme.",
+        "pt": "Meu coringa histórico de karaokê. Minha mãe pede ela toda vez que estamos num karaokê, ou algo parecido, quando estamos juntos."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
+  },
+  {
+    "id": "song-im-sorry",
+    "title": "I'm Sorry",
+    "artist": "Brenda Lee",
+    "releaseYear": 1960,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=BGLR25EJtfE",
+    "genres": [],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": ["thinkers"],
+      "tags": [],
+      "why": {
+        "en": "A very mature, very real take on forgiveness and owning your mistakes.",
+        "es": "Una postura muy madura y muy real sobre el perdón y sobre hacerte responsable de tus errores.",
+        "it": "Una visione molto matura e molto reale sul perdono e sull'assumersi la responsabilità dei propri errori.",
+        "pt": "Uma visão muito madura e muito real sobre o perdão e sobre assumir a responsabilidade pelos próprios erros."
+      },
+      "addedToPantheon": "2026-09-18"
+    }
   }
 ]
