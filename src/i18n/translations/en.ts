@@ -26,6 +26,7 @@ const en = {
   'pantheon.category': 'Category',
   'pantheon.genre': 'Genre',
   'pantheon.decade': 'Decade',
+  'pantheon.language': 'Language',
   'pantheon.emotionalLandscapeHeading': 'Emotional Landscape',
   'pantheon.emotionalLandscapeCaption': "How the Pantheon feels, not just what's in it.",
 

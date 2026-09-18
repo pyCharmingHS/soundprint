@@ -24,6 +24,7 @@ const it: Record<TranslationKey, TranslationValue> = {
   'pantheon.category': 'Categoria',
   'pantheon.genre': 'Genere',
   'pantheon.decade': 'Decennio',
+  'pantheon.language': 'Lingua',
   'pantheon.emotionalLandscapeHeading': 'Paesaggio Emotivo',
   'pantheon.emotionalLandscapeCaption': 'Come si sente il Pantheon, non solo cosa contiene.',
 

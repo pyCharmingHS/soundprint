@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { decadeLabel, formatDate, formatHourLabel, formatHours, mostCommonKey } from './format'
+import { decadeLabel, formatDate, formatHourLabel, formatHours, languageName, mostCommonKey } from './format'
 
 describe('formatHours', () => {
   it('converts minutes to hours with one decimal place, no unit', () => {
@@ -37,6 +37,22 @@ describe('decadeLabel', () => {
     expect(decadeLabel(1984)).toBe('1980s')
     expect(decadeLabel(2014)).toBe('2010s')
     expect(decadeLabel(2000)).toBe('2000s')
+  })
+})
+
+describe('languageName', () => {
+  it('resolves an ISO code to its name in the given locale', () => {
+    expect(languageName('es', 'en')).toBe('Spanish')
+    expect(languageName('it', 'en')).toBe('Italian')
+    expect(languageName('es', 'es')).toBe('español')
+  })
+
+  it('defaults to English when no locale is given', () => {
+    expect(languageName('pt')).toBe('Portuguese')
+  })
+
+  it('falls back to the raw code for something unresolvable', () => {
+    expect(languageName('not-a-real-code')).toBe('not-a-real-code')
   })
 })
 

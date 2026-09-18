@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { EASE_CINEMATIC, fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
@@ -7,11 +7,12 @@ import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
 import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
-import { decadeLabel } from '../lib/format'
+import { decadeLabel, languageName } from '../lib/format'
 import type { Category, Song } from '../types'
 import EmotionalLandscape from '../visualizations/EmotionalLandscape'
 
-type BrowseMode = 'category' | 'genre' | 'decade'
+type SimpleMode = 'genre' | 'decade' | 'language'
+type BrowseMode = 'category' | SimpleMode
 
 function sortPantheon(songs: Song[]): Song[] {
   return [...songs].sort((a, b) => {
@@ -24,16 +25,21 @@ function sortPantheon(songs: Song[]): Song[] {
   })
 }
 
+const SIMPLE_MODES: SimpleMode[] = ['genre', 'decade', 'language']
+
 function PantheonPage() {
-  const { t, localize } = useLocale()
+  const { t, locale, localize } = useLocale()
   const [categories, setCategories] = useState<Category[]>([])
   const [songs, setSongs] = useState<Song[]>([])
   const [searchParams, setSearchParams] = useSearchParams()
   const activeCategory = searchParams.get('category')
-  const activeGenre = searchParams.get('genre')
-  const activeDecade = searchParams.get('decade')
+  const activeValues: Record<SimpleMode, string | null> = {
+    genre: searchParams.get('genre'),
+    decade: searchParams.get('decade'),
+    language: searchParams.get('language'),
+  }
   const [browseMode, setBrowseMode] = useState<BrowseMode>(
-    activeGenre ? 'genre' : activeDecade ? 'decade' : 'category',
+    SIMPLE_MODES.find((mode) => activeValues[mode] !== null) ?? 'category',
   )
 
   useEffect(() => {
@@ -41,31 +47,46 @@ function PantheonPage() {
     loadSongs().then((all) => setSongs(sortPantheon(all.filter((s) => s.personal.isPantheon))))
   }, [])
 
-  const visibleSongs = activeGenre
-    ? songs.filter((song) => song.genres.includes(activeGenre))
-    : activeCategory
-      ? songs.filter((song) => song.personal.categories.includes(activeCategory))
-      : activeDecade
-        ? songs.filter(
-            (song) => song.releaseYear !== undefined && decadeLabel(song.releaseYear) === activeDecade,
-          )
-        : songs
-
   const activeCategoryData = categories.find((c) => c.id === activeCategory)
-  const genres = [...new Set(songs.flatMap((s) => s.genres))].sort()
-  const decades = [
-    ...new Set(
-      songs.filter((s) => s.releaseYear !== undefined).map((s) => decadeLabel(s.releaseYear!)),
-    ),
-  ].sort()
+
+  const simpleModeConfig: Record<
+    SimpleMode,
+    { values: string[]; matches: (song: Song) => boolean; label: (value: string) => string }
+  > = {
+    genre: {
+      values: [...new Set(songs.flatMap((s) => s.genres))].sort(),
+      matches: (song) => song.genres.includes(activeValues.genre!),
+      label: (value) => value,
+    },
+    decade: {
+      values: [
+        ...new Set(
+          songs.filter((s) => s.releaseYear !== undefined).map((s) => decadeLabel(s.releaseYear!)),
+        ),
+      ].sort(),
+      matches: (song) => song.releaseYear !== undefined && decadeLabel(song.releaseYear) === activeValues.decade,
+      label: (value) => value,
+    },
+    language: {
+      values: [...new Set(songs.filter((s) => s.language).map((s) => s.language!))].sort(),
+      matches: (song) => song.language === activeValues.language,
+      label: (value) => languageName(value, locale),
+    },
+  }
+
+  const activeSimpleMode = SIMPLE_MODES.find((mode) => activeValues[mode] !== null)
+  const visibleSongs = activeCategory
+    ? songs.filter((song) => song.personal.categories.includes(activeCategory))
+    : activeSimpleMode
+      ? songs.filter(simpleModeConfig[activeSimpleMode].matches)
+      : songs
 
   function switchMode(mode: BrowseMode) {
     setBrowseMode(mode)
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev)
       next.delete('category')
-      next.delete('genre')
-      next.delete('decade')
+      for (const m of SIMPLE_MODES) next.delete(m)
       return next
     })
   }
@@ -73,8 +94,7 @@ function PantheonPage() {
   function toggleCategory(categoryId: string) {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev)
-      next.delete('genre')
-      next.delete('decade')
+      for (const m of SIMPLE_MODES) next.delete(m)
       if (activeCategory === categoryId) {
         next.delete('category')
       } else {
@@ -84,29 +104,15 @@ function PantheonPage() {
     })
   }
 
-  function toggleGenre(genre: string) {
+  function toggleSimpleValue(mode: SimpleMode, value: string) {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev)
       next.delete('category')
-      next.delete('decade')
-      if (activeGenre === genre) {
-        next.delete('genre')
+      for (const m of SIMPLE_MODES) if (m !== mode) next.delete(m)
+      if (activeValues[mode] === value) {
+        next.delete(mode)
       } else {
-        next.set('genre', genre)
-      }
-      return next
-    })
-  }
-
-  function toggleDecade(decade: string) {
-    setSearchParams((prev) => {
-      const next = new URLSearchParams(prev)
-      next.delete('category')
-      next.delete('genre')
-      if (activeDecade === decade) {
-        next.delete('decade')
-      } else {
-        next.set('decade', decade)
+        next.set(mode, value)
       }
       return next
     })
@@ -139,39 +145,37 @@ function PantheonPage() {
       >
         <div className="flex items-center justify-center gap-2 text-xs tracking-wide uppercase">
           <span className="text-muted">{t('pantheon.browseBy')}</span>
-          <button
-            type="button"
-            onClick={() => switchMode('category')}
-            className={`cursor-pointer transition-colors ${
-              browseMode === 'category' ? 'text-gold' : 'text-muted hover:text-foreground'
-            }`}
-          >
-            {t('pantheon.category')}
-          </button>
-          <span className="text-border">/</span>
-          <button
-            type="button"
-            onClick={() => switchMode('genre')}
-            className={`cursor-pointer transition-colors ${
-              browseMode === 'genre' ? 'text-gold' : 'text-muted hover:text-foreground'
-            }`}
-          >
-            {t('pantheon.genre')}
-          </button>
-          {decades.length > 0 && (
-            <>
-              <span className="text-border">/</span>
-              <button
-                type="button"
-                onClick={() => switchMode('decade')}
-                className={`cursor-pointer transition-colors ${
-                  browseMode === 'decade' ? 'text-gold' : 'text-muted hover:text-foreground'
-                }`}
-              >
-                {t('pantheon.decade')}
-              </button>
-            </>
-          )}
+          {(
+            [
+              { mode: 'category' as const, label: t('pantheon.category'), visible: true },
+              { mode: 'genre' as const, label: t('pantheon.genre'), visible: true },
+              {
+                mode: 'decade' as const,
+                label: t('pantheon.decade'),
+                visible: simpleModeConfig.decade.values.length > 0,
+              },
+              {
+                mode: 'language' as const,
+                label: t('pantheon.language'),
+                visible: simpleModeConfig.language.values.length > 0,
+              },
+            ] satisfies { mode: BrowseMode; label: string; visible: boolean }[]
+          )
+            .filter((b) => b.visible)
+            .map((b, i) => (
+              <Fragment key={b.mode}>
+                {i > 0 && <span className="text-border">/</span>}
+                <button
+                  type="button"
+                  onClick={() => switchMode(b.mode)}
+                  className={`cursor-pointer transition-colors ${
+                    browseMode === b.mode ? 'text-gold' : 'text-muted hover:text-foreground'
+                  }`}
+                >
+                  {b.label}
+                </button>
+              </Fragment>
+            ))}
         </div>
 
         <motion.div
@@ -188,43 +192,24 @@ function PantheonPage() {
                     onClick={() => toggleCategory(category.id)}
                   />
                 ))
-              : browseMode === 'genre'
-                ? genres.map((genre) => (
-                    <motion.button
-                      key={genre}
-                      layout
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      type="button"
-                      onClick={() => toggleGenre(genre)}
-                      className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
-                        activeGenre === genre
-                          ? 'border-gold bg-gold/10 text-gold'
-                          : 'border-border bg-surface hover:border-gold/50'
-                      }`}
-                    >
-                      {genre}
-                    </motion.button>
-                  ))
-                : decades.map((decade) => (
-                    <motion.button
-                      key={decade}
-                      layout
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      type="button"
-                      onClick={() => toggleDecade(decade)}
-                      className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
-                        activeDecade === decade
-                          ? 'border-gold bg-gold/10 text-gold'
-                          : 'border-border bg-surface hover:border-gold/50'
-                      }`}
-                    >
-                      {decade}
-                    </motion.button>
-                  ))}
+              : simpleModeConfig[browseMode].values.map((value) => (
+                  <motion.button
+                    key={value}
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    type="button"
+                    onClick={() => toggleSimpleValue(browseMode, value)}
+                    className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
+                      activeValues[browseMode] === value
+                        ? 'border-gold bg-gold/10 text-gold'
+                        : 'border-border bg-surface hover:border-gold/50'
+                    }`}
+                  >
+                    {simpleModeConfig[browseMode].label(value)}
+                  </motion.button>
+                ))}
           </AnimatePresence>
         </motion.div>
       </motion.div>

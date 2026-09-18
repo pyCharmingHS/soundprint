@@ -4,6 +4,7 @@
     "title": "El Aguante",
     "artist": "Calle 13",
     "releaseYear": 2014,
+    "language": "es",
     "genres": ["fusion"],
     "listening": {
       "plays": 0,
@@ -27,6 +28,7 @@
     "title": "Cuando Se Acaba el Amor",
     "artist": "Guillermo Dávila",
     "releaseYear": 1984,
+    "language": "es",
     "genres": ["ballad"],
     "listening": {
       "plays": 0,
@@ -50,6 +52,7 @@
     "title": "A te",
     "artist": "Jovanotti",
     "releaseYear": 2008,
+    "language": "it",
     "genres": ["pop"],
     "listening": {
       "plays": 0,

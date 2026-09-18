@@ -6,7 +6,7 @@ import AlbumArt from '../components/AlbumArt'
 import StatBar from '../components/StatBar'
 import YouTubeIcon from '../components/YouTubeIcon'
 import { useLocale } from '../i18n/LocaleContext'
-import { formatDate, formatHourLabel, formatHours, mostCommonKey } from '../lib/format'
+import { formatDate, formatHourLabel, formatHours, languageName, mostCommonKey } from '../lib/format'
 import { loadCategories, loadSongs } from '../lib/data'
 import type { Category, Song } from '../types'
 
@@ -65,8 +65,9 @@ function SongDetailPage() {
         <div>
           <h1 className="text-3xl">{song.title}</h1>
           <p className="text-muted">
-            {song.artist}
-            {song.releaseYear ? ` · ${song.releaseYear}` : ''}
+            {[song.artist, song.releaseYear, song.language && languageName(song.language, locale)]
+              .filter(Boolean)
+              .join(' · ')}
           </p>
         </div>
         {personal.isPantheon && (

@@ -35,6 +35,8 @@ export interface Song {
   artwork?: string
   duration?: number
   releaseYear?: number
+  /** ISO 639-1 code (e.g. "es", "it") — the language the song is sung in. */
+  language?: string
   genres: string[]
 
   // External identifiers

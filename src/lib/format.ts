@@ -25,6 +25,17 @@ export function decadeLabel(year: number): string {
   return `${Math.floor(year / 10) * 10}s`
 }
 
+/** e.g. ("es", "en") -> "Spanish". Falls back to the raw code if the
+ * runtime can't resolve it (Intl.DisplayNames is widely supported, but
+ * this keeps an unrecognized code from crashing the page). */
+export function languageName(code: string, locale: Locale = 'en'): string {
+  try {
+    return new Intl.DisplayNames([locale], { type: 'language' }).of(code) ?? code
+  } catch {
+    return code
+  }
+}
+
 export function mostCommonKey(
   record: Record<string, number> | undefined,
 ): string | undefined {
