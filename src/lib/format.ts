@@ -20,6 +20,11 @@ export function formatDate(iso: string, locale: Locale = 'en'): string {
   })
 }
 
+/** e.g. 1984 -> "1980s". */
+export function decadeLabel(year: number): string {
+  return `${Math.floor(year / 10) * 10}s`
+}
+
 export function mostCommonKey(
   record: Record<string, number> | undefined,
 ): string | undefined {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatDate, formatHourLabel, formatHours, mostCommonKey } from './format'
+import { decadeLabel, formatDate, formatHourLabel, formatHours, mostCommonKey } from './format'
 
 describe('formatHours', () => {
   it('converts minutes to hours with one decimal place, no unit', () => {
@@ -29,6 +29,14 @@ describe('formatDate', () => {
 
   it('defaults to English when no locale is given', () => {
     expect(formatDate('2026-01-15T10:00:00.000Z')).toContain('January')
+  })
+})
+
+describe('decadeLabel', () => {
+  it('rounds a year down to its decade', () => {
+    expect(decadeLabel(1984)).toBe('1980s')
+    expect(decadeLabel(2014)).toBe('2010s')
+    expect(decadeLabel(2000)).toBe('2000s')
   })
 })
 

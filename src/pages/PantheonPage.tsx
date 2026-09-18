@@ -7,10 +7,11 @@ import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
 import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
+import { decadeLabel } from '../lib/format'
 import type { Category, Song } from '../types'
 import EmotionalLandscape from '../visualizations/EmotionalLandscape'
 
-type BrowseMode = 'category' | 'genre'
+type BrowseMode = 'category' | 'genre' | 'decade'
 
 function sortPantheon(songs: Song[]): Song[] {
   return [...songs].sort((a, b) => {
@@ -30,7 +31,10 @@ function PantheonPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const activeCategory = searchParams.get('category')
   const activeGenre = searchParams.get('genre')
-  const [browseMode, setBrowseMode] = useState<BrowseMode>(activeGenre ? 'genre' : 'category')
+  const activeDecade = searchParams.get('decade')
+  const [browseMode, setBrowseMode] = useState<BrowseMode>(
+    activeGenre ? 'genre' : activeDecade ? 'decade' : 'category',
+  )
 
   useEffect(() => {
     loadCategories().then(setCategories)
@@ -41,10 +45,19 @@ function PantheonPage() {
     ? songs.filter((song) => song.genres.includes(activeGenre))
     : activeCategory
       ? songs.filter((song) => song.personal.categories.includes(activeCategory))
-      : songs
+      : activeDecade
+        ? songs.filter(
+            (song) => song.releaseYear !== undefined && decadeLabel(song.releaseYear) === activeDecade,
+          )
+        : songs
 
   const activeCategoryData = categories.find((c) => c.id === activeCategory)
   const genres = [...new Set(songs.flatMap((s) => s.genres))].sort()
+  const decades = [
+    ...new Set(
+      songs.filter((s) => s.releaseYear !== undefined).map((s) => decadeLabel(s.releaseYear!)),
+    ),
+  ].sort()
 
   function switchMode(mode: BrowseMode) {
     setBrowseMode(mode)
@@ -52,6 +65,7 @@ function PantheonPage() {
       const next = new URLSearchParams(prev)
       next.delete('category')
       next.delete('genre')
+      next.delete('decade')
       return next
     })
   }
@@ -60,6 +74,7 @@ function PantheonPage() {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev)
       next.delete('genre')
+      next.delete('decade')
       if (activeCategory === categoryId) {
         next.delete('category')
       } else {
@@ -73,10 +88,25 @@ function PantheonPage() {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev)
       next.delete('category')
+      next.delete('decade')
       if (activeGenre === genre) {
         next.delete('genre')
       } else {
         next.set('genre', genre)
+      }
+      return next
+    })
+  }
+
+  function toggleDecade(decade: string) {
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev)
+      next.delete('category')
+      next.delete('genre')
+      if (activeDecade === decade) {
+        next.delete('decade')
+      } else {
+        next.set('decade', decade)
       }
       return next
     })
@@ -128,6 +158,20 @@ function PantheonPage() {
           >
             {t('pantheon.genre')}
           </button>
+          {decades.length > 0 && (
+            <>
+              <span className="text-border">/</span>
+              <button
+                type="button"
+                onClick={() => switchMode('decade')}
+                className={`cursor-pointer transition-colors ${
+                  browseMode === 'decade' ? 'text-gold' : 'text-muted hover:text-foreground'
+                }`}
+              >
+                {t('pantheon.decade')}
+              </button>
+            </>
+          )}
         </div>
 
         <motion.div
@@ -144,24 +188,43 @@ function PantheonPage() {
                     onClick={() => toggleCategory(category.id)}
                   />
                 ))
-              : genres.map((genre) => (
-                  <motion.button
-                    key={genre}
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    type="button"
-                    onClick={() => toggleGenre(genre)}
-                    className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
-                      activeGenre === genre
-                        ? 'border-gold bg-gold/10 text-gold'
-                        : 'border-border bg-surface hover:border-gold/50'
-                    }`}
-                  >
-                    {genre}
-                  </motion.button>
-                ))}
+              : browseMode === 'genre'
+                ? genres.map((genre) => (
+                    <motion.button
+                      key={genre}
+                      layout
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      type="button"
+                      onClick={() => toggleGenre(genre)}
+                      className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
+                        activeGenre === genre
+                          ? 'border-gold bg-gold/10 text-gold'
+                          : 'border-border bg-surface hover:border-gold/50'
+                      }`}
+                    >
+                      {genre}
+                    </motion.button>
+                  ))
+                : decades.map((decade) => (
+                    <motion.button
+                      key={decade}
+                      layout
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      type="button"
+                      onClick={() => toggleDecade(decade)}
+                      className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
+                        activeDecade === decade
+                          ? 'border-gold bg-gold/10 text-gold'
+                          : 'border-border bg-surface hover:border-gold/50'
+                      }`}
+                    >
+                      {decade}
+                    </motion.button>
+                  ))}
           </AnimatePresence>
         </motion.div>
       </motion.div>

@@ -34,7 +34,7 @@ export interface Song {
   album?: string
   artwork?: string
   duration?: number
-  releaseDate?: string
+  releaseYear?: number
   genres: string[]
 
   // External identifiers

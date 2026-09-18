@@ -25,6 +25,7 @@ const en = {
   'pantheon.browseBy': 'Browse by',
   'pantheon.category': 'Category',
   'pantheon.genre': 'Genre',
+  'pantheon.decade': 'Decade',
   'pantheon.emotionalLandscapeHeading': 'Emotional Landscape',
   'pantheon.emotionalLandscapeCaption': "How the Pantheon feels, not just what's in it.",
 

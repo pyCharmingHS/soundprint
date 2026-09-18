@@ -64,7 +64,10 @@ function SongDetailPage() {
         />
         <div>
           <h1 className="text-3xl">{song.title}</h1>
-          <p className="text-muted">{song.artist}</p>
+          <p className="text-muted">
+            {song.artist}
+            {song.releaseYear ? ` · ${song.releaseYear}` : ''}
+          </p>
         </div>
         {personal.isPantheon && (
           <span className="text-sm tracking-wide text-gold">
