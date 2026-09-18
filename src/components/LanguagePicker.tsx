@@ -7,13 +7,9 @@ import FlagIcon from './FlagIcon'
 
 function FlagCluster({ flags, className = '' }: { flags: FlagCode[]; className?: string }) {
   return (
-    <span className={`inline-flex items-center ${className}`}>
-      {flags.map((flag, i) => (
-        <FlagIcon
-          key={flag}
-          code={flag}
-          className={`rounded-[1px] ring-1 ring-ink ${i === 0 ? '' : '-ml-1'}`}
-        />
+    <span className={`inline-flex items-center gap-0.5 ${className}`}>
+      {flags.map((flag) => (
+        <FlagIcon key={flag} code={flag} className="rounded-[1px] ring-1 ring-ink" />
       ))}
     </span>
   )
