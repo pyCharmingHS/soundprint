@@ -26,10 +26,10 @@ function SongCard({ song, showWhy, showYear }: SongCardProps) {
       />
       <div className="flex flex-col">
         <span className="truncate font-medium">{song.title}</span>
-        <span className="truncate text-sm text-muted">
-          {song.artist}
-          {showYear && song.releaseYear ? ` · ${song.releaseYear}` : ''}
-        </span>
+        <div className="flex items-baseline gap-1 text-sm text-muted">
+          <span className="min-w-0 truncate">{song.artist}</span>
+          {showYear && song.releaseYear && <span className="shrink-0">· {song.releaseYear}</span>}
+        </div>
       </div>
       {why && <p className="line-clamp-2 text-sm text-muted italic">"{why}"</p>}
     </Link>
