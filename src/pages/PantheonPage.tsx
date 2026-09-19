@@ -250,11 +250,12 @@ function PantheonPage() {
         </div>
       </motion.div>
 
-      {/* Fixed height regardless of description length or whether a category
-          is selected, so the song grid below never shifts. Only relevant in
-          category mode — genre pills already show their own active state. */}
+      {/* No selected category (or one with no description) collapses this to
+          nothing — `layout` animates the resulting height change smoothly
+          instead of reserving fixed dead space like before, matching how
+          genre/decade/language sit closer to the grid. */}
       {browseMode === 'category' && (
-        <div className="flex h-[4.5rem] items-start justify-center">
+        <motion.div layout className="flex justify-center">
           <AnimatePresence mode="wait">
             {activeCategoryData?.description && (
               <motion.p
@@ -269,7 +270,7 @@ function PantheonPage() {
               </motion.p>
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
       )}
 
       <motion.div variants={fadeUp} className="flex justify-end">
