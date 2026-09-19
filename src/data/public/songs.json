@@ -5,6 +5,7 @@
     "artist": "Calle 13",
     "releaseYear": 2014,
     "language": "es",
+    "youtubeUrl": "https://www.youtube.com/watch?v=LUk73pUe9i4",
     "genres": ["fusion"],
     "listening": {
       "plays": 0,
@@ -29,6 +30,7 @@
     "artist": "Guillermo Dávila",
     "releaseYear": 1984,
     "language": "es",
+    "youtubeUrl": "https://www.youtube.com/watch?v=wy-zh6UGVzg",
     "genres": ["ballad"],
     "listening": {
       "plays": 0,
@@ -53,6 +55,7 @@
     "artist": "Jovanotti",
     "releaseYear": 2008,
     "language": "it",
+    "youtubeUrl": "https://www.youtube.com/watch?v=FSea1YPxK1c",
     "genres": ["pop"],
     "listening": {
       "plays": 0,
@@ -78,7 +81,7 @@
     "releaseYear": 2020,
     "language": "it",
     "youtubeUrl": "https://www.youtube.com/watch?v=fVWLRf8IaNw",
-    "genres": [],
+    "genres": ["electronic"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -103,7 +106,7 @@
     "releaseYear": 2016,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=mgIk98foFOU",
-    "genres": [],
+    "genres": ["hip hop"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -128,7 +131,7 @@
     "releaseYear": 1963,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=DsY_kocbWaM",
-    "genres": [],
+    "genres": ["country", "pop"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -153,7 +156,7 @@
     "releaseYear": 1945,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=gMTPsumjfTA",
-    "genres": [],
+    "genres": ["jazz"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -178,7 +181,7 @@
     "releaseYear": 1951,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=DPkizW2SFSY",
-    "genres": [],
+    "genres": ["jazz"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -203,7 +206,7 @@
     "releaseYear": 1951,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=ydLHY0qonl4",
-    "genres": [],
+    "genres": ["musical comedy"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -228,7 +231,7 @@
     "releaseYear": 1973,
     "language": "fr",
     "youtubeUrl": "https://www.youtube.com/watch?v=LYAvhujK4nA",
-    "genres": [],
+    "genres": ["chanson"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -253,7 +256,7 @@
     "releaseYear": 2016,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=Tx9zMFodNtA",
-    "genres": [],
+    "genres": ["deep house"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -278,7 +281,7 @@
     "releaseYear": 2012,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=lAwYodrBr2Q",
-    "genres": [],
+    "genres": ["dream pop"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -303,7 +306,7 @@
     "releaseYear": 2011,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=8gyLR4NfMiI",
-    "genres": [],
+    "genres": ["hip hop"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -328,7 +331,7 @@
     "releaseYear": 1993,
     "language": "es",
     "youtubeUrl": "https://www.youtube.com/watch?v=tRszrYtlrlM",
-    "genres": [],
+    "genres": ["bolero"],
     "listening": {
       "plays": 0,
       "minutes": 0
@@ -353,7 +356,7 @@
     "releaseYear": 1960,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=BGLR25EJtfE",
-    "genres": [],
+    "genres": ["pop"],
     "listening": {
       "plays": 0,
       "minutes": 0
