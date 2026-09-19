@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import LanguagePicker from '../components/LanguagePicker'
 import PageTransition from '../components/PageTransition'
+import WorkInProgressBadge from '../components/WorkInProgressBadge'
 import { useLocale } from '../i18n/LocaleContext'
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -26,9 +27,12 @@ function RootLayout() {
           <NavLink to="/pantheon" className={navLinkClass}>
             {t('nav.pantheon')}
           </NavLink>
-          <NavLink to="/statistics" className={navLinkClass}>
-            {t('nav.statistics')}
-          </NavLink>
+          <span className="flex items-center gap-1.5">
+            <NavLink to="/statistics" className={navLinkClass}>
+              {t('nav.statistics')}
+            </NavLink>
+            <WorkInProgressBadge className="hidden sm:inline-flex" />
+          </span>
         </div>
         <LanguagePicker />
       </nav>

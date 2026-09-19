@@ -54,6 +54,8 @@ const en = {
   'statistics.pantheonCandidates': 'Pantheon Candidates',
   'statistics.pantheonCandidatesCaption':
     "A discovery signal, not a decision — these songs behave like Pantheon songs but haven't been added.",
+  'statistics.wipCaption':
+    "Real listening history isn't connected yet, so the numbers below are placeholders — this page comes alive once the streaming import pipeline is wired up.",
 
   'song.back': 'Back',
   'song.watchOnYouTube': 'Watch on YouTube',
@@ -76,6 +78,7 @@ const en = {
   'common.songs': { one: '{{count}} song', other: '{{count}} songs' },
   'common.hoursUnit': 'hours',
   'common.by': '{{title}} by {{artist}}',
+  'common.workInProgress': 'Work in Progress',
 
   'viz.pantheonLegend': 'Pantheon',
   'viz.notYetLegend': 'Not (yet)',

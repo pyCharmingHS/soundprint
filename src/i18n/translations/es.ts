@@ -52,6 +52,8 @@ const es: Record<TranslationKey, TranslationValue> = {
   'statistics.pantheonCandidates': 'Candidatas al Panteón',
   'statistics.pantheonCandidatesCaption':
     'Una señal de descubrimiento, no una decisión: estas canciones se comportan como canciones del Panteón, pero aún no han sido añadidas.',
+  'statistics.wipCaption':
+    'El historial de escucha real todavía no está conectado, así que los números de abajo son marcadores de posición — esta página cobrará vida cuando se conecte el pipeline de importación de streaming.',
 
   'song.back': 'Volver',
   'song.watchOnYouTube': 'Ver en YouTube',
@@ -74,6 +76,7 @@ const es: Record<TranslationKey, TranslationValue> = {
   'common.songs': { one: '{{count}} canción', other: '{{count}} canciones' },
   'common.hoursUnit': 'horas',
   'common.by': '{{title}} de {{artist}}',
+  'common.workInProgress': 'En construcción',
 
   'viz.pantheonLegend': 'Panteón',
   'viz.notYetLegend': 'Aún no',
