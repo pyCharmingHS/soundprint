@@ -261,7 +261,7 @@ function PantheonPage() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.35, ease: EASE_CINEMATIC }}
             >
-              <SongCard song={song} />
+              <SongCard song={song} showYear />
             </motion.div>
           ))}
         </AnimatePresence>

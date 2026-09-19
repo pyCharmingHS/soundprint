@@ -6,9 +6,10 @@ import AlbumArt from './AlbumArt'
 interface SongCardProps {
   song: Song
   showWhy?: boolean
+  showYear?: boolean
 }
 
-function SongCard({ song, showWhy }: SongCardProps) {
+function SongCard({ song, showWhy, showYear }: SongCardProps) {
   const { localize } = useLocale()
   const why = showWhy ? localize(song.personal.why) : undefined
 
@@ -25,7 +26,10 @@ function SongCard({ song, showWhy }: SongCardProps) {
       />
       <div className="flex flex-col">
         <span className="truncate font-medium">{song.title}</span>
-        <span className="truncate text-sm text-muted">{song.artist}</span>
+        <span className="truncate text-sm text-muted">
+          {song.artist}
+          {showYear && song.releaseYear ? ` · ${song.releaseYear}` : ''}
+        </span>
       </div>
       {why && <p className="line-clamp-2 text-sm text-muted italic">"{why}"</p>}
     </Link>
