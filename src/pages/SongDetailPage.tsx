@@ -44,7 +44,7 @@ function SongDetailPage() {
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
-      className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-16"
+      className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-6 py-8 sm:gap-10 sm:py-16"
     >
       <motion.button
         type="button"
@@ -90,7 +90,7 @@ function SongDetailPage() {
       </motion.div>
 
       {why && (
-        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-6 sm:pt-8">
           <h2 className="text-sm tracking-wide text-muted uppercase">{t('song.whyHeading')}</h2>
           <p className="text-lg italic">"{why}"</p>
           {memories && <p className="text-sm text-muted">{memories}</p>}
@@ -101,7 +101,7 @@ function SongDetailPage() {
         personal.emotionalIntensity !== undefined ||
         personal.nostalgia !== undefined ||
         personal.meaning !== undefined) && (
-        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-6 sm:pt-8">
           <h2 className="text-sm tracking-wide text-muted uppercase">
             {t('song.emotionalProfileHeading')}
           </h2>
@@ -122,7 +122,7 @@ function SongDetailPage() {
         </motion.div>
       )}
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-6 sm:pt-8">
         <h2 className="text-sm tracking-wide text-muted uppercase">{t('song.myListeningHeading')}</h2>
         <p>
           {t('common.plays', { count: listening.plays })} · {formatHours(listening.minutes)}{' '}
@@ -152,7 +152,7 @@ function SongDetailPage() {
       </motion.div>
 
       {personal.categories.length > 0 && (
-        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-6 sm:pt-8">
           <h2 className="text-sm tracking-wide text-muted uppercase">
             {t('song.categoriesHeading')}
           </h2>
@@ -175,7 +175,7 @@ function SongDetailPage() {
       )}
 
       {personal.tags.length > 0 && (
-        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-6 sm:pt-8">
           <h2 className="text-sm tracking-wide text-muted uppercase">{t('song.tagsHeading')}</h2>
           <div className="flex flex-wrap gap-2">
             {personal.tags.map((tag) => (

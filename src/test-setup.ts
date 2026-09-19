@@ -19,3 +19,7 @@ class IntersectionObserverStub {
 
 // @ts-expect-error -- minimal stub, not a full IntersectionObserver implementation
 window.IntersectionObserver = IntersectionObserverStub
+
+// jsdom doesn't implement scrollIntoView at all (not even as a no-op) —
+// PantheonPage calls it to bring the active filter pill into view.
+Element.prototype.scrollIntoView = () => {}

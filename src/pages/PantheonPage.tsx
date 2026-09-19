@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { EASE_CINEMATIC, fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
 import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
 import SongSortMenu from '../components/SongSortMenu'
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
 import { decadeLabel, languageName } from '../lib/format'
@@ -44,11 +45,25 @@ function PantheonPage() {
     SIMPLE_MODES.find((mode) => activeValues[mode] !== null) ?? 'category',
   )
   const [sort, setSort] = useState<SongSortOption>('curated')
+  const reducedMotion = usePrefersReducedMotion()
+  const pillScrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     loadCategories().then(setCategories)
     loadSongs().then((all) => setSongs(sortPantheon(all.filter((s) => s.personal.isPantheon))))
   }, [])
+
+  // Brings the active pill into view when it's off-screen — most notably
+  // when arriving here with a category already selected (e.g. from a Home
+  // page link) and that category sits past the row's visible edge.
+  useEffect(() => {
+    const active = pillScrollRef.current?.querySelector('[data-active="true"]')
+    active?.scrollIntoView({
+      behavior: reducedMotion ? 'auto' : 'smooth',
+      inline: 'nearest',
+      block: 'nearest',
+    })
+  }, [browseMode, activeCategory, activeValues.genre, activeValues.decade, activeValues.language, categories.length, songs.length, reducedMotion])
 
   const activeCategoryData = categories.find((c) => c.id === activeCategory)
 
@@ -182,42 +197,57 @@ function PantheonPage() {
             ))}
         </div>
 
-        <motion.div
-          layout
-          className="flex flex-nowrap items-center gap-2 overflow-x-auto sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible"
-        >
-          <AnimatePresence mode="popLayout" initial={false}>
-            {browseMode === 'category'
-              ? categories.map((category) => (
-                  <CategoryCard
-                    key={category.id}
-                    category={category}
-                    active={activeCategory === category.id}
-                    onClick={() => toggleCategory(category.id)}
-                  />
-                ))
-              : simpleModeConfig[browseMode].values.map((value) => (
-                  <motion.button
-                    key={value}
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    type="button"
-                    onClick={() => toggleSimpleValue(browseMode, value)}
-                    className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
-                      browseMode === 'language' ? 'uppercase' : ''
-                    } ${
-                      activeValues[browseMode] === value
-                        ? 'border-gold bg-gold/10 text-gold'
-                        : 'border-border bg-surface hover:border-gold/50'
-                    }`}
-                  >
-                    {simpleModeConfig[browseMode].label(value)}
-                  </motion.button>
-                ))}
-          </AnimatePresence>
-        </motion.div>
+        <div className="relative">
+          <motion.div
+            ref={pillScrollRef}
+            layout
+            className="flex flex-nowrap items-center gap-2 overflow-x-auto sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible [mask-image:linear-gradient(to_right,transparent,black_16px,black_calc(100%-28px),transparent)] sm:[mask-image:none]"
+          >
+            <AnimatePresence mode="popLayout" initial={false}>
+              {browseMode === 'category'
+                ? categories.map((category) => (
+                    <CategoryCard
+                      key={category.id}
+                      category={category}
+                      active={activeCategory === category.id}
+                      onClick={() => toggleCategory(category.id)}
+                    />
+                  ))
+                : simpleModeConfig[browseMode].values.map((value) => (
+                    <motion.button
+                      key={value}
+                      layout
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      type="button"
+                      data-active={activeValues[browseMode] === value}
+                      onClick={() => toggleSimpleValue(browseMode, value)}
+                      className={`flex shrink-0 cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm whitespace-nowrap transition-colors sm:px-4 sm:py-2 sm:text-base ${
+                        browseMode === 'language' ? 'uppercase' : ''
+                      } ${
+                        activeValues[browseMode] === value
+                          ? 'border-gold bg-gold/10 text-gold'
+                          : 'border-border bg-surface hover:border-gold/50'
+                      }`}
+                    >
+                      {simpleModeConfig[browseMode].label(value)}
+                    </motion.button>
+                  ))}
+            </AnimatePresence>
+          </motion.div>
+          {/* Mobile-only nudge that the pill row scrolls horizontally —
+              paired with the edge fade above, which alone wasn't obvious
+              enough. Hidden once flex-wrap takes over at sm:. */}
+          <motion.span
+            aria-hidden="true"
+            animate={reducedMotion ? undefined : { x: [0, 3, 0] }}
+            transition={{ repeat: Infinity, duration: 1.4, ease: 'easeInOut' }}
+            className="pointer-events-none absolute top-1/2 right-0 -translate-y-1/2 text-gold sm:hidden"
+          >
+            ›
+          </motion.span>
+        </div>
       </motion.div>
 
       {/* Fixed height regardless of description length or whether a category
@@ -270,7 +300,7 @@ function PantheonPage() {
       {songs.some(
         (s) => s.personal.meaning !== undefined && s.personal.emotionalIntensity !== undefined,
       ) && (
-        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-6 sm:pt-8">
           <h2 className="text-center text-sm tracking-wide text-muted uppercase">
             {t('pantheon.emotionalLandscapeHeading')}
           </h2>

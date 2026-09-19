@@ -57,7 +57,7 @@ function HomePage() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="relative flex flex-col items-center gap-6 px-6 py-24 text-center"
+          className="relative flex flex-col items-center gap-6 px-6 py-14 sm:py-24 text-center"
         >
           <motion.h1
             variants={fadeUp}
@@ -82,7 +82,7 @@ function HomePage() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="mx-auto flex w-full max-w-4xl flex-col gap-6 px-6 py-16"
+            className="mx-auto flex w-full max-w-4xl flex-col gap-6 px-6 py-10 sm:py-16"
           >
             <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
               {t('home.highlightsHeading')}
@@ -102,7 +102,7 @@ function HomePage() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="mx-auto flex w-full max-w-3xl flex-col gap-2 px-6 py-16"
+            className="mx-auto flex w-full max-w-3xl flex-col gap-2 px-6 py-10 sm:py-16"
           >
             <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
               {t('home.acrossGenresHeading')}
@@ -120,7 +120,7 @@ function HomePage() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-16"
+            className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-10 sm:py-16"
           >
             <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
               {t('home.mostPlayedVsFavoriteHeading')}
@@ -150,7 +150,7 @@ function HomePage() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-16"
+          className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-10 sm:py-16"
         >
           <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
             {t('home.exploreHeading')}

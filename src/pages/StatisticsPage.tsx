@@ -60,7 +60,7 @@ function StatisticsPage() {
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
-      className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-12 px-6 py-16"
+      className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-6 py-10 sm:gap-12 sm:py-16"
     >
       <ParallaxLayer offset={20}>
         <motion.div variants={fadeUp} className="flex flex-col items-center gap-2 text-center">
@@ -93,7 +93,7 @@ function StatisticsPage() {
       </motion.div>
 
       {obsession && (
-        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-6 sm:pt-8">
           <SectionHeading>{t('statistics.currentObsession')}</SectionHeading>
           <RankRow
             rank={1}
@@ -105,13 +105,13 @@ function StatisticsPage() {
         </motion.div>
       )}
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-2 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.pantheonVsReality')}</SectionHeading>
         <p className="text-sm text-muted">{t('statistics.pantheonVsRealityCaption')}</p>
         <PantheonVsReality songs={songs} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.mostPlayed')}</SectionHeading>
         {topSongsByPlays(songs).map((song, i) => (
           <RankRow
@@ -125,7 +125,7 @@ function StatisticsPage() {
         ))}
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.topArtists')}</SectionHeading>
         {topArtists(songs).map((artist, i) => (
           <RankRow
@@ -138,7 +138,7 @@ function StatisticsPage() {
         ))}
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.topGenres')}</SectionHeading>
         {topGenres(songs).map((genre, i) => (
           <RankRow
@@ -152,7 +152,7 @@ function StatisticsPage() {
         <GenreCloud genres={topGenres(songs, 10)} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.dayOfWeek')}</SectionHeading>
         <div className="flex flex-col gap-1.5">
           {WEEKDAYS.map((day) => (
@@ -161,7 +161,7 @@ function StatisticsPage() {
         </div>
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.timeOfDay')}</SectionHeading>
         <div className="flex flex-col gap-1.5">
           {Object.entries(byHour)
@@ -179,19 +179,19 @@ function StatisticsPage() {
         <ListeningClock hours={byHour} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.discoveryTimeline')}</SectionHeading>
         <p className="text-sm text-muted">{t('statistics.discoveryTimelineCaption')}</p>
         <TimelineChart entries={timeline} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-4 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.musicalEvolution')}</SectionHeading>
         <p className="text-sm text-muted">{t('statistics.musicalEvolutionCaption')}</p>
         <MusicalEvolution entries={evolution} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-8">
+      <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-6 sm:pt-8">
         <SectionHeading>{t('statistics.replayIntensity')}</SectionHeading>
         <p className="text-sm text-muted">{t('statistics.replayIntensityCaption')}</p>
         {topByReplayIntensity(songs).map((song, i) => (
@@ -207,7 +207,7 @@ function StatisticsPage() {
       </motion.div>
 
       {candidates.length > 0 && (
-        <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-8">
+        <motion.div variants={fadeUp} className="flex flex-col gap-1 border-t border-border pt-6 sm:pt-8">
           <SectionHeading>{t('statistics.pantheonCandidates')}</SectionHeading>
           <p className="text-sm text-muted">{t('statistics.pantheonCandidatesCaption')}</p>
           {candidates.map(({ song }, i) => (

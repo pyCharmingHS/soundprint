@@ -18,9 +18,9 @@ function RootLayout() {
   }, [t])
 
   return (
-    <div className="flex min-h-svh flex-col">
-      <nav className="flex items-center justify-between gap-4 border-b border-border px-6 py-4">
-        <div className="flex items-center gap-6">
+    <div className="flex min-h-svh flex-col overflow-x-clip">
+      <nav className="flex items-center justify-between gap-2 border-b border-border px-4 py-4 sm:gap-4 sm:px-6">
+        <div className="flex items-center gap-3 sm:gap-6">
           <NavLink to="/" end className={navLinkClass}>
             {t('nav.home')}
           </NavLink>
