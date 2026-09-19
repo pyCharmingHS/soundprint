@@ -83,6 +83,7 @@ const es: Record<TranslationKey, TranslationValue> = {
   'common.hoursUnit': 'horas',
   'common.by': '{{title}} de {{artist}}',
   'common.workInProgress': 'En construcción',
+  'common.wip': 'WIP',
 
   'viz.pantheonLegend': 'Panteón',
   'viz.notYetLegend': 'Aún no',

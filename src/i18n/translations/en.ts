@@ -85,6 +85,7 @@ const en = {
   'common.hoursUnit': 'hours',
   'common.by': '{{title}} by {{artist}}',
   'common.workInProgress': 'Work in Progress',
+  'common.wip': 'WIP',
 
   'viz.pantheonLegend': 'Pantheon',
   'viz.notYetLegend': 'Not (yet)',

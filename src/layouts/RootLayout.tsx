@@ -31,7 +31,7 @@ function RootLayout() {
             <NavLink to="/statistics" className={navLinkClass}>
               {t('nav.statistics')}
             </NavLink>
-            <WorkInProgressBadge className="hidden sm:inline-flex" />
+            <WorkInProgressBadge compact />
           </span>
         </div>
         <LanguagePicker />
