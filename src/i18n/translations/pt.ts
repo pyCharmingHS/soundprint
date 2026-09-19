@@ -27,6 +27,12 @@ const pt: Record<TranslationKey, TranslationValue> = {
   'pantheon.language': 'Idioma',
   'pantheon.emotionalLandscapeHeading': 'Paisagem Emocional',
   'pantheon.emotionalLandscapeCaption': 'Como o Panteão se sente, não apenas o que ele contém.',
+  'pantheon.sortBy': 'Ordenar',
+  'pantheon.sort.curated': 'Curado',
+  'pantheon.sort.titleAsc': 'Título (A–Z)',
+  'pantheon.sort.titleDesc': 'Título (Z–A)',
+  'pantheon.sort.yearAsc': 'Ano (mais antigo primeiro)',
+  'pantheon.sort.yearDesc': 'Ano (mais recente primeiro)',
 
   'statistics.title': 'Estatísticas',
   'statistics.subtitle': 'O que eu realmente faço, não o que eu valorizo.',

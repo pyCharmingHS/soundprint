@@ -5,9 +5,11 @@ import { EASE_CINEMATIC, fadeIn, fadeUp, staggerContainer } from '../animations/
 import CategoryCard from '../components/CategoryCard'
 import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
+import SongSortMenu from '../components/SongSortMenu'
 import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
 import { decadeLabel, languageName } from '../lib/format'
+import { sortSongs, type SongSortOption } from '../lib/songSort'
 import type { Category, Song } from '../types'
 import EmotionalLandscape from '../visualizations/EmotionalLandscape'
 
@@ -41,6 +43,7 @@ function PantheonPage() {
   const [browseMode, setBrowseMode] = useState<BrowseMode>(
     SIMPLE_MODES.find((mode) => activeValues[mode] !== null) ?? 'category',
   )
+  const [sort, setSort] = useState<SongSortOption>('curated')
 
   useEffect(() => {
     loadCategories().then(setCategories)
@@ -75,11 +78,12 @@ function PantheonPage() {
   }
 
   const activeSimpleMode = SIMPLE_MODES.find((mode) => activeValues[mode] !== null)
-  const visibleSongs = activeCategory
+  const filteredSongs = activeCategory
     ? songs.filter((song) => song.personal.categories.includes(activeCategory))
     : activeSimpleMode
       ? songs.filter(simpleModeConfig[activeSimpleMode].matches)
       : songs
+  const visibleSongs = sortSongs(filteredSongs, sort)
 
   function switchMode(mode: BrowseMode) {
     setBrowseMode(mode)
@@ -237,6 +241,10 @@ function PantheonPage() {
           </AnimatePresence>
         </div>
       )}
+
+      <motion.div variants={fadeUp} className="flex justify-end">
+        <SongSortMenu value={sort} onChange={setSort} />
+      </motion.div>
 
       <motion.div
         layout

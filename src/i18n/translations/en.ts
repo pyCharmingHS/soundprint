@@ -29,6 +29,12 @@ const en = {
   'pantheon.language': 'Language',
   'pantheon.emotionalLandscapeHeading': 'Emotional Landscape',
   'pantheon.emotionalLandscapeCaption': "How the Pantheon feels, not just what's in it.",
+  'pantheon.sortBy': 'Sort',
+  'pantheon.sort.curated': 'Curated',
+  'pantheon.sort.titleAsc': 'Title (A–Z)',
+  'pantheon.sort.titleDesc': 'Title (Z–A)',
+  'pantheon.sort.yearAsc': 'Year (oldest first)',
+  'pantheon.sort.yearDesc': 'Year (newest first)',
 
   'statistics.title': 'Statistics',
   'statistics.subtitle': 'What I actually do, not what I value.',
