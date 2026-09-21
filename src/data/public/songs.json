@@ -6,14 +6,19 @@
     "releaseYear": 2014,
     "language": "es",
     "youtubeUrl": "https://www.youtube.com/watch?v=LUk73pUe9i4",
-    "genres": ["fusion"],
+    "genres": [
+      "fusion"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["catalogues", "thinkers"],
+      "categories": [
+        "catalogues",
+        "thinkers"
+      ],
       "tags": [],
       "why": {
         "en": "I love songs that enumerate things, and this is my favorite one! From things that don't kill you, to dictators and evil companies, to philosophy and mindset. A tribute to resilience.",
@@ -22,7 +27,8 @@
         "pt": "Eu amo músicas que enumeram coisas, e essa é a minha favorita! De coisas que não te matam, a ditadores e empresas malvadas, passando por filosofia e mentalidade. Uma homenagem à resiliência."
       },
       "addedToPantheon": "2026-09-02"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d9/48/83/d9488320-effe-ae59-80c5-be8ab8ad83ea/886444506212.jpg/600x600bb.jpg"
   },
   {
     "id": "song-cuando-se-acaba-el-amor",
@@ -31,15 +37,22 @@
     "releaseYear": 1984,
     "language": "es",
     "youtubeUrl": "https://www.youtube.com/watch?v=wy-zh6UGVzg",
-    "genres": ["ballad"],
+    "genres": [
+      "ballad"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["hurts", "time-machines"],
-      "tags": ["romantic"],
+      "categories": [
+        "hurts",
+        "time-machines"
+      ],
+      "tags": [
+        "romantic"
+      ],
       "why": {
         "en": "You can really feel love has ended for this man — he takes you right along with him.",
         "es": "Realmente se siente que el amor se acabó para este hombre — te arrastra con él.",
@@ -47,7 +60,8 @@
         "pt": "Dá pra sentir de verdade que o amor acabou pra esse homem — ele te leva junto com ele."
       },
       "addedToPantheon": "2026-09-02"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/32/a9/d9/32a9d9c2-92b3-2c4a-d7d2-c47d2da92445/191018267537_cover.jpg/600x600bb.jpg"
   },
   {
     "id": "song-a-te",
@@ -56,15 +70,23 @@
     "releaseYear": 2008,
     "language": "it",
     "youtubeUrl": "https://www.youtube.com/watch?v=FSea1YPxK1c",
-    "genres": ["pop"],
+    "genres": [
+      "pop"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["personal", "thinkers"],
-      "tags": ["romantic", "growth"],
+      "categories": [
+        "personal",
+        "thinkers"
+      ],
+      "tags": [
+        "romantic",
+        "growth"
+      ],
       "why": {
         "en": "It's not my favorite because I don't have one, but it pops into my head whenever I'm asked the question. It's incredibly romantic — my favorite part is \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" It encapsulates the beauty of always growing but retaining your essence, and I think that's beautiful.",
         "es": "No es mi favorita porque no tengo una, pero se me viene a la mente cada vez que me hacen esa pregunta. Es increíblemente romántica — mi parte favorita es \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" Encierra la belleza de crecer constantemente sin perder tu esencia, y creo que eso es hermoso.",
@@ -72,7 +94,8 @@
         "pt": "Não é a minha favorita porque eu não tenho uma, mas ela vem à minha cabeça toda vez que me fazem essa pergunta. É incrivelmente romântica — minha parte favorita é \"A te che sei la miglior cosa che mi sia successa, a te che cambi tutti i giorni, e resti sempre la stessa.\" Ela resume a beleza de sempre crescer mas manter sua essência, e eu acho isso lindo."
       },
       "addedToPantheon": "2026-09-16"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/46/98/d8/4698d8d4-9ef2-3001-208d-c8035fe8ed63/00602517618718.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": "song-l-ecole",
@@ -81,14 +104,18 @@
     "releaseYear": 2020,
     "language": "it",
     "youtubeUrl": "https://www.youtube.com/watch?v=fVWLRf8IaNw",
-    "genres": ["electronic"],
+    "genres": [
+      "electronic"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["thinkers"],
+      "categories": [
+        "thinkers"
+      ],
       "tags": [],
       "why": {
         "en": "Great song. There's a little monologue by a remarkably smart kid about what life actually is, compared to what school makes us do, from his POV. The maturity of his stance is inspiring. And it's in Italian, to boot!",
@@ -97,7 +124,8 @@
         "pt": "Ótima música. Tem um pequeno monólogo de uma criança incrivelmente inteligente sobre o que a vida realmente é, comparado ao que a escola nos obriga a fazer, do POV dele. A maturidade da sua postura é inspiradora. E ainda por cima é em italiano!"
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e4/58/bc/e458bc03-b1f5-83f6-8dd0-bd9484f07222/artwork.jpg/600x600bb.jpg"
   },
   {
     "id": "song-4-your-eyez-only",
@@ -106,14 +134,19 @@
     "releaseYear": 2016,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=mgIk98foFOU",
-    "genres": ["hip hop"],
+    "genres": [
+      "hip hop"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["thinkers", "hurts"],
+      "categories": [
+        "thinkers",
+        "hurts"
+      ],
       "tags": [],
       "why": {
         "en": "It redefines what a \"real man\" is, speaking against an oppressive, discriminatory system. It's a beautiful song. Singing through it intently has made my eyes water.",
@@ -122,7 +155,8 @@
         "pt": "Ela redefine o que é ser um \"homem de verdade\", levantando a voz contra um sistema opressor e discriminatório. É uma música linda. Cantar a letra com atenção realmente me fez os olhos marejarem."
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/9f/93/b1/9f93b168-f7f4-5520-449c-0a4140c29052/00850498007537.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": "song-the-end-of-the-world",
@@ -131,14 +165,20 @@
     "releaseYear": 1963,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=DsY_kocbWaM",
-    "genres": ["country", "pop"],
+    "genres": [
+      "country",
+      "pop"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["hurts", "time-machines"],
+      "categories": [
+        "hurts",
+        "time-machines"
+      ],
       "tags": [],
       "why": {
         "en": "Another one where you can tell the songwriter has been through real heartbreak. It shows in the way they put into words what it feels like for the world to end. Very relatable.",
@@ -147,7 +187,8 @@
         "pt": "Mais uma daquelas em que dá pra perceber que quem escreveu passou por um sofrimento de amor de verdade. Isso aparece no jeito como consegue colocar em palavras a sensação de que o mundo está acabando. Muito fácil de se identificar."
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Features/19/fa/5d/dj.ashmqwlx.jpg/600x600bb.jpg"
   },
   {
     "id": "song-personality",
@@ -156,14 +197,19 @@
     "releaseYear": 1945,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=gMTPsumjfTA",
-    "genres": ["jazz"],
+    "genres": [
+      "jazz"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["time-machines", "thinkers"],
+      "categories": [
+        "time-machines",
+        "thinkers"
+      ],
       "tags": [],
       "why": {
         "en": "A song about the \"personality\" women supposedly needed to get ahead (in a man's world), a pretty transparent stand-in for physical attributes. A product of its time, and it always makes me think of my dear Denise Paiewonsky, my gender studies professor in college (Sex and Power).",
@@ -172,7 +218,8 @@
         "pt": "Uma música sobre a \"personalidade\" que as mulheres supostamente precisavam ter para progredir (num mundo de homens), uma referência bem transparente a atributos físicos. Um produto da sua época, e sempre me faz lembrar da minha querida Denise Paiewonsky, minha professora de estudos de gênero na faculdade (Sexo e Poder)."
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/31/31/44/31314439-a0ed-3fc3-9b54-2b36965d5680/19UMGIM68187.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": "song-way-back-home",
@@ -181,14 +228,20 @@
     "releaseYear": 1951,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=DPkizW2SFSY",
-    "genres": ["jazz"],
+    "genres": [
+      "jazz"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["catalogues", "thinkers", "time-machines"],
+      "categories": [
+        "catalogues",
+        "thinkers",
+        "time-machines"
+      ],
       "tags": [],
       "why": {
         "en": "It's about that very common feeling of belonging to a place of origin, and how it shows up as nostalgia and as overvaluing the things you share that origin with. What's interesting is that not everything the song mentions is framed as necessarily good, just the attributes that are supposed to define the place: \"The gates are the rustiest,\" \"The roads are the dustiest,\" and \"The dogs are the yappiest\" are a few examples. It also enumerates things, and I love that :v",
@@ -197,7 +250,8 @@
         "pt": "Fala sobre aquele sentimento tão comum de pertencer a um lugar de origem, e como isso se manifesta na melancolia e em supervalorizar as coisas com as quais compartilhamos essa origem. É interessante que nem tudo o que a música menciona é apresentado como necessariamente bom, mas sim como os atributos que supostamente a definem: \"The gates are the rustiest\", \"The roads are the dustiest\" e \"The dogs are the yappiest\" são alguns exemplos. Além disso, ela enumera coisas, e eu adoro isso :v"
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/2c/34/38/2c3438e3-34b5-33b8-67c9-af196ff88da3/dj.gdkoapvm.jpg/600x600bb.jpg"
   },
   {
     "id": "song-its-a-man",
@@ -206,14 +260,19 @@
     "releaseYear": 1951,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=ydLHY0qonl4",
-    "genres": ["musical comedy"],
+    "genres": [
+      "musical comedy"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["thinkers", "time-machines"],
+      "categories": [
+        "thinkers",
+        "time-machines"
+      ],
       "tags": [],
       "why": {
         "en": "It's a semi-satirical, stereotype-heavy description of the qualities associated with masculinity at the time, with the added edge that women are led to believe love is \"their thing,\" and that getting married is one of the most important goals of their life, if not the most important. The ending is... particularly interesting.",
@@ -222,7 +281,8 @@
         "pt": "É uma descrição semi-satírica, cheia de estereótipos, das qualidades associadas à masculinidade da época, com o detalhe de que as mulheres são levadas a acreditar que o amor é \"a área delas\", e que se casar é uma das metas mais importantes da vida, senão a mais importante. O final é... particularmente interessante."
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/72/5b/06/725b06e6-e95e-5f1a-8c0b-1387ca5ff906/Betty_Hutton_-_It_s_a_man.jpg/600x600bb.jpg"
   },
   {
     "id": "song-paroles-paroles",
@@ -231,15 +291,22 @@
     "releaseYear": 1973,
     "language": "fr",
     "youtubeUrl": "https://www.youtube.com/watch?v=LYAvhujK4nA",
-    "genres": ["chanson"],
+    "genres": [
+      "chanson"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["thinkers", "time-machines"],
-      "tags": ["romantic"],
+      "categories": [
+        "thinkers",
+        "time-machines"
+      ],
+      "tags": [
+        "romantic"
+      ],
       "why": {
         "en": "Love this song. There's a stark contrast between the guy spitting romantic lines in the most classic French romantic accent, and the woman seeing right through it. It's kinda funny 😆",
         "es": "Amo esta canción. Hay un contraste marcadísimo entre el tipo soltando frases románticas con el acento francés más romántico y clásico posible, y la mujer que ve todo eso venir de lejos. Es medio gracioso 😆",
@@ -247,7 +314,8 @@
         "pt": "Amo essa música. Existe um contraste bem marcante entre o cara soltando frases românticas com o sotaque francês mais romântico e clássico possível, e a mulher que enxerga tudo isso de longe. É meio engraçado 😆"
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/67/3a/22/673a222d-26e5-62a8-0aed-56c1fb198bc1/06UMGIM28881.rgb.jpg/600x600bb.jpg"
   },
   {
     "id": "song-innerbloom",
@@ -256,14 +324,18 @@
     "releaseYear": 2016,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=Tx9zMFodNtA",
-    "genres": ["deep house"],
+    "genres": [
+      "deep house"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["hurts"],
+      "categories": [
+        "hurts"
+      ],
       "tags": [],
       "why": {
         "en": "One of the most lopsided ratios I know of between lyrics and feeling. It barely says anything, and it'll wreck you anyway. Brace yourself.",
@@ -272,7 +344,8 @@
         "pt": "Uma das relações mais desequilibradas que conheço entre letra e sentimento. Quase não diz nada, e mesmo assim vai te destruir. Se prepare."
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/aa/5f/d8/aa5fd889-4c2e-7e24-e8b2-428beaf9d4fe/SWEATA009.jpg/600x600bb.jpg"
   },
   {
     "id": "song-wait",
@@ -281,14 +354,18 @@
     "releaseYear": 2012,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=lAwYodrBr2Q",
-    "genres": ["dream pop"],
+    "genres": [
+      "dream pop"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["hurts"],
+      "categories": [
+        "hurts"
+      ],
       "tags": [],
       "why": {
         "en": "Say the least, feel the most — I don't think I know a bigger gap between how few words this song uses and how much it makes you feel.",
@@ -297,7 +374,8 @@
         "pt": "Dizer o mínimo, sentir o máximo — acho que não conheço uma distância maior entre o quão poucas são as palavras dessa música e o quanto ela te faz sentir."
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cb/7b/a9/cb7ba903-b5f1-cc21-90db-7a81b7aa0997/724596951057.jpg/600x600bb.jpg"
   },
   {
     "id": "song-look-at-me-now",
@@ -306,14 +384,19 @@
     "releaseYear": 2011,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=8gyLR4NfMiI",
-    "genres": ["hip hop"],
+    "genres": [
+      "hip hop"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["time-machines", "bangers"],
+      "categories": [
+        "time-machines",
+        "bangers"
+      ],
       "tags": [],
       "why": {
         "en": "The first really fast rap verse I ever learned, waaaay back when I was a teenager. A classic.",
@@ -331,14 +414,19 @@
     "releaseYear": 1993,
     "language": "es",
     "youtubeUrl": "https://www.youtube.com/watch?v=tRszrYtlrlM",
-    "genres": ["bolero"],
+    "genres": [
+      "bolero"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["time-machines", "personal"],
+      "categories": [
+        "time-machines",
+        "personal"
+      ],
       "tags": [],
       "why": {
         "en": "My all-time go-to for karaoke. My mom asks for it every time we're at a karaoke night, or anything like it, when we're together.",
@@ -347,7 +435,8 @@
         "pt": "Meu coringa histórico de karaokê. Minha mãe pede ela toda vez que estamos num karaokê, ou algo parecido, quando estamos juntos."
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/02/e1/89/02e18907-3e5e-f440-1c1f-beffcb1c9f9d/195081985091.jpg/600x600bb.jpg"
   },
   {
     "id": "song-im-sorry",
@@ -356,14 +445,19 @@
     "releaseYear": 1960,
     "language": "en",
     "youtubeUrl": "https://www.youtube.com/watch?v=BGLR25EJtfE",
-    "genres": ["pop"],
+    "genres": [
+      "pop"
+    ],
     "listening": {
       "plays": 0,
       "minutes": 0
     },
     "personal": {
       "isPantheon": true,
-      "categories": ["thinkers", "time-machines"],
+      "categories": [
+        "thinkers",
+        "time-machines"
+      ],
       "tags": [],
       "why": {
         "en": "A very mature, very real take on forgiveness and owning your mistakes.",
@@ -372,6 +466,7 @@
         "pt": "Uma visão muito madura e muito real sobre o perdão e sobre assumir a responsabilidade pelos próprios erros."
       },
       "addedToPantheon": "2026-09-18"
-    }
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/5b/c6/bd/5bc6bdbd-cec9-abbd-14ce-5d544ea1d379/00602567713753.rgb.jpg/600x600bb.jpg"
   }
 ]
