@@ -63,6 +63,8 @@ const it: Record<TranslationKey, TranslationValue> = {
     "La cronologia di ascolto reale non è ancora collegata, quindi i numeri qui sotto sono segnaposto — questa pagina prenderà vita quando la pipeline di importazione dallo streaming sarà collegata.",
 
   'song.back': 'Indietro',
+  'song.previous': 'Canzone precedente',
+  'song.next': 'Canzone successiva',
   'song.watchOnYouTube': 'Guarda su YouTube',
   'song.pantheonBadge': 'PANTHEON',
   'song.whyHeading': 'Perché è qui',

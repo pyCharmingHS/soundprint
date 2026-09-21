@@ -89,7 +89,12 @@ function HomePage() {
             </motion.p>
             <motion.div variants={fadeUp} className="grid grid-cols-2 gap-6 sm:grid-cols-4">
               {highlights.map((song) => (
-                <SongCard key={song.id} song={song} showWhy />
+                <SongCard
+                  key={song.id}
+                  song={song}
+                  showWhy
+                  navState={{ songIds: highlights.map((s) => s.id), returnTo: '/' }}
+                />
               ))}
             </motion.div>
           </motion.section>
@@ -128,14 +133,20 @@ function HomePage() {
             <motion.div variants={fadeUp} className="grid grid-cols-2 gap-6">
               <div className="flex flex-col items-center gap-2 text-center">
                 <span className="text-xs tracking-wide text-muted uppercase">{t('home.mostPlayedLabel')}</span>
-                <SongCard song={mostPlayed} />
+                <SongCard
+                  song={mostPlayed}
+                  navState={{ songIds: [mostPlayed.id, topPantheon.id], returnTo: '/' }}
+                />
                 <span className="text-sm text-muted">
                   {t('common.plays', { count: mostPlayed.listening.plays })}
                 </span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center">
                 <span className="text-xs tracking-wide text-gold uppercase">{t('home.pantheonLabel')}</span>
-                <SongCard song={topPantheon} />
+                <SongCard
+                  song={topPantheon}
+                  navState={{ songIds: [mostPlayed.id, topPantheon.id], returnTo: '/' }}
+                />
                 <span className="text-sm text-muted">
                   {t('common.plays', { count: topPantheon.listening.plays })}
                 </span>

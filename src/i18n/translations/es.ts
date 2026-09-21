@@ -62,6 +62,8 @@ const es: Record<TranslationKey, TranslationValue> = {
     'El historial de escucha real todavía no está conectado, así que los números de abajo son marcadores de posición — esta página cobrará vida cuando se conecte el pipeline de importación de streaming.',
 
   'song.back': 'Volver',
+  'song.previous': 'Canción anterior',
+  'song.next': 'Canción siguiente',
   'song.watchOnYouTube': 'Ver en YouTube',
   'song.pantheonBadge': 'PANTEÓN',
   'song.whyHeading': 'Por qué está aquí',

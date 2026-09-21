@@ -64,6 +64,8 @@ const en = {
     "Real listening history isn't connected yet, so the numbers below are placeholders — this page comes alive once the streaming import pipeline is wired up.",
 
   'song.back': 'Back',
+  'song.previous': 'Previous song',
+  'song.next': 'Next song',
   'song.watchOnYouTube': 'Watch on YouTube',
   'song.pantheonBadge': 'PANTHEON',
   'song.whyHeading': "Why it's here",

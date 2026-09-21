@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useLocation, useSearchParams } from 'react-router-dom'
 import { EASE_CINEMATIC, fadeIn, fadeUp, staggerContainer } from '../animations/variants'
 import CategoryCard from '../components/CategoryCard'
 import ParallaxLayer from '../components/ParallaxLayer'
@@ -32,6 +32,7 @@ const SIMPLE_MODES: SimpleMode[] = ['genre', 'decade', 'language']
 
 function PantheonPage() {
   const { t, locale, localize } = useLocale()
+  const location = useLocation()
   const [categories, setCategories] = useState<Category[]>([])
   const [songs, setSongs] = useState<Song[]>([])
   const [searchParams, setSearchParams] = useSearchParams()
@@ -292,7 +293,14 @@ function PantheonPage() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.35, ease: EASE_CINEMATIC }}
             >
-              <SongCard song={song} showYear />
+              <SongCard
+                song={song}
+                showYear
+                navState={{
+                  songIds: visibleSongs.map((s) => s.id),
+                  returnTo: location.pathname + location.search,
+                }}
+              />
             </motion.div>
           ))}
         </AnimatePresence>

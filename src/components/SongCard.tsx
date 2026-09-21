@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLocale } from '../i18n/LocaleContext'
+import type { SongNavState } from '../lib/songNav'
 import type { Song } from '../types'
 import AlbumArt from './AlbumArt'
 
@@ -7,15 +8,19 @@ interface SongCardProps {
   song: Song
   showWhy?: boolean
   showYear?: boolean
+  /** The list this card is part of — lets the detail page offer Prev/Next
+   * through it and a way back to exactly this view. */
+  navState?: SongNavState
 }
 
-function SongCard({ song, showWhy, showYear }: SongCardProps) {
+function SongCard({ song, showWhy, showYear, navState }: SongCardProps) {
   const { localize } = useLocale()
   const why = showWhy ? localize(song.personal.why) : undefined
 
   return (
     <Link
       to={`/song/${song.id}`}
+      state={navState}
       className="group flex flex-col gap-3 text-left"
     >
       <AlbumArt

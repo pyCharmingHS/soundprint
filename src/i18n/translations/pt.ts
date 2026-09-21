@@ -62,6 +62,8 @@ const pt: Record<TranslationKey, TranslationValue> = {
     'O histórico de audição real ainda não está conectado, então os números abaixo são placeholders — esta página ganha vida quando o pipeline de importação de streaming for conectado.',
 
   'song.back': 'Voltar',
+  'song.previous': 'Música anterior',
+  'song.next': 'Próxima música',
   'song.watchOnYouTube': 'Assistir no YouTube',
   'song.pantheonBadge': 'PANTEÃO',
   'song.whyHeading': 'Por que está aqui',
