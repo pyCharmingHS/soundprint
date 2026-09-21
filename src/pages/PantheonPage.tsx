@@ -10,6 +10,7 @@ import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
 import { decadeLabel, languageName } from '../lib/format'
+import { isBackNavState } from '../lib/songNav'
 import { sortSongs, type SongSortOption } from '../lib/songSort'
 import type { Category, Song } from '../types'
 import EmotionalLandscape from '../visualizations/EmotionalLandscape'
@@ -48,6 +49,9 @@ function PantheonPage() {
   const [sort, setSort] = useState<SongSortOption>('curated')
   const reducedMotion = usePrefersReducedMotion()
   const pillScrollRef = useRef<HTMLDivElement>(null)
+  const [highlightId, setHighlightId] = useState<string | null>(() =>
+    isBackNavState(location.state) ? location.state.highlightSongId : null,
+  )
 
   useEffect(() => {
     loadCategories().then(setCategories)
@@ -65,6 +69,16 @@ function PantheonPage() {
       block: 'nearest',
     })
   }, [browseMode, activeCategory, activeValues.genre, activeValues.decade, activeValues.language, categories.length, songs.length, reducedMotion])
+
+  // Scrolls the song you just came back from into view and rings it gold
+  // for a moment — "so you know where you were" — then clears itself.
+  useEffect(() => {
+    if (!highlightId) return
+    const card = document.querySelector(`[data-song-id="${highlightId}"]`)
+    card?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
+    const timer = setTimeout(() => setHighlightId(null), 2500)
+    return () => clearTimeout(timer)
+  }, [highlightId, reducedMotion])
 
   const activeCategoryData = categories.find((c) => c.id === activeCategory)
 
@@ -100,6 +114,14 @@ function PantheonPage() {
       ? songs.filter(simpleModeConfig[activeSimpleMode].matches)
       : songs
   const visibleSongs = sortSongs(filteredSongs, sort)
+
+  // What to call this particular set of songs on the song detail page's
+  // Prev/Next indicator — the answer to "why 5 songs and not all of them".
+  const currentListLabel = activeCategory
+    ? (activeCategoryData ? (localize(activeCategoryData.name) ?? activeCategoryData.id) : t('pantheon.category'))
+    : activeSimpleMode
+      ? simpleModeConfig[activeSimpleMode].label(activeValues[activeSimpleMode]!)
+      : t('pantheon.title')
 
   function switchMode(mode: BrowseMode) {
     setBrowseMode(mode)
@@ -296,9 +318,11 @@ function PantheonPage() {
               <SongCard
                 song={song}
                 showYear
+                glow={song.id === highlightId}
                 navState={{
                   songIds: visibleSongs.map((s) => s.id),
                   returnTo: location.pathname + location.search,
+                  listLabel: currentListLabel,
                 }}
               />
             </motion.div>

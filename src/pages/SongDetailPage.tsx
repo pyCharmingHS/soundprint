@@ -39,7 +39,8 @@ function SongDetailPage() {
   }
 
   function goBack() {
-    if (navState) navigate(navState.returnTo)
+    if (navState && id) navigate(navState.returnTo, { state: { highlightSongId: id } })
+    else if (navState) navigate(navState.returnTo)
     else navigate(-1)
   }
 
@@ -83,7 +84,7 @@ function SongDetailPage() {
         exit="hidden"
         className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-6 py-8 sm:gap-10 sm:py-16"
       >
-        <motion.div variants={fadeUp} className="flex items-center justify-between gap-2">
+        <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-between gap-2">
           <button
             type="button"
             onClick={goBack}
@@ -101,8 +102,11 @@ function SongDetailPage() {
               >
                 ‹
               </button>
-              <span className="tabular-nums">
-                {currentIndex + 1} / {navState.songIds.length}
+              <span className="whitespace-nowrap">
+                <span className="tabular-nums">
+                  {currentIndex + 1} / {navState.songIds.length}
+                </span>
+                {navState.listLabel && <span> · {navState.listLabel}</span>}
               </span>
               <button
                 type="button"

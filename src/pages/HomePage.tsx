@@ -1,25 +1,32 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { fadeUp, staggerContainer } from '../animations/variants'
 import AlbumArtPattern from '../components/AlbumArtPattern'
 import CategoryCard from '../components/CategoryCard'
 import OpeningAnimation from '../components/OpeningAnimation'
 import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { useLocale } from '../i18n/LocaleContext'
 import { curatedHighlights } from '../lib/highlights'
 import { loadCategories, loadSongs } from '../lib/data'
 import { topGenres } from '../lib/analytics'
+import { isBackNavState } from '../lib/songNav'
 import type { Category, Song } from '../types'
 import GenreCloud from '../visualizations/GenreCloud'
 
 function HomePage() {
   const { t } = useLocale()
+  const location = useLocation()
+  const reducedMotion = usePrefersReducedMotion()
   const [songs, setSongs] = useState<Song[]>([])
   const [mostPlayed, setMostPlayed] = useState<Song | null>(null)
   const [topPantheon, setTopPantheon] = useState<Song | null>(null)
   const [categories, setCategories] = useState<Category[]>([])
+  const [highlightId, setHighlightId] = useState<string | null>(() =>
+    isBackNavState(location.state) ? location.state.highlightSongId : null,
+  )
 
   useEffect(() => {
     loadSongs().then((all) => {
@@ -34,6 +41,14 @@ function HomePage() {
     })
     loadCategories().then(setCategories)
   }, [])
+
+  useEffect(() => {
+    if (!highlightId) return
+    const card = document.querySelector(`[data-song-id="${highlightId}"]`)
+    card?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
+    const timer = setTimeout(() => setHighlightId(null), 2500)
+    return () => clearTimeout(timer)
+  }, [highlightId, reducedMotion])
 
   const highlights = curatedHighlights(songs, categories, 4)
   const pantheonGenres = topGenres(
@@ -93,7 +108,12 @@ function HomePage() {
                   key={song.id}
                   song={song}
                   showWhy
-                  navState={{ songIds: highlights.map((s) => s.id), returnTo: '/' }}
+                  glow={song.id === highlightId}
+                  navState={{
+                    songIds: highlights.map((s) => s.id),
+                    returnTo: '/',
+                    listLabel: t('home.highlightsHeading'),
+                  }}
                 />
               ))}
             </motion.div>
@@ -135,7 +155,12 @@ function HomePage() {
                 <span className="text-xs tracking-wide text-muted uppercase">{t('home.mostPlayedLabel')}</span>
                 <SongCard
                   song={mostPlayed}
-                  navState={{ songIds: [mostPlayed.id, topPantheon.id], returnTo: '/' }}
+                  glow={mostPlayed.id === highlightId}
+                  navState={{
+                    songIds: [mostPlayed.id, topPantheon.id],
+                    returnTo: '/',
+                    listLabel: t('home.mostPlayedVsFavoriteHeading'),
+                  }}
                 />
                 <span className="text-sm text-muted">
                   {t('common.plays', { count: mostPlayed.listening.plays })}
@@ -145,7 +170,12 @@ function HomePage() {
                 <span className="text-xs tracking-wide text-gold uppercase">{t('home.pantheonLabel')}</span>
                 <SongCard
                   song={topPantheon}
-                  navState={{ songIds: [mostPlayed.id, topPantheon.id], returnTo: '/' }}
+                  glow={topPantheon.id === highlightId}
+                  navState={{
+                    songIds: [mostPlayed.id, topPantheon.id],
+                    returnTo: '/',
+                    listLabel: t('home.mostPlayedVsFavoriteHeading'),
+                  }}
                 />
                 <span className="text-sm text-muted">
                   {t('common.plays', { count: topPantheon.listening.plays })}
