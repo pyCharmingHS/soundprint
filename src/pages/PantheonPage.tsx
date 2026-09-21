@@ -5,12 +5,16 @@ import { EASE_CINEMATIC, fadeIn, fadeUp, staggerContainer } from '../animations/
 import CategoryCard from '../components/CategoryCard'
 import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
+import SongRow from '../components/SongRow'
 import SongSortMenu from '../components/SongSortMenu'
+import ViewControls from '../components/ViewControls'
+import { usePersistedState } from '../hooks/usePersistedState'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { useLocale } from '../i18n/LocaleContext'
 import { loadCategories, loadSongs } from '../lib/data'
 import { decadeLabel, languageName } from '../lib/format'
 import { isBackNavState } from '../lib/songNav'
+import { GRID_SIZE_CLASSES, isGridSize, isViewMode } from '../lib/songDisplay'
 import { sortSongs, type SongSortOption } from '../lib/songSort'
 import type { Category, Song } from '../types'
 import EmotionalLandscape from '../visualizations/EmotionalLandscape'
@@ -47,6 +51,8 @@ function PantheonPage() {
     SIMPLE_MODES.find((mode) => activeValues[mode] !== null) ?? 'category',
   )
   const [sort, setSort] = useState<SongSortOption>('curated')
+  const [viewMode, setViewMode] = usePersistedState('soundprint-song-view', 'grid', isViewMode)
+  const [gridSize, setGridSize] = usePersistedState('soundprint-grid-size', 'medium', isGridSize)
   const reducedMotion = usePrefersReducedMotion()
   const pillScrollRef = useRef<HTMLDivElement>(null)
   const [highlightId, setHighlightId] = useState<string | null>(() =>
@@ -122,6 +128,12 @@ function PantheonPage() {
     : activeSimpleMode
       ? simpleModeConfig[activeSimpleMode].label(activeValues[activeSimpleMode]!)
       : t('pantheon.title')
+
+  const songNavState = {
+    songIds: visibleSongs.map((s) => s.id),
+    returnTo: location.pathname + location.search,
+    listLabel: currentListLabel,
+  }
 
   function switchMode(mode: BrowseMode) {
     setBrowseMode(mode)
@@ -296,39 +308,51 @@ function PantheonPage() {
         </motion.div>
       )}
 
-      <motion.div variants={fadeUp} className="flex justify-end">
+      <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-between gap-3">
+        <ViewControls
+          viewMode={viewMode}
+          onViewModeChange={setViewMode}
+          gridSize={gridSize}
+          onGridSizeChange={setGridSize}
+        />
         <SongSortMenu value={sort} onChange={setSort} />
       </motion.div>
 
-      <motion.div
-        layout
-        variants={fadeUp}
-        className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4"
-      >
-        <AnimatePresence mode="popLayout" initial={false}>
-          {visibleSongs.map((song) => (
-            <motion.div
-              key={song.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.35, ease: EASE_CINEMATIC }}
-            >
-              <SongCard
-                song={song}
-                showYear
-                glow={song.id === highlightId}
-                navState={{
-                  songIds: visibleSongs.map((s) => s.id),
-                  returnTo: location.pathname + location.search,
-                  listLabel: currentListLabel,
-                }}
-              />
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+      {viewMode === 'grid' ? (
+        <motion.div layout variants={fadeUp} className={`grid gap-6 ${GRID_SIZE_CLASSES[gridSize]}`}>
+          <AnimatePresence mode="popLayout" initial={false}>
+            {visibleSongs.map((song) => (
+              <motion.div
+                key={song.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.35, ease: EASE_CINEMATIC }}
+              >
+                <SongCard song={song} showYear glow={song.id === highlightId} navState={songNavState} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      ) : (
+        <motion.div layout variants={fadeUp} className="flex flex-col divide-y divide-border">
+          <AnimatePresence mode="popLayout" initial={false}>
+            {visibleSongs.map((song) => (
+              <motion.div
+                key={song.id}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25, ease: EASE_CINEMATIC }}
+              >
+                <SongRow song={song} showYear glow={song.id === highlightId} navState={songNavState} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      )}
 
       {songs.some(
         (s) => s.personal.meaning !== undefined && s.personal.emotionalIntensity !== undefined,

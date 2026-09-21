@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
+import { useGlowAnimation } from '../hooks/useGlowAnimation'
 import { useLocale } from '../i18n/LocaleContext'
 import type { SongNavState } from '../lib/songNav'
 import type { Song } from '../types'
@@ -18,16 +18,9 @@ interface SongCardProps {
   glow?: boolean
 }
 
-const GLOW_SHADOW = [
-  '0 0 0 0px rgba(201,162,75,0)',
-  '0 0 0 6px rgba(201,162,75,0.55)',
-  '0 0 0 0px rgba(201,162,75,0)',
-]
-const NO_GLOW_SHADOW = '0 0 0 0px rgba(201,162,75,0)'
-
 function SongCard({ song, showWhy, showYear, navState, glow }: SongCardProps) {
   const { localize } = useLocale()
-  const reducedMotion = usePrefersReducedMotion()
+  const glowAnimation = useGlowAnimation(glow)
   const why = showWhy ? localize(song.personal.why) : undefined
 
   return (
@@ -37,15 +30,7 @@ function SongCard({ song, showWhy, showYear, navState, glow }: SongCardProps) {
       data-song-id={song.id}
       className="group flex flex-col gap-3 text-left"
     >
-      <motion.div
-        className="rounded-sm"
-        animate={{ boxShadow: glow ? (reducedMotion ? GLOW_SHADOW[1] : GLOW_SHADOW) : NO_GLOW_SHADOW }}
-        transition={
-          glow && !reducedMotion
-            ? { duration: 2.2, ease: 'easeOut', times: [0, 0.3, 1] }
-            : { duration: 0.4 }
-        }
-      >
+      <motion.div className="rounded-sm" {...glowAnimation}>
         <AlbumArt
           src={song.artwork}
           title={song.title}

@@ -21,24 +21,13 @@ function HomePage() {
   const location = useLocation()
   const reducedMotion = usePrefersReducedMotion()
   const [songs, setSongs] = useState<Song[]>([])
-  const [mostPlayed, setMostPlayed] = useState<Song | null>(null)
-  const [topPantheon, setTopPantheon] = useState<Song | null>(null)
   const [categories, setCategories] = useState<Category[]>([])
   const [highlightId, setHighlightId] = useState<string | null>(() =>
     isBackNavState(location.state) ? location.state.highlightSongId : null,
   )
 
   useEffect(() => {
-    loadSongs().then((all) => {
-      setSongs(all)
-
-      const byPlays = [...all].sort((a, b) => b.listening.plays - a.listening.plays)
-      setMostPlayed(byPlays[0] ?? null)
-
-      const pantheon = all.filter((s) => s.personal.isPantheon)
-      const ranked = pantheon.find((s) => s.personal.pantheonRank === 1)
-      setTopPantheon(ranked ?? pantheon[0] ?? null)
-    })
+    loadSongs().then(setSongs)
     loadCategories().then(setCategories)
   }, [])
 
@@ -134,53 +123,6 @@ function HomePage() {
             </motion.p>
             <motion.div variants={fadeUp}>
               <GenreCloud genres={pantheonGenres} />
-            </motion.div>
-          </motion.section>
-        </ParallaxLayer>
-      )}
-
-      {mostPlayed && topPantheon && (
-        <ParallaxLayer offset={16} className="border-t border-border">
-          <motion.section
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-10 sm:py-16"
-          >
-            <motion.p variants={fadeUp} className="text-center text-sm tracking-wide text-muted uppercase">
-              {t('home.mostPlayedVsFavoriteHeading')}
-            </motion.p>
-            <motion.div variants={fadeUp} className="grid grid-cols-2 gap-6">
-              <div className="flex flex-col items-center gap-2 text-center">
-                <span className="text-xs tracking-wide text-muted uppercase">{t('home.mostPlayedLabel')}</span>
-                <SongCard
-                  song={mostPlayed}
-                  glow={mostPlayed.id === highlightId}
-                  navState={{
-                    songIds: [mostPlayed.id, topPantheon.id],
-                    returnTo: '/',
-                    listLabel: t('home.mostPlayedVsFavoriteHeading'),
-                  }}
-                />
-                <span className="text-sm text-muted">
-                  {t('common.plays', { count: mostPlayed.listening.plays })}
-                </span>
-              </div>
-              <div className="flex flex-col items-center gap-2 text-center">
-                <span className="text-xs tracking-wide text-gold uppercase">{t('home.pantheonLabel')}</span>
-                <SongCard
-                  song={topPantheon}
-                  glow={topPantheon.id === highlightId}
-                  navState={{
-                    songIds: [mostPlayed.id, topPantheon.id],
-                    returnTo: '/',
-                    listLabel: t('home.mostPlayedVsFavoriteHeading'),
-                  }}
-                />
-                <span className="text-sm text-muted">
-                  {t('common.plays', { count: topPantheon.listening.plays })}
-                </span>
-              </div>
             </motion.div>
           </motion.section>
         </ParallaxLayer>
