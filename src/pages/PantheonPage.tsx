@@ -8,6 +8,7 @@ import SongCard from '../components/SongCard'
 import SongRow from '../components/SongRow'
 import SongSortMenu from '../components/SongSortMenu'
 import ViewControls from '../components/ViewControls'
+import { GLOW_DURATION_MS } from '../hooks/useGlowAnimation'
 import { usePersistedState } from '../hooks/usePersistedState'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { useLocale } from '../i18n/LocaleContext'
@@ -78,13 +79,18 @@ function PantheonPage() {
 
   // Scrolls the song you just came back from into view and rings it gold
   // for a moment — "so you know where you were" — then clears itself.
+  // Depends on songs.length too: songs load asynchronously, so on a fresh
+  // page load the card doesn't exist in the DOM yet the instant this first
+  // runs — without that dependency the query silently finds nothing and
+  // never retries once the grid actually renders.
   useEffect(() => {
     if (!highlightId) return
     const card = document.querySelector(`[data-song-id="${highlightId}"]`)
-    card?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
-    const timer = setTimeout(() => setHighlightId(null), 2500)
+    if (!card) return
+    card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
+    const timer = setTimeout(() => setHighlightId(null), GLOW_DURATION_MS)
     return () => clearTimeout(timer)
-  }, [highlightId, reducedMotion])
+  }, [highlightId, reducedMotion, songs.length])
 
   const activeCategoryData = categories.find((c) => c.id === activeCategory)
 

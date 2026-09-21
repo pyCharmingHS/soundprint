@@ -7,6 +7,7 @@ import CategoryCard from '../components/CategoryCard'
 import OpeningAnimation from '../components/OpeningAnimation'
 import ParallaxLayer from '../components/ParallaxLayer'
 import SongCard from '../components/SongCard'
+import { GLOW_DURATION_MS } from '../hooks/useGlowAnimation'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { useLocale } from '../i18n/LocaleContext'
 import { curatedHighlights } from '../lib/highlights'
@@ -31,13 +32,17 @@ function HomePage() {
     loadCategories().then(setCategories)
   }, [])
 
+  // songs/categories load asynchronously, so the card this is looking for
+  // may not exist in the DOM yet the instant this first runs — depending
+  // on their lengths lets it retry once the page actually renders them.
   useEffect(() => {
     if (!highlightId) return
     const card = document.querySelector(`[data-song-id="${highlightId}"]`)
-    card?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
-    const timer = setTimeout(() => setHighlightId(null), 2500)
+    if (!card) return
+    card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
+    const timer = setTimeout(() => setHighlightId(null), GLOW_DURATION_MS)
     return () => clearTimeout(timer)
-  }, [highlightId, reducedMotion])
+  }, [highlightId, reducedMotion, songs.length, categories.length])
 
   const highlights = curatedHighlights(songs, categories, 4)
   const pantheonGenres = topGenres(
