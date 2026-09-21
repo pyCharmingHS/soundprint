@@ -35,13 +35,21 @@ function HomePage() {
   // songs/categories load asynchronously, so the card this is looking for
   // may not exist in the DOM yet the instant this first runs — depending
   // on their lengths lets it retry once the page actually renders them.
+  // The scroll itself is delayed past the page's own 0.6s fade-in
+  // transition, so it's a visible motion rather than happening underneath it.
   useEffect(() => {
     if (!highlightId) return
     const card = document.querySelector(`[data-song-id="${highlightId}"]`)
     if (!card) return
-    card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
-    const timer = setTimeout(() => setHighlightId(null), GLOW_DURATION_MS)
-    return () => clearTimeout(timer)
+    const scrollDelay = reducedMotion ? 0 : 650
+    const scrollTimer = setTimeout(() => {
+      card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
+    }, scrollDelay)
+    const clearTimer = setTimeout(() => setHighlightId(null), GLOW_DURATION_MS + scrollDelay)
+    return () => {
+      clearTimeout(scrollTimer)
+      clearTimeout(clearTimer)
+    }
   }, [highlightId, reducedMotion, songs.length, categories.length])
 
   const highlights = curatedHighlights(songs, categories, 4)

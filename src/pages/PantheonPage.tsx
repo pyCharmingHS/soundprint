@@ -82,14 +82,23 @@ function PantheonPage() {
   // Depends on songs.length too: songs load asynchronously, so on a fresh
   // page load the card doesn't exist in the DOM yet the instant this first
   // runs — without that dependency the query silently finds nothing and
-  // never retries once the grid actually renders.
+  // never retries once the grid actually renders. The scroll itself is
+  // delayed past the page's own 0.6s fade-in transition — starting it
+  // immediately on mount had it running invisibly underneath that fade,
+  // easy to miss entirely.
   useEffect(() => {
     if (!highlightId) return
     const card = document.querySelector(`[data-song-id="${highlightId}"]`)
     if (!card) return
-    card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
-    const timer = setTimeout(() => setHighlightId(null), GLOW_DURATION_MS)
-    return () => clearTimeout(timer)
+    const scrollDelay = reducedMotion ? 0 : 650
+    const scrollTimer = setTimeout(() => {
+      card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
+    }, scrollDelay)
+    const clearTimer = setTimeout(() => setHighlightId(null), GLOW_DURATION_MS + scrollDelay)
+    return () => {
+      clearTimeout(scrollTimer)
+      clearTimeout(clearTimer)
+    }
   }, [highlightId, reducedMotion, songs.length])
 
   const activeCategoryData = categories.find((c) => c.id === activeCategory)
