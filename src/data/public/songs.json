@@ -566,8 +566,10 @@
     "id": "song-ce-lho-piccolo",
     "title": "Ce l'ho piccolo",
     "artist": "Huga Flame",
+    "releaseYear": 2003,
     "language": "it",
     "youtubeUrl": "https://www.youtube.com/watch?v=8QUGjke7DXw",
+    "artwork": "https://i.discogs.com/i17AZJ8c80nBkAB0GP3izfKG2Mw_r2NfIAM_Ij3UGig/rs:fit/g:sm/q:90/h:525/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1NTkz/ODQxLTE2NzIyNDg4/MDctNzE3NC5qcGVn.jpeg",
     "genres": [
       "hip hop"
     ],
@@ -583,10 +585,10 @@
       ],
       "tags": [],
       "why": {
-        "en": "First rap song in Italian I learned, courtesy of my best friend, Ettore. It's funny as hell 😆",
-        "es": "La primera canción de rap en italiano que aprendí, cortesía de mi mejor amigo, Ettore. Es graciosísima 😆",
-        "it": "La prima canzone rap in italiano che ho imparato, grazie al mio migliore amico, Ettore. È divertentissima 😆",
-        "pt": "A primeira música de rap em italiano que aprendi, cortesia do meu melhor amigo, Ettore. É hilária 😆"
+        "en": "First rap song in Italian I learned, courtesy of my best friend, Ettore. It's funny as hell 😆 Pretty obscure, too.",
+        "es": "La primera canción de rap en italiano que aprendí, cortesía de mi mejor amigo, Ettore. Es graciosísima 😆 Bastante oscura, también.",
+        "it": "La prima canzone rap in italiano che ho imparato, grazie al mio migliore amico, Ettore. È divertentissima 😆 Anche piuttosto sconosciuta.",
+        "pt": "A primeira música de rap em italiano que aprendi, cortesia do meu melhor amigo, Ettore. É hilária 😆 Bem obscura, também."
       },
       "addedToPantheon": "2026-10-13"
     }
