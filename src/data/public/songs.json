@@ -748,5 +748,37 @@
       "addedToPantheon": "2026-10-20"
     },
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/72/00/89/720089d8-c063-a323-e0cc-de921e50b968/00602527051789.rgb.jpg/600x600bb.jpg"
+  },
+  {
+    "id": "song-changes",
+    "title": "Changes",
+    "artist": "2Pac",
+    "releaseYear": 1998,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=eXvBjCO19QY",
+    "genres": [
+      "hip hop"
+    ],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": [
+        "thinkers",
+        "hurts",
+        "time-machines"
+      ],
+      "tags": [],
+      "why": {
+        "en": "The cycle of violence, including examples from his own life. Take on other social issues like racism, police brutality and poverty.",
+        "es": "El ciclo de la violencia, incluyendo ejemplos de su propia vida. Una mirada sobre otros problemas sociales como el racismo, la brutalidad policial y la pobreza.",
+        "it": "Il ciclo della violenza, incluso esempi della sua stessa vita. Uno sguardo su altri problemi sociali come il razzismo, la brutalità della polizia e la povertà.",
+        "pt": "O ciclo da violência, incluindo exemplos da própria vida dele. Um olhar sobre outros problemas sociais como racismo, brutalidade policial e pobreza."
+      },
+      "addedToPantheon": "2026-10-20"
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/72/00/89/720089d8-c063-a323-e0cc-de921e50b968/00602527051789.rgb.jpg/600x600bb.jpg"
   }
 ]
