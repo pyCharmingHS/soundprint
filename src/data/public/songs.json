@@ -685,5 +685,36 @@
       "addedToPantheon": "2026-10-14"
     },
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/6d/8f/bb6d8f67-6d04-10b5-dd62-eb5809ac54fc/00602567879152.rgb.jpg/600x600bb.jpg"
+  },
+  {
+    "id": "song-fantasmas",
+    "title": "Fantasmas",
+    "artist": "Humbe",
+    "releaseYear": 2023,
+    "language": "es",
+    "youtubeUrl": "https://www.youtube.com/watch?v=e2c8NkNY41U",
+    "genres": [
+      "latin pop"
+    ],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": [
+        "thinkers",
+        "hurts"
+      ],
+      "tags": [],
+      "why": {
+        "en": "Exploring loss and missing someone. Nothing supernatural (ghosts), just reality (memories).",
+        "es": "Explorando la pérdida y el extrañar. Nada sobrenatural (fantasmas), solo realidad (recuerdos).",
+        "it": "Esplorando la perdita e la mancanza di qualcuno. Niente di sovrannaturale (fantasmi), solo realtà (ricordi).",
+        "pt": "Explorando a perda e a saudade. Nada sobrenatural (fantasmas), só realidade (memórias)."
+      },
+      "addedToPantheon": "2026-10-20"
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8e/c5/5a/8ec55a12-713f-0283-f4d7-5f7b392aeabb/81206.jpg/600x600bb.jpg"
   }
 ]
