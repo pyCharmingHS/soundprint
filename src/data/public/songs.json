@@ -716,5 +716,37 @@
       "addedToPantheon": "2026-10-20"
     },
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8e/c5/5a/8ec55a12-713f-0283-f4d7-5f7b392aeabb/81206.jpg/600x600bb.jpg"
+  },
+  {
+    "id": "song-brendas-got-a-baby",
+    "title": "Brenda's Got a Baby",
+    "artist": "2Pac",
+    "releaseYear": 1991,
+    "language": "en",
+    "youtubeUrl": "https://www.youtube.com/watch?v=NRWUs0KtB-I",
+    "genres": [
+      "hip hop"
+    ],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": [
+        "thinkers",
+        "hurts",
+        "time-machines"
+      ],
+      "tags": [],
+      "why": {
+        "en": "Sad reality for young Brenda. Reminding listeners it's not just \"Brenda's\" problem, it's everyone's problem. Reading the story of how this song brought an estranged mother and son together just made it even better.",
+        "es": "Triste realidad para la joven Brenda. Les recuerda a los oyentes que no es solo \"el problema de Brenda\", es el problema de todos. Leer la historia de cómo esta canción reunió a una madre y un hijo distanciados la hizo aún mejor.",
+        "it": "Triste realtà per la giovane Brenda. Ricorda agli ascoltatori che non è solo \"il problema di Brenda\", è un problema di tutti. Leggere la storia di come questa canzone abbia riunito una madre e un figlio distanti l'ha resa ancora più bella.",
+        "pt": "Triste realidade para a jovem Brenda. Lembra aos ouvintes que não é só \"o problema da Brenda\", é um problema de todos. Ler a história de como essa música reuniu uma mãe e um filho afastados tornou ela ainda melhor."
+      },
+      "addedToPantheon": "2026-10-20"
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/72/00/89/720089d8-c063-a323-e0cc-de921e50b968/00602527051789.rgb.jpg/600x600bb.jpg"
   }
 ]
