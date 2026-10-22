@@ -412,7 +412,7 @@
     "id": "song-imaginacion",
     "title": "Imaginación",
     "artist": "Anthony Ríos",
-    "releaseYear": 1993,
+    "releaseYear": 1981,
     "language": "es",
     "youtubeUrl": "https://www.youtube.com/watch?v=tRszrYtlrlM",
     "genres": [
@@ -803,10 +803,10 @@
       ],
       "tags": [],
       "why": {
-        "en": "Another song I love for karaoke.",
-        "es": "Otra canción que amo para el karaoke.",
-        "it": "Un'altra canzone che amo per il karaoke.",
-        "pt": "Outra música que eu amo para o karaokê."
+        "en": "Another song I love for karaoke. I also love the metaphors!",
+        "es": "Otra canción que amo para el karaoke. ¡También amo las metáforas!",
+        "it": "Un'altra canzone che amo per il karaoke. Adoro anche le metafore!",
+        "pt": "Outra música que eu amo para o karaokê. Também adoro as metáforas!"
       },
       "addedToPantheon": "2026-10-22"
     },
