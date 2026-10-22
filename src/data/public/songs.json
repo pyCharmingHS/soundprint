@@ -780,5 +780,36 @@
       "addedToPantheon": "2026-10-20"
     },
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/72/00/89/720089d8-c063-a323-e0cc-de921e50b968/00602527051789.rgb.jpg/600x600bb.jpg"
+  },
+  {
+    "id": "song-lo-que-te-espera",
+    "title": "Lo Que Te Espera",
+    "artist": "Anthony Ríos",
+    "releaseYear": 1981,
+    "language": "es",
+    "youtubeUrl": "https://www.youtube.com/watch?v=wvoD1XuRnYs",
+    "genres": [
+      "bolero"
+    ],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": [
+        "time-machines",
+        "personal"
+      ],
+      "tags": [],
+      "why": {
+        "en": "Another song I love for karaoke.",
+        "es": "Otra canción que amo para el karaoke.",
+        "it": "Un'altra canzone che amo per il karaoke.",
+        "pt": "Outra música que eu amo para o karaokê."
+      },
+      "addedToPantheon": "2026-10-22"
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/99/88/f2/9988f201-7a89-b93f-d6c5-9d482505873a/193872223490_cover.jpg/600x600bb.jpg"
   }
 ]
