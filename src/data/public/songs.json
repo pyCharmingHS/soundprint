@@ -811,5 +811,36 @@
       "addedToPantheon": "2026-10-22"
     },
     "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/99/88/f2/9988f201-7a89-b93f-d6c5-9d482505873a/193872223490_cover.jpg/600x600bb.jpg"
+  },
+  {
+    "id": "song-unicornio",
+    "title": "Unicornio",
+    "artist": "Silvio Rodríguez",
+    "releaseYear": 1982,
+    "language": "es",
+    "youtubeUrl": "https://www.youtube.com/watch?v=5J-oX4tmkxk",
+    "genres": [
+      "nueva trova"
+    ],
+    "listening": {
+      "plays": 0,
+      "minutes": 0
+    },
+    "personal": {
+      "isPantheon": true,
+      "categories": [
+        "time-machines",
+        "personal"
+      ],
+      "tags": [],
+      "why": {
+        "en": "Reminds me of a Physics exam at ITLA, of all things… IYKYK XD",
+        "es": "Me recuerda a un examen de Física en el ITLA of all things… IYKYK XD",
+        "it": "Mi ricorda un esame di Fisica all'ITLA, of all things… IYKYK XD",
+        "pt": "Me faz lembrar de uma prova de Física no ITLA, of all things… IYKYK XD"
+      },
+      "addedToPantheon": "2026-10-22"
+    },
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c4/c9/7b/c4c97bd8-f6ac-4127-d63f-fc050962424f/cover.jpg/600x600bb.jpg"
   }
 ]
